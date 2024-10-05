@@ -1,0 +1,17 @@
+.git/
+.idea/
+*.csv
+.venv/
+/misc/*.csv
+/misc/ecplise_bugs/*.csv
+/misc/ecplise_bugs/*.txt
+/misc/GFG/*.csv
+/misc/ThePublicJiraDataset/
+/mics/__pycache__/
+/data/cve_training.json
+/data/cve_to_cwe.json
+/data/cve_to_cwe_2016_2024.json
+/misc/extractor/*.json
+/text.txt
+.DS_Store
+/data/
