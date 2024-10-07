@@ -6,6 +6,7 @@
 /misc/ecplise_bugs/*.csv
 /misc/ecplise_bugs/*.txt
 /misc/GFG/*.csv
+node_modules/
 /misc/ThePublicJiraDataset/
 /mics/__pycache__/
 /data/cve_training.json
