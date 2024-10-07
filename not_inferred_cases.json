@@ -1,0 +1,20 @@
+[
+    {
+        "url": "https://github.com/argoproj/argo-cd/commit/e047efa8f9518c54d00d2e4493b64bc4dba98478",
+        "CVE": "CVE-2023-40025",
+        "date": "2023-08-23",
+        "reason": "The record does not not meet the criteria. TOKEN_EXCEEDED (17889)"
+    },
+    {
+        "url": "https://github.com/GeoNode/geonode/commit/a9eebae80cb362009660a1fd49e105e7cdb499b9",
+        "CVE": "CVE-2023-40017",
+        "date": "2023-08-24",
+        "reason": "The record does not not meet the criteria. TOKEN_EXCEEDED (22386)"
+    },
+    {
+        "url": "https://github.com/PrivateUploader/PrivateUploader/commit/869657d61e3c7a518177106fe63ea483082b0d3e",
+        "CVE": "CVE-2023-40020",
+        "date": "2023-08-14",
+        "reason": "The record does not not meet the criteria. TOKEN_EXCEEDED (15286)"
+    }
+]

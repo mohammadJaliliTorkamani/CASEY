@@ -53,7 +53,7 @@ def extract_line_range(search_string: str, file_path: str)-> tuple:
 
         occurrences.append((start_line, end_line))
 
-    return occurrences[0] if len(occurrences) > 0 else [(None,None)]
+    return occurrences[0] if len(occurrences) > 0 else (None,None)
 def save_json(address, content):
     # Ensure the directory exists; if not, create it
     directory = os.path.dirname(address)
@@ -72,8 +72,6 @@ def is_not_in_list(str_corpus: list, key: str) -> bool:
 def date_is_after(date_str1: str, date_str2: str) -> bool:
     date1 = datetime.strptime(date_str1, "%Y-%m-%d")
     date2 = datetime.strptime(date_str2, "%Y-%m-%d")
-    print(date1,date2)
-    print("###")
     return date1 > date2
 
 

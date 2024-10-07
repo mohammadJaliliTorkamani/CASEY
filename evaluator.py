@@ -18,8 +18,13 @@ class EvaluationResult:
 
     def __init__(self, llm_input, llm_output, ground_truth_CVE: str, ground_truth_CWEs: list,
                  ground_truth_severities: dict,
-                 gt_CVSS_version: list):
+                 gt_CVSS_version: list, url: str, description: str, date: str, github_description: str):
         self.llm_input = llm_input
+
+        self.url = url
+        self.description = description
+        self.date = date
+        self.github_description = github_description
 
         self.ground_truth_CVE = ground_truth_CVE
         self.ground_truth_CWEs = ground_truth_CWEs
@@ -34,6 +39,8 @@ class EvaluationResult:
                 self.llm_output['CWE_IDS'] = list(set(self.llm_output['CWE_IDS']))
                 if self.llm_output['severity'] == 'null':
                     self.llm_output['severity'] = None
+                else:
+                    self.llm_output['severity'] = self.llm_output['severity'].upper()
 
                 self.equal_severity = (self.llm_output['severity'] is not None and
                                        len(self.ground_truth_severities) > 0 and
@@ -51,6 +58,10 @@ class EvaluationResult:
 
     def __str__(self):
         return (f"EvaluationResult(llm_input={self.llm_input}, "
+                f"url={self.url}, "
+                f"description={self.description}, "
+                f"date={self.date}, "
+                f"github_description={self.github_description}, "
                 f"llm_raw_output={self.llm_raw_output}, "
                 f"llm_output={json.dumps(self.llm_output)}, "
                 f"ground_truth_CVE={self.ground_truth_CVE}, "
@@ -64,6 +75,10 @@ class EvaluationResult:
 
     def __repr__(self):
         return (f"EvaluationResult(llm_input={self.llm_input!r}, "
+                f"url={self.url!r}, "
+                f"description={self.description!r}, "
+                f"date={self.date!r}, "
+                f"github_description={self.github_description!r}, "
                 f"llm_raw_output={self.llm_raw_output!r}, "
                 f"llm_output={json.dumps(self.llm_output)!r}, "
                 f"ground_truth_CVE={self.ground_truth_CVE!r}, "
@@ -78,6 +93,10 @@ class EvaluationResult:
     def to_dict(self):
         return {
             'llm_input': self.llm_input,
+            'url': self.url,
+            'description': self.description,
+            'date': self.date,
+            'github_description': self.github_description,
             'llm_raw_output': self.llm_raw_output,
             'llm_output': self.llm_output,
             'ground_truth_CVE': self.ground_truth_CVE,
@@ -111,9 +130,11 @@ class EvaluationResult:
 
 class Evaluator:
     def evaluate(self, llm_input, inference_response: str | None, ground_truth_CVE: str, ground_truth_CWEs: list,
-                 ground_truth_severities: dict, gt_CVSS_version: list):
+                 ground_truth_severities: dict, gt_CVSS_version: list,
+                 url: str, description: str, date: str, github_description: str):
         return EvaluationResult(llm_input, inference_response, ground_truth_CVE, ground_truth_CWEs,
-                                ground_truth_severities, gt_CVSS_version).to_dict()
+                                ground_truth_severities, gt_CVSS_version, url, description, date,
+                                github_description).to_dict()
 
     @staticmethod
     def analyze_evaluations(evaluations: list[dict]):
@@ -153,10 +174,10 @@ class Evaluator:
 
         return {
             'total_number_of_samples': len(evaluations),
-            'date': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
             'equal': equal_counter,
             'accuracy_overall': 0 if len(evaluations) == 0 else (equal_counter / len(evaluations)),
-            'accuracy_CWE': 0  if len(evaluations) == 0 else cwe_identical_counter / len(evaluations),
+            'accuracy_CWE': 0 if len(evaluations) == 0 else cwe_identical_counter / len(evaluations),
             'accuracy_severity': 0 if len(evaluations) == 0 else equal_severity_counter / len(evaluations),
             'CWE_identical': cwe_identical_counter,
             'CWE_gt_subset_of_pr': cwe_gt_subset_of_pr_counter,

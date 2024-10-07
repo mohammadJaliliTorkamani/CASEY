@@ -1,46 +1,37 @@
+import argparse
 import json
-import os
-import subprocess
-import sys
 
-def install_esprima():
-    try:
-        # Install esprima using npm
-        subprocess.check_call(['npm', 'install', 'esprima'])
-        print("esprima installed successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to install esprima: {e}")
-        sys.exit(1)
-
-def extract_methods(js_file_path):
-    install_esprima()
-    result = subprocess.run(['node', '/Users/joeyng/PycharmProjects/BugType_Categorization/extractors/parse_js.js', js_file_path], capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"Error: {result.stderr}")
-        sys.exit(1)
-    return json.loads(result.stdout)
+import tree_sitter_javascript
+from tree_sitter import Language, Parser
 
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python extract_js_methods.py <path_to_js_file>")
-        sys.exit(1)
+def main(file_path):
+    code = open(file_path).read()
+    parser = Parser()
+    parser.language = Language(tree_sitter_javascript.language())
+    tree = parser.parse(bytes(code, "utf8"))
 
-    js_file_path = sys.argv[1]
-    if not os.path.isfile(js_file_path):
-        print(f"File not found: {js_file_path}")
-        sys.exit(1)
+    methods = extract_methods(tree.root_node, code.encode("utf8"))
 
-    methods = extract_methods(js_file_path)
-
-    # Create a dictionary with methods under the "methods" field
-    methods_json = {
-        "methods": methods
-    }
-
-    # Print the JSON object
-    print(json.dumps(methods_json, indent=4))
+    result = {"methods": methods}
+    obj = json.dumps(result, indent=4)
+    print(obj)
 
 
-if __name__ == "__main__":
-    main()
+def extract_methods(node, code):
+    methods = []
+    if node.type == 'method_definition' or node.type == 'method_declaration':
+        methods.append(node.text.decode('utf-8'))
+
+    for child in node.children:
+        methods.extend(extract_methods(child, code))
+
+    return methods
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Extract methods from a JS file.')
+    parser.add_argument('file_path', type=str, help='Path to the JS file')
+    args = parser.parse_args()
+
+    main(args.file_path)

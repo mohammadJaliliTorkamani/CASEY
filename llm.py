@@ -1,6 +1,7 @@
 import json
 import time
 
+import tiktoken
 from openai import OpenAI
 from openai.types.chat import ChatCompletion
 
@@ -102,7 +103,7 @@ class LLM:
             for (file_name, _methods) in methods.items():
                 user_input = ('File: ' + file_name + '\nMethods:\n')
                 for method in _methods:
-                    user_input += (constants.METHOD_TAGS[0] + "\n" + method + constants.METHOD_TAGS[1] + "\n")
+                    user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n"+constants.METHOD_TAGS[1] + "\n")
 
             i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_METHOD % (
                 (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))

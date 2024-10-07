@@ -1,0 +1,30 @@
+File: framework/core/src/User/Command/UploadAvatarHandler.php
+Methods:
+<Method>
+public function handle(UploadAvatar $command)
+    {
+        $actor = $command->actor;
+
+        $user = $this->users->findOrFail($command->userId);
+
+        if ($actor->id !== $user->id) {
+            $actor->assertCan('edit', $user);
+        }
+
+        $this->validator->assertValid(['avatar' => $command->file]);
+
+        $image = $this->imageManager->make($command->file->getStream());
+
+        $this->events->dispatch(
+            new AvatarSaving($user, $actor, $image)
+        );
+
+        $this->uploader->upload($user, $image);
+
+        $user->save();
+
+        $this->dispatchEventsFor($user, $actor);
+
+        return $user;
+    }
+</Method>

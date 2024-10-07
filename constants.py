@@ -1,12 +1,13 @@
 MAX_INFERENCE_ITERATION_LOOP = 5
 OPENAI_API_KEY = 'sk-proj-0Wxp6IspMkkWhD5dBWYmT3BlbkFJmzWgaCdndfviDXJ5UQE6'
 OPENAI_LLM_MAX_TRIAL = 3
+PROJECT_ABSOLUTE_PATH = "/Users/mjalilitorkamani2/Codes/BugType_Categorization"
 LLM_TEMPERATURE = 1
 LLM_TOP_P = 1
 LLM_PRESENCE_PENALTY = 0
 LLM_FREQUENCY_PENALTY = 0
 LLM_TRIAL_GAP_SECONDS = 3
-MAX_TOKEN_NUMBER = 2000
+MAX_TOKEN_NUMBER = 15000
 LLM_MODEL = 'gpt-3.5-turbo'
 CODE_TAGS = ['<Code>', '</Code>']
 HUNK_TAGS = ['<Hunk>', '</Hunk>']
@@ -14,8 +15,7 @@ METHOD_TAGS = ['<Method>', '</Method>']
 LLM_MODEL_CUT_OFF_DATE = '2021-09-01'
 LLM_RESPONSE_ERROR_SIGNS = ["Traceback (most recent call last)", "Bad gateway"]
 
-LLM_SYSTEM_FIELD_FOR_BUGGY_FILE = """
-You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
+LLM_SYSTEM_FIELD_FOR_BUGGY_FILE = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
 
 Instructions:
 1. * Input: You will receive one or more files, each has a file name, and file content enclosed  within <Code> and </Code>. If there are multiple buggy codes, they will be related to the same bug. The provided input structure is as below:
@@ -49,8 +49,7 @@ Important: Your output must strictly follow the described JSON structure. Do not
 %s
 """
 
-LLM_SYSTEM_FIELD_FOR_BUGGY_METHOD = """
-You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
+LLM_SYSTEM_FIELD_FOR_BUGGY_METHOD = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
 
 Instructions:
 1. * Input: You will receive one or more files, each has a file name, and one or more buggy methods enclosed  within <Method> and </Method>. If there are multiple buggy methods or files, they will be related to the same bug. The provided input structure is as below:
@@ -86,8 +85,7 @@ Important: Your output must strictly follow the described JSON structure. Do not
 %s
 """
 
-LLM_SYSTEM_FIELD_FOR_BUGGY_HUNKS = """
-You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
+LLM_SYSTEM_FIELD_FOR_BUGGY_HUNKS = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
 
 Instructions:
 1. * Input: You will receive one or more files, each has a file name, and one or more buggy hunks enclosed  within <Hunk> and </Hunk>. If there are multiple buggy hunks or files, they will be related to the same bug. The provided input structure is as below:
@@ -123,8 +121,7 @@ Important: Your output must strictly follow the described JSON structure. Do not
 %s
 """
 
-LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION = """
-You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on the description of software bugs.
+LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on the description of software bugs.
 
 Instructions:
 1. * Input: 
@@ -157,8 +154,7 @@ Important: Your output must strictly follow the described JSON structure. Do not
 %s
 """
 
-LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_FILES = """
-You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy code(s) and bug description.
+LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_FILES = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy code(s) and bug description.
 
 Instructions:
 1. * Input: You will receive one or more sections of buggy files enclosed within <Code> and </Code>, and a description of the buggy code. If there are multiple buggy files, they will be related to the same bug. You may receive multiple file names and their contents provided as:
@@ -194,8 +190,7 @@ Important: Your output must strictly follow the described JSON structure. Do not
 %s
 """
 
-LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_METHODS = """
-You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.
+LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_METHODS = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.
 
 Instructions:
 1. * Input: You will receive one or more file names, each having one or more buggy methods enclosed within <Method> and </Method>, and a description of the buggy code. If there are multiple buggy methods or files, they will be related to the same bug. The provided input structure is provided as:
@@ -232,8 +227,7 @@ Important: Your output must strictly follow the described JSON structure. Do not
 %s
 """
 
-LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_HUNKS = """
-You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.
+LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_HUNKS = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.
 
 Instructions:
 1. * Input: You will receive one or more file names, each having one or more buggy hunks enclosed within <Hunk> and </Hunk>, and a description of the buggy code. If there are multiple buggy hunks or files, they will be related to the same bug. The provided input structure is provided as:
@@ -272,9 +266,7 @@ Important: Your output must strictly follow the described JSON structure. Do not
 
 DEFAULT_SEVERITY_VERSION_FOR_CVSS = 'V3.0'
 
-# todo (by Joey)
-CVSS_SEVERITY_DESCRIPTIONS = {'V2.0': """
-CVSS v2.0 Guide:
+CVSS_SEVERITY_DESCRIPTIONS = {'V2.0': """CVSS v2.0 Guide:
 
 Base Metrics:
 1.	Access Vector (AV): How the vulnerability is exploited (Network (N), Adjacent Network (A), Local (L))
@@ -290,8 +282,7 @@ Severity Levels and Example Combinations:
 Note: The severity level may change based on specific characteristics of the vulnerability. For example, if the access vector is local but the impact on availability is complete, the severity might increase.
 """,
                               'V3.0':
-                                  """"
-CVSS v3.0 Guide:
+                                  """"CVSS v3.0 Guide:
 
 Base Metrics:
 1.	Attack Vector (AV): How the vulnerability is exploited (Network (N), Adjacent Network (A), Local (L), Physical (P))
@@ -311,8 +302,7 @@ Severity Levels and Example Combinations:
 Note: The severity level may change based on specific characteristics of the vulnerability. For example, if the attack vector is physical but the impact on availability is high, the severity might increase.
 
                                   """,
-                              'V3.1': """
-CVSS v3.1 Guide:
+                              'V3.1': """CVSS v3.1 Guide:
 
 Base Metrics:
 1.	Attack Vector (AV): How the vulnerability is exploited (Network (N), Adjacent Network (A), Local (L), Physical (P))

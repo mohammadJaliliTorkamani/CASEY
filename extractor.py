@@ -16,20 +16,25 @@ def extract_java_methods(file_name) -> list:
 def execute_methods_extractor_python_script(script_name: str, file_name: str):
     # Define the command to activate the virtual environment and run the Python script
     activate_script = os.path.join('.venv', 'bin', 'activate')
-    command = f'source {activate_script} && python "{script_name}" "{file_name}"'
+    # command = f'source {activate_script} && python "{script_name}" "{file_name}"'
+    command = ['python', script_name, file_name]
+    # 'source {activate_script} && python "{script_name}" "{file_name}"'
 
-    print("Command:", command)
-
-    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    stdout, stderr = process.communicate()
+    # process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    process = subprocess.run(
+        command,  # Replace with your script name
+        stdout=subprocess.PIPE,  # Capture standard output
+        stderr=subprocess.PIPE,  # Capture standard error
+        text=True  # Decode output as text (string)
+    )
+    # stdout, stderr = process.communicate()
+    stdout, stderr = process.stdout, process.stderr
 
     if process.returncode != 0:
-        print(f"Error executing script: {stderr} | {stdout}")
+        print("Error occurred!", "Stdout: ", stderr, "Stdout: ", stdout)
         return None
 
-    print("STDOUT:", stdout.decode('utf-8'))
-
-    return json.loads(stdout.decode('utf-8'))['methods']
+    return json.loads(stdout.encode('utf-8'))['methods']
 
 
 def extract_python_methods(file_name):
