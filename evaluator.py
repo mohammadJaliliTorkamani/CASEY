@@ -148,6 +148,7 @@ class Evaluator:
     @staticmethod
     def analyze_evaluations(evaluations: list[dict]):
         equal_counter = 0
+        errors_counter = 0
         cwe_identical_counter = 0
         cwe_gt_subset_of_pr_counter = 0
         cwe_pr_subset_of_gt_counter = 0
@@ -159,31 +160,34 @@ class Evaluator:
         invalid_inference_counter = 0
 
         for evaluation in evaluations:
-            if evaluation['is_equal']:
-                equal_counter += 1
-            if evaluation['equal_severity'] is True:
-                equal_severity_counter += 1
-            if evaluation['llm_output'] is None:
-                invalid_inference_counter += 1
-
-            if evaluation['cwe_evaluation'] == "IDENTICAL":
-                cwe_identical_counter += 1
-            elif evaluation['cwe_evaluation'] == "GT_SUBSET_OF_PR":
-                cwe_gt_subset_of_pr_counter += 1
-            elif evaluation['cwe_evaluation'] == "PR_SUBSET_OF_GT":
-                cwe_pr_subset_of_gt_counter += 1
-            elif evaluation['cwe_evaluation'] == "EMPTY_PR":
-                cwe_empty_pr_counter += 1
-            elif evaluation['cwe_evaluation'] == "EMPTY_GT":
-                cwe_empty_gt_counter += 1
-            elif evaluation['cwe_evaluation'] == "NOT_OVERLAPPED":
-                cwe_non_overlapped_counter += 1
-            elif evaluation['cwe_evaluation'] == "OVERLAPPED":
-                cwe_overlapped_counter += 1
+            if evaluation['error_msg'] is not None:
+                errors_counter += 1
+            else:
+                if evaluation['is_equal']:
+                    equal_counter += 1
+                if evaluation['equal_severity'] is True:
+                    equal_severity_counter += 1
+                if evaluation['llm_output'] is None:
+                    invalid_inference_counter += 1
+                if evaluation['cwe_evaluation'] == "IDENTICAL":
+                    cwe_identical_counter += 1
+                elif evaluation['cwe_evaluation'] == "GT_SUBSET_OF_PR":
+                    cwe_gt_subset_of_pr_counter += 1
+                elif evaluation['cwe_evaluation'] == "PR_SUBSET_OF_GT":
+                    cwe_pr_subset_of_gt_counter += 1
+                elif evaluation['cwe_evaluation'] == "EMPTY_PR":
+                    cwe_empty_pr_counter += 1
+                elif evaluation['cwe_evaluation'] == "EMPTY_GT":
+                    cwe_empty_gt_counter += 1
+                elif evaluation['cwe_evaluation'] == "NOT_OVERLAPPED":
+                    cwe_non_overlapped_counter += 1
+                elif evaluation['cwe_evaluation'] == "OVERLAPPED":
+                    cwe_overlapped_counter += 1
 
         return {
             'total_number_of_samples': len(evaluations),
             'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            'errors':errors_counter,
             'equal': equal_counter,
             'accuracy_overall': 0 if len(evaluations) == 0 else (100.0 * equal_counter / len(evaluations)),
             'accuracy_CWE': 0 if len(evaluations) == 0 else 100.0 * cwe_identical_counter / len(evaluations),
