@@ -1,7 +1,6 @@
 import json
 import time
 
-import tiktoken
 from openai import OpenAI
 from openai.types.chat import ChatCompletion
 
@@ -22,6 +21,8 @@ class LLM:
             return None
 
     def __inference(self, user_input: str, system_field: str) -> (str, str | None):
+        system_field = system_field.strip()
+        user_input = user_input.strip()
         input_message = [{'role': 'system', 'content': system_field}]
         input_message.append(
             {'role': 'user',
@@ -65,7 +66,7 @@ class LLM:
         user_input = "Description: " + description
 
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION % (
-                (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
 
         return i, o
 
@@ -79,7 +80,7 @@ class LLM:
 
         i, o = None, None
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_FILE % (
-                (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
 
         return i, o
 
@@ -91,7 +92,7 @@ class LLM:
         for (file_name, _methods) in methods.items():
             user_input += ('File: ' + file_name + '\nMethods:\n')
             for method in _methods:
-                user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n"+constants.METHOD_TAGS[1] + "\n")
+                user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n" + constants.METHOD_TAGS[1] + "\n")
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_METHOD % (
             (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
 
@@ -105,10 +106,10 @@ class LLM:
         for (file_name, hunk_lines) in hunks.items():
             user_input = ('File: ' + file_name + '\nHunks:\n')
             for hunk in hunk_lines:
-                user_input += (constants.HUNK_TAGS[0] + "\n" + hunk + constants.HUNK_TAGS[1] + "\n")
+                user_input += (constants.HUNK_TAGS[0] + "\n" + hunk + "\n" + constants.HUNK_TAGS[1] + "\n")
 
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_HUNKS % (
-                (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
 
         return i, o
 
@@ -122,7 +123,7 @@ class LLM:
 
         i, o = None, None
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_FILES % (
-                (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
 
         return i, o
 
@@ -134,10 +135,10 @@ class LLM:
         for (file_name, methods) in methods_list.items():
             user_input += ('File: ' + file_name + '\nMethods:\n')
             for method in methods:
-                user_input += (constants.METHOD_TAGS[0] + "\n" + method + constants.METHOD_TAGS[1] + "\n")
+                user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n" + constants.METHOD_TAGS[1] + "\n")
 
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_METHODS % (
-                (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
 
         return i, o
 
@@ -149,7 +150,7 @@ class LLM:
         for (file_name, hunk_lines) in hunks.items():
             user_input += ('File: ' + file_name + '\nHunks:\n')
             for hunk in hunk_lines:
-                user_input += (constants.HUNK_TAGS[0] + "\n" + hunk + constants.HUNK_TAGS[1] + "\n")
+                user_input += (constants.HUNK_TAGS[0] + "\n" + hunk + "\n" + constants.HUNK_TAGS[1] + "\n")
 
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_HUNKS % (
             (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))

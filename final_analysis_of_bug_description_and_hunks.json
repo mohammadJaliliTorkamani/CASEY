@@ -1,0 +1,93 @@
+{
+    "total_number_of_samples": 2,
+    "timestamp": "08/10/2024 13:35:53",
+    "errors": 0,
+    "equal": 0,
+    "accuracy_overall": 0.0,
+    "accuracy_CWE": 0.0,
+    "accuracy_severity": 0.0,
+    "CWE_identical": 0,
+    "CWE_gt_subset_of_pr": 0,
+    "CWE_pr_subset_of_gt": 0,
+    "CWE_empty_pr": 0,
+    "CWE_non_overlapped": 2,
+    "CWE_overlapped": 0,
+    "equal_severities": 0,
+    "invalid_inferences": 0,
+    "cwe_evaluations": [
+        {
+            "llm_input": [
+                {
+                    "role": "system",
+                    "content": "You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.\n\nInstructions:\n1. * Input: You will receive one or more file names, each having one or more buggy hunks enclosed within <Hunk> and </Hunk>, and a description of the buggy code. If there are multiple buggy hunks or files, they will be related to the same bug. The provided input structure is provided as:\n   Description: description of the bug\n   File: file_name\n   Hunks: \n        <Hunk> hunk 1 </Hunk>\n        <Hunk> hunk 2 </Hunk>\n2. * Output: Generate a JSON object with the following structure:\n   {\n     \"CWE_IDS\": [], \n     \"severity\": null\n   }\n\nOutput Details:\n- CWE_IDS: If you identify any CWE IDs from the provided buggy hunk(s) or its description, list them here (e.g., [\"CWE-123\"]). If no CWEs are found, leave this as an empty array [].\n- severity: If the provided information indicates a security vulnerability (CVE), provide its severity level (e.g., \"high\") based on CVSS V3.1 . If there are no vulnerabilities, set this field to null.\n\nExample Outputs:\n1. If CWEs are found and severity is identified:\n   {\n     \"CWE_IDS\": [\"CWE-123\", \"CWE-456\"],\n     \"severity\": \"high\"\n   }\n\n2. If no CWEs or severity are identified:\n   {\n     \"CWE_IDS\": [],\n     \"severity\": null\n   }\n\nImportant: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.\n\nCVSS v3.1 Guide:\n\nBase Metrics:\n1.\tAttack Vector (AV): How the vulnerability is exploited (Network (N), Adjacent Network (A), Local (L), Physical (P))\n2.\tAttack Complexity (AC): Difficulty of exploitation (Low (L), High (H))\n3.\tPrivileges Required (PR): Level of required privileges an attacker needs to exploit the vulnerability (None (N), Low (L), High (H))\n4.\tUser Interaction (UI): Need for user interaction (None (N), Required (R))\n5.\tScope (S): Impact on other components (Unchanged (U), Changed (C))\n6.\tConfidentiality (C), Integrity (I), Availability (A): Impact on security properties (None (N), Low (L), High (H))\n\nSeverity Levels and Example Combinations:\n1. None (0.0): This vulnerability is extremely difficult to exploit and has minimal impact. For example, \u201cAV:P/AC:H/PR:H/UI:R/S:U/C:N/I:N/A:N\u201d and \u201cAV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:N\u201d\n2. Low (0.1 - 3.9): These vulnerabilities are somewhat difficult to exploit or have limited impact. For example, \u201cAV:L/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:L\u201d and \u201cAV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N\u201d\n3. Medium (4.0 - 6.9): Involves vulnerabilities that are exploitable and could cause moderate damage. For example, \u201cAV:N/AC:H/PR:H/UI:R/S:C/C:L/I:L/A:N\u201d and \u201cAV:A/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L\u201d\n4. High (7.0 - 8.9): Represents vulnerabilities that are easier to exploit and have significant consequences. For example, \u201cAV:L/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:L\u201d and \u201cAV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L\u201d\n5. Critical (9.0 - 10.0): These vulnerabilities are both easy to exploit and have a devastating impact. For example, \u201cAV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H\u201d and \u201cAV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H\u201d\n\nNote: The severity level may change based on specific characteristics of the vulnerability. For example, if the attack vector is physical but the impact on availability is high, the severity might increase."
+                },
+                {
+                    "role": "user",
+                    "content": "Description: Address negative shift reported by https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=26229.\nAs I understand it, a corrupt EXR file has a declared length of a short Huffman code (pl.len) that exceeds the number of bits remaining to represent it (lc). This causes the lc to go negative, causing a negative left shift, which has undefined behavior.\nThis is the 'non-fast' path taken when there are less than 128 bits of data. testHuf has been updated to test with small as well as large data sizes to ensure both decoders are covered.\nSigned-off-by: Peter Hillman peterh@wetafx.co.nz\nFile: OpenEXR/IlmImfTest/testHuf.cpp\nHunks:\n<Hunk>\nconst int N = 1000000;\n</Hunk>\n<Hunk>\nArray <unsigned short> raw (N);\n</Hunk>\n<Hunk>\n\n</Hunk>\n<Hunk>\nfill1 (raw, N, 1, rand48);\t  // test various symbol distributions\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill1 (raw, N, 10, rand48);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill1 (raw, N, 100, rand48);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill1 (raw, N, 1000, rand48);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\n\n</Hunk>\n<Hunk>\nfill2 (raw, N, 1, rand48);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill2 (raw, N, 10, rand48);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill2 (raw, N, 100, rand48);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill2 (raw, N, 1000, rand48);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\n\n</Hunk>\n<Hunk>\nfill3 (raw, N, 0);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill3 (raw, N, 1);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill3 (raw, N, USHRT_MAX - 1);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\nfill3 (raw, N, USHRT_MAX);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\n\n</Hunk>\n<Hunk>\nfill4 (raw, USHRT_MAX + 1);\n</Hunk>\n<Hunk>\ncompressVerify(raw, USHRT_MAX + 1, HUF_COMPRESS_DEK_HASH_FOR_FILL4_USHRT_MAX_PLUS_ONE);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, USHRT_MAX + 1);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, USHRT_MAX + 1);\n</Hunk>\n<Hunk>\nfill4 (raw, N);\n</Hunk>\n<Hunk>\ncompressVerify(raw, N, HUF_COMPRESS_DEK_HASH_FOR_FILL4_N);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>\n<Hunk>\n\n</Hunk>\n<Hunk>\nfill4 (raw, 0);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, 0);\t// test small input data sets\n</Hunk>\n<Hunk>\nfill4 (raw, 1);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, 1);\n</Hunk>\n<Hunk>\nfill4 (raw, 2);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, 2);\n</Hunk>\n<Hunk>\nfill4 (raw, 3);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, 3);\n</Hunk>\n<Hunk>\n\n</Hunk>\n<Hunk>\nfill5 (raw, N);\t\t\t// test run-length coding of code table\n</Hunk>\n<Hunk>\ncompressVerify(raw, N, HUF_COMPRESS_DEK_HASH_FOR_FILL5_N);\n</Hunk>\n<Hunk>\ncompressUncompress (raw, N);\n</Hunk>\n<Hunk>\ncompressUncompressSubset (raw, N);\n</Hunk>"
+                }
+            ],
+            "url": "https://github.com/AcademySoftwareFoundation/openexr/commit/51a92d67f53c08230734e74564c807043cbfe41e",
+            "description": "A flaw was found in OpenEXR's hufDecode functionality. This flaw allows an attacker who can pass a crafted file to be processed by OpenEXR, to trigger an undefined right shift error. The highest threat from this vulnerability is to system availability.",
+            "date": "2022-08-23",
+            "github_description": "Address negative shift reported by https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=26229.\nAs I understand it, a corrupt EXR file has a declared length of a short Huffman code (pl.len) that exceeds the number of bits remaining to represent it (lc). This causes the lc to go negative, causing a negative left shift, which has undefined behavior.\nThis is the 'non-fast' path taken when there are less than 128 bits of data. testHuf has been updated to test with small as well as large data sizes to ensure both decoders are covered.\nSigned-off-by: Peter Hillman peterh@wetafx.co.nz",
+            "llm_raw_output": "{\n  \"CWE_IDS\": [\"CWE-681\"],\n  \"severity\": \"medium\"\n}",
+            "llm_output": {
+                "CWE_IDS": [
+                    "CWE-681"
+                ],
+                "severity": "MEDIUM"
+            },
+            "ground_truth_CVE": "CVE-2021-20304",
+            "ground_truth_CWEs": [
+                "CWE-190"
+            ],
+            "ground_truth_severities": {
+                "V3.1": "HIGH"
+            },
+            "ground_truth_CVSS_version": [
+                "V3.1"
+            ],
+            "is_equal": false,
+            "error_msg": null,
+            "equal_severity": false,
+            "cwe_evaluation": "NOT_OVERLAPPED"
+        },
+        {
+            "llm_input": [
+                {
+                    "role": "system",
+                    "content": "You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.\n\nInstructions:\n1. * Input: You will receive one or more file names, each having one or more buggy hunks enclosed within <Hunk> and </Hunk>, and a description of the buggy code. If there are multiple buggy hunks or files, they will be related to the same bug. The provided input structure is provided as:\n   Description: description of the bug\n   File: file_name\n   Hunks: \n        <Hunk> hunk 1 </Hunk>\n        <Hunk> hunk 2 </Hunk>\n2. * Output: Generate a JSON object with the following structure:\n   {\n     \"CWE_IDS\": [], \n     \"severity\": null\n   }\n\nOutput Details:\n- CWE_IDS: If you identify any CWE IDs from the provided buggy hunk(s) or its description, list them here (e.g., [\"CWE-123\"]). If no CWEs are found, leave this as an empty array [].\n- severity: If the provided information indicates a security vulnerability (CVE), provide its severity level (e.g., \"high\") based on CVSS V3.1 . If there are no vulnerabilities, set this field to null.\n\nExample Outputs:\n1. If CWEs are found and severity is identified:\n   {\n     \"CWE_IDS\": [\"CWE-123\", \"CWE-456\"],\n     \"severity\": \"high\"\n   }\n\n2. If no CWEs or severity are identified:\n   {\n     \"CWE_IDS\": [],\n     \"severity\": null\n   }\n\nImportant: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.\n\nCVSS v3.1 Guide:\n\nBase Metrics:\n1.\tAttack Vector (AV): How the vulnerability is exploited (Network (N), Adjacent Network (A), Local (L), Physical (P))\n2.\tAttack Complexity (AC): Difficulty of exploitation (Low (L), High (H))\n3.\tPrivileges Required (PR): Level of required privileges an attacker needs to exploit the vulnerability (None (N), Low (L), High (H))\n4.\tUser Interaction (UI): Need for user interaction (None (N), Required (R))\n5.\tScope (S): Impact on other components (Unchanged (U), Changed (C))\n6.\tConfidentiality (C), Integrity (I), Availability (A): Impact on security properties (None (N), Low (L), High (H))\n\nSeverity Levels and Example Combinations:\n1. None (0.0): This vulnerability is extremely difficult to exploit and has minimal impact. For example, \u201cAV:P/AC:H/PR:H/UI:R/S:U/C:N/I:N/A:N\u201d and \u201cAV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:N\u201d\n2. Low (0.1 - 3.9): These vulnerabilities are somewhat difficult to exploit or have limited impact. For example, \u201cAV:L/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:L\u201d and \u201cAV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N\u201d\n3. Medium (4.0 - 6.9): Involves vulnerabilities that are exploitable and could cause moderate damage. For example, \u201cAV:N/AC:H/PR:H/UI:R/S:C/C:L/I:L/A:N\u201d and \u201cAV:A/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L\u201d\n4. High (7.0 - 8.9): Represents vulnerabilities that are easier to exploit and have significant consequences. For example, \u201cAV:L/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:L\u201d and \u201cAV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L\u201d\n5. Critical (9.0 - 10.0): These vulnerabilities are both easy to exploit and have a devastating impact. For example, \u201cAV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H\u201d and \u201cAV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H\u201d\n\nNote: The severity level may change based on specific characteristics of the vulnerability. For example, if the attack vector is physical but the impact on availability is high, the severity might increase."
+                },
+                {
+                    "role": "user",
+                    "content": "Description: B44 was allocating a _tmpBuffer of maxScanLineSize*numScanlines unsigned short values. maxScanLineSize is the number of bytes of uncompressed data on each scanline, not the number of pixel samples. _tmpBuffer was therefore assigning one 16 bit short for every byte of uncompressed data, so making the buffer twice the size it needs to be\npartially addresses out-of-memory issue https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25913\nSigned-off-by: Peter Hillman peterh@wetafx.co.nz\nFile: OpenEXR/IlmImf/ImfB44Compressor.cpp\nHunks:\n<Hunk>\n[checkArraySize (uiMult (maxScanLineSize, numScanLines),\n</Hunk>"
+                }
+            ],
+            "url": "https://github.com/AcademySoftwareFoundation/openexr/commit/85fd638ae0d5fa132434f4cbf32590261c1dba97",
+            "description": "A flaw was found in OpenEXR's B44Compressor. This flaw allows an attacker who can submit a crafted file to be processed by OpenEXR, to exhaust all memory accessible to the application. The highest threat from this vulnerability is to system availability.",
+            "date": "2022-08-23",
+            "github_description": "B44 was allocating a _tmpBuffer of maxScanLineSize*numScanlines unsigned short values. maxScanLineSize is the number of bytes of uncompressed data on each scanline, not the number of pixel samples. _tmpBuffer was therefore assigning one 16 bit short for every byte of uncompressed data, so making the buffer twice the size it needs to be\npartially addresses out-of-memory issue https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25913\nSigned-off-by: Peter Hillman peterh@wetafx.co.nz",
+            "llm_raw_output": "{\n\t\"CWE_IDS\": [\"CWE-131\"],\n\t\"severity\": \"low\"\n}",
+            "llm_output": {
+                "CWE_IDS": [
+                    "CWE-131"
+                ],
+                "severity": "LOW"
+            },
+            "ground_truth_CVE": "CVE-2021-20298",
+            "ground_truth_CWEs": [
+                "CWE-787"
+            ],
+            "ground_truth_severities": {
+                "V3.1": "HIGH"
+            },
+            "ground_truth_CVSS_version": [
+                "V3.1"
+            ],
+            "is_equal": false,
+            "error_msg": null,
+            "equal_severity": false,
+            "cwe_evaluation": "NOT_OVERLAPPED"
+        }
+    ]
+}

@@ -1,136 +1,51 @@
-File: app/models/pusher.rb
-Methods:
-<Method>
-def validate
-    signature_missing = "There was a problem saving your gem: \nYou have added cert_chain in gemspec but signature was empty"
+You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
 
-    return notify(signature_missing, 403) unless validate_signature_exists?
-    (rubygem.valid? && version.valid?) || notify("There was a problem saving your gem: #{rubygem.all_errors(version)}", 403)
-  end
-</Method>
-<Method>
-def validate
-    signature_missing = "There was a problem saving your gem: \nYou have added cert_chain in gemspec but signature was empty"
+Instructions:
+1. * Input: You will receive one or more files, each has a file name, and one or more buggy methods enclosed  within <Method> and </Method>. If there are multiple buggy methods or files, they will be related to the same bug. The provided input structure is as below:
+   File: file_name
+   Methods: 
+        <Method> method 1 </Method>
+        <Method> method 2 </Method>
+2. * Output: Generate a JSON object with the following structure:
+   {
+     "CWE_IDS": [], 
+     "severity": null
+   }
 
-    return notify(signature_missing, 403) unless validate_signature_exists?
-    (rubygem.valid? && version.valid?) || notify("There was a problem saving your gem: #{rubygem.all_errors(version)}", 403)
-  end
-</Method>
-<Method>
-def validate
-    signature_missing = "There was a problem saving your gem: \nYou have added cert_chain in gemspec but signature was empty"
+Output Details:
+- CWE_IDS: If you identify any CWE IDs in the provided buggy method(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- severity: If the buggy method(s) has a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS V3.1 . If there are no vulnerabilities, set this field to null.
 
-    return notify(signature_missing, 403) unless validate_signature_exists?
-    (rubygem.valid? && version.valid?) || notify("There was a problem saving your gem: #{rubygem.all_errors(version)}", 403)
-  end
-</Method>
-<Method>
-def write_gem(body, spec)
-    original_name = spec.original_name
+Example Outputs:
+1. If CWEs are found and severity is identified:
+   {
+     "CWE_IDS": ["CWE-123", "CWE-456"],
+     "severity": "high"
+   }
 
-    gem_path = "gems/#{original_name}.gem"
-    gem_contents = body.string
+2. If no CWEs or severity are identified:
+   {
+     "CWE_IDS": [],
+     "severity": null
+   }
 
-    spec.abbreviate
-    spec.sanitize
-    spec_path = "quick/Marshal.4.8/#{original_name}.gemspec.rz"
-    spec_contents = Gem.deflate(Marshal.dump(spec))
+Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
 
-    spec_contents_checksum = Digest::SHA2.base64digest(spec_contents)
+CVSS v3.1 Guide:
 
-    # do all processing _before_ we upload anything to S3, so we lower the chances of orphaned files
-    RubygemFs.instance.store(gem_path, gem_contents, checksum_sha256: version.sha256)
-    RubygemFs.instance.store(spec_path, spec_contents, checksum_sha256: spec_contents_checksum)
+Base Metrics:
+1.	Attack Vector (AV): How the vulnerability is exploited (Network (N), Adjacent Network (A), Local (L), Physical (P))
+2.	Attack Complexity (AC): Difficulty of exploitation (Low (L), High (H))
+3.	Privileges Required (PR): Level of required privileges an attacker needs to exploit the vulnerability (None (N), Low (L), High (H))
+4.	User Interaction (UI): Need for user interaction (None (N), Required (R))
+5.	Scope (S): Impact on other components (Unchanged (U), Changed (C))
+6.	Confidentiality (C), Integrity (I), Availability (A): Impact on security properties (None (N), Low (L), High (H))
 
-    Fastly.purge(path: gem_path)
-    Fastly.purge(path: spec_path)
-  end
-</Method>
-File: app/models/specification_policy.rb
-Methods:
-File: app/models/version.rb
-Methods:
-File: lib/patterns.rb
-Methods:
-File: test/helpers/gem_helpers.rb
-Methods:
-<Method>
-def gem_specification_from_gem_fixture(name)
-    Gem::Package.new(File.join("test", "gems", "#{name}.gem")).spec
-  end
-</Method>
-<Method>
-def gem_file(name = "test-0.0.0.gem")
-    Rails.root.join("test", "gems", name.to_s).open("rb")
-  end
-</Method>
-<Method>
-def build_gemspec(gemspec)
-    Gem::DefaultUserInteraction.use_ui(Gem::StreamUI.new(StringIO.new, StringIO.new)) do
-      Gem::Package.build(gemspec, true)
-    end
-  end
-</Method>
-<Method>
-def build_gem(name, version, summary = "Gemcutter", platform = "ruby", &)
-    build_gemspec(new_gemspec(name, version, summary, platform, &))
-  end
-</Method>
-<Method>
-def new_gemspec(name, version, summary, platform, extra_args = {})
-    ruby_version = extra_args[:ruby_version]
-    rubygems_version = extra_args[:rubygems_version]
-    Gem::Specification.new do |s|
-      s.name = name
-      s.platform = platform
-      s.version = version.to_s
-      s.authors = ["Someone"]
-      s.date = Time.zone.now.strftime("%Y-%m-%d")
-      s.description = summary.to_s
-      s.email = "someone@example.com"
-      s.files = []
-      s.homepage = "http://example.com/#{name}"
-      s.require_paths = ["lib"]
-      s.summary = summary.to_s
-      s.test_files = []
-      s.licenses = []
-      s.required_ruby_version = ruby_version
-      s.required_rubygems_version = rubygems_version
-      s.metadata = { "foo" => "bar" }
-      yield s if block_given?
-    end
-  end
-</Method>
-File: test/integration/push_test.rb
-Methods:
-File: test/models/pusher_test.rb
-Methods:
-<Method>
-def two_cert_chain(signing_key:, root_not_before: Time.current, cert_not_before: Time.current)
-    root_key = OpenSSL::PKey::RSA.new(1024)
-    root_subject = "/C=FI/O=Test/OU=Test/CN=Root"
+Severity Levels and Example Combinations:
+1. None (0.0): This vulnerability is extremely difficult to exploit and has minimal impact. For example, “AV:P/AC:H/PR:H/UI:R/S:U/C:N/I:N/A:N” and “AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:N”
+2. Low (0.1 - 3.9): These vulnerabilities are somewhat difficult to exploit or have limited impact. For example, “AV:L/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:L” and “AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N”
+3. Medium (4.0 - 6.9): Involves vulnerabilities that are exploitable and could cause moderate damage. For example, “AV:N/AC:H/PR:H/UI:R/S:C/C:L/I:L/A:N” and “AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L”
+4. High (7.0 - 8.9): Represents vulnerabilities that are easier to exploit and have significant consequences. For example, “AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:L” and “AV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L”
+5. Critical (9.0 - 10.0): These vulnerabilities are both easy to exploit and have a devastating impact. For example, “AV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H” and “AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H”
 
-    root_cert = OpenSSL::X509::Certificate.new
-    root_cert.subject = root_cert.issuer = OpenSSL::X509::Name.parse(root_subject)
-    root_cert.not_before = root_not_before
-    root_cert.not_after = root_not_before + 1.year
-    root_cert.public_key = root_key.public_key
-    root_cert.serial = 0x0
-    root_cert.version = 2
-    root_cert.sign(root_key, OpenSSL::Digest.new("SHA256"))
-
-    subject = "/C=FI/O=Test/OU=Test/CN=Test"
-
-    cert = OpenSSL::X509::Certificate.new
-    cert.issuer = OpenSSL::X509::Name.parse(root_subject)
-    cert.subject = OpenSSL::X509::Name.parse(subject)
-    cert.not_before = cert_not_before
-    cert.not_after = cert_not_before + 1.year
-    cert.public_key = signing_key.public_key
-    cert.serial = 0x0
-    cert.version = 2
-    cert.sign(root_key, OpenSSL::Digest.new("SHA256"))
-
-    [root_cert, cert]
-  end
-</Method>
+Note: The severity level may change based on specific characteristics of the vulnerability. For example, if the attack vector is physical but the impact on availability is high, the severity might increase.

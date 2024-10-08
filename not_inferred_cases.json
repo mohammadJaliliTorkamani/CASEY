@@ -1,0 +1,20 @@
+[
+    {
+        "url": "https://github.com/ImageMagick/ImageMagick/commit/5af1dffa4b6ab984b5f13d1e91c95760d75f12a6",
+        "CVE": "CVE-2021-20224",
+        "date": "2022-08-25",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (32739)"
+    },
+    {
+        "url": "https://github.com/AcademySoftwareFoundation/openexr/commit/25e9515b06a6bc293d871622b8cafaee7af84e0f",
+        "CVE": "CVE-2021-20299",
+        "date": "2022-03-16",
+        "reason": "The record does not not meet the criteria. EMPTY_DELETIONS"
+    },
+    {
+        "url": "https://github.com/qemu/qemu/commit/3de46e6fc489c52c9431a8a832ad8170a7569bd8",
+        "CVE": "CVE-2021-20257",
+        "date": "2022-03-16",
+        "reason": "The record does not not meet the criteria. EMPTY_DELETIONS"
+    }
+]

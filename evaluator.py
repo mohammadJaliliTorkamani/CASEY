@@ -9,7 +9,6 @@ class EvaluationResult:
         GT_SUBSET_OF_PR = 1
         PR_SUBSET_OF_GT = 2
         EMPTY_PR = 3
-        EMPTY_GT = 4
         NOT_OVERLAPPED = 5
         OVERLAPPED = 6
 
@@ -124,8 +123,6 @@ class EvaluationResult:
 
         if len(predicted_CWEs_set) == 0:
             return EvaluationResult.CWE_EvaluationResultEnum.EMPTY_PR
-        elif len(ground_truth_CWEs_set) == 0:
-            return EvaluationResult.CWE_EvaluationResultEnum.EMPTY_GT
         elif predicted_CWEs_set == ground_truth_CWEs_set:
             return EvaluationResult.CWE_EvaluationResultEnum.IDENTICAL
         elif ground_truth_CWEs_set.issubset(predicted_CWEs_set):
@@ -153,7 +150,6 @@ class Evaluator:
         cwe_gt_subset_of_pr_counter = 0
         cwe_pr_subset_of_gt_counter = 0
         cwe_empty_pr_counter = 0
-        cwe_empty_gt_counter = 0
         cwe_non_overlapped_counter = 0
         cwe_overlapped_counter = 0
         equal_severity_counter = 0
@@ -177,8 +173,6 @@ class Evaluator:
                     cwe_pr_subset_of_gt_counter += 1
                 elif evaluation['cwe_evaluation'] == "EMPTY_PR":
                     cwe_empty_pr_counter += 1
-                elif evaluation['cwe_evaluation'] == "EMPTY_GT":
-                    cwe_empty_gt_counter += 1
                 elif evaluation['cwe_evaluation'] == "NOT_OVERLAPPED":
                     cwe_non_overlapped_counter += 1
                 elif evaluation['cwe_evaluation'] == "OVERLAPPED":
@@ -196,7 +190,6 @@ class Evaluator:
             'CWE_gt_subset_of_pr': cwe_gt_subset_of_pr_counter,
             'CWE_pr_subset_of_gt': cwe_pr_subset_of_gt_counter,
             'CWE_empty_pr': cwe_empty_pr_counter,
-            'CWE_empty_gt': cwe_empty_gt_counter,
             'CWE_non_overlapped': cwe_non_overlapped_counter,
             'CWE_overlapped': cwe_overlapped_counter,
             'equal_severities': equal_severity_counter,

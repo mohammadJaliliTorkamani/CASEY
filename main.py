@@ -68,7 +68,11 @@ def run_experiment_buggy_hunks(data_obj: dict, CVE2CWE_OBJ):
 def run_experiment_bug_description(data_obj, CVE2CWE_OBJ):
     gt_CVE = data_obj['CVE']
     gt_CVSS_versions = utils.extract_cvss_versions(gt_CVE, CVE2CWE_OBJ)
-    llm_input, llm_output = llm.inference_with_description(data_obj['description'], gt_CVSS_versions)
+    description = data_obj['description'] \
+        if (data_obj['github_description'] == "No descriptions found." or data_obj['github_description'] is None or len(
+        data_obj['github_description'].strip()) == 0) \
+        else data_obj['github_description']
+    llm_input, llm_output = llm.inference_with_description(description, gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
     return evaluator.evaluate(llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions, data_obj['url'],
@@ -78,7 +82,11 @@ def run_experiment_bug_description(data_obj, CVE2CWE_OBJ):
 def run_experiment_bug_description_and_files(data_obj: dict, CVE2CWE_OBJ):
     gt_CVE = data_obj['CVE']
     gt_CVSS_versions = utils.extract_cvss_versions(gt_CVE, CVE2CWE_OBJ)
-    llm_input, llm_output = llm.inference_with_description_and_files(data_obj['description'], data_obj['buggy_code'],
+    description = data_obj['description'] \
+        if (data_obj['github_description'] == "No descriptions found." or data_obj['github_description'] is None or len(
+        data_obj['github_description'].strip()) == 0) \
+        else data_obj['github_description']
+    llm_input, llm_output = llm.inference_with_description_and_files(description, data_obj['buggy_code'],
                                                                      gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
@@ -122,7 +130,11 @@ def run_experiment_bug_description_and_methods(data_obj: dict, CVE2CWE_OBJ):
 
     llm_input, llm_output = None, None
     if len(methods) > 0:
-        llm_input, llm_output = llm.inference_with_description_and_methods(data_obj['description'], methods,
+        description = data_obj['description'] \
+            if (data_obj['github_description'] == "No descriptions found." or data_obj[
+            'github_description'] is None or len(data_obj['github_description'].strip()) == 0) \
+            else data_obj['github_description']
+        llm_input, llm_output = llm.inference_with_description_and_methods(description, methods,
                                                                            gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
@@ -140,28 +152,65 @@ def run_experiment_bug_description_and_hunks(data_obj: dict, CVE2CWE_OBJ):
         if len(hunks_temp) > 0:
             hunks[buggy_code_obj['file']] = hunks_temp
 
-    llm_input, llm_output = llm.inference_with_description_and_hunks(data_obj['description'], hunks, gt_CVSS_versions)
+    description = data_obj['description'] \
+        if (data_obj['github_description'] == "No descriptions found." or data_obj['github_description'] is None or len(
+        data_obj['github_description'].strip()) == 0) \
+        else data_obj['github_description']
+    llm_input, llm_output = llm.inference_with_description_and_hunks(description, hunks, gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
     return evaluator.evaluate(llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions, data_obj['url'],
                               data_obj['description'], data_obj['date'], data_obj['github_description'])
 
 
-def meets_buggy_code_details(data_obj) -> tuple:
+def meets_buggy_code_details(data_obj, CVE2CWE_OBJ) -> tuple:
     total_number_of_tokens = 0
     new_buggy_codes = []
-    for item in data_obj['buggy_code']:
-        if 'file' in item and item['file'].split('.')[-1] in constants.ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS:
-            total_number_of_tokens += utils.count_gpt_tokens(item['file_content'])
-            if total_number_of_tokens < constants.MAX_TOKEN_NUMBER:
-                new_buggy_codes.append(item)
+    failure_reason = None
+    GT_CWEs = utils.get_CWEs_of_CVE(data_obj['CVE'], CVE2CWE_OBJ)
+    if len(GT_CWEs) == 1 and GT_CWEs[0] == "Unknown-CWE":
+        failure_reason = "EMPTY_GT_CWEs"
+    else:
+        for item in data_obj['buggy_code']:
+            if len(item['deletions']) == 0:
+                failure_reason = "EMPTY_DELETIONS"
             else:
-                return None, f"FILES_TOKENS_EXCEEDED ({total_number_of_tokens})"
+                if ('file' in item and (
+                        item['file'].split('.')[-1] in constants.ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS) and
+                        len(item['deletions']) > 0):
+                    total_number_of_tokens += utils.count_gpt_tokens(item['file_content'])
+                    if total_number_of_tokens < constants.MAX_TOKEN_NUMBER:
+                        new_buggy_codes.append(item)
+                    else:
+                        return None, f"FILES_TOKENS_EXCEEDED ({total_number_of_tokens})"
+                else:
+                    failure_reason = "NON-ACCEPTABLE_FILE_TYPE"
 
-    if len(new_buggy_codes) > 0:
-        data_obj['buggy_code'] = new_buggy_codes
-        return data_obj, None
-    return None, "NON-ACCEPTABLE_FILE_TYPE"
+        if len(new_buggy_codes) > 0:
+            data_obj['buggy_code'] = new_buggy_codes
+            return data_obj, None
+    return None, failure_reason
+
+
+def run_experiment(data_array, _list, runner, CVE2CWE_OBJ):
+    not_inferred_cases = list()
+
+    for idx, data_obj in enumerate(data_array):
+        print("Record url: ", data_obj['url'], "Experiment Progress: ", 100.0 * (idx + 1) / len(data_array), "%")
+        if utils.date_is_after(data_obj['date'], constants.LLM_MODEL_CUT_OFF_DATE):
+            filtered_data_object = meets_buggy_code_details(data_obj, CVE2CWE_OBJ)
+            if filtered_data_object[1] is None:
+                assert filtered_data_object[0] is not None
+                _list.append(runner(filtered_data_object[0], CVE2CWE_OBJ))
+            else:
+                not_inferred_cases.append({'url': data_obj['url'], 'CVE': data_obj['CVE'], 'date': data_obj['date'],
+                                           'reason': 'The record does not not meet the criteria. ' +
+                                                     filtered_data_object[1]})
+        else:
+            not_inferred_cases.append({'url': data_obj['url'], 'CVE': data_obj['CVE'], 'date': data_obj['date'],
+                                       'reason': 'The record is not new enough.'})
+
+    return not_inferred_cases
 
 
 if __name__ == '__main__':
@@ -178,48 +227,23 @@ if __name__ == '__main__':
 
     CVE2CWE_OBJ = utils.load_json_file(constants.CVE2CWE_PATH)
 
-    for idx, data_obj in enumerate(data_array):
-        print("################################")
-        print("Record: ", data_obj['url'])
-        if utils.date_is_after(data_obj['date'], constants.LLM_MODEL_CUT_OFF_DATE):
-            filtered_data_object = meets_buggy_code_details(data_obj)
-            if filtered_data_object[1] is None:
-                assert filtered_data_object[0] is not None
-                evaluations_buggy_files.append(run_experiment_buggy_files(filtered_data_object[0], CVE2CWE_OBJ))
-                evaluations_buggy_methods.append(run_experiment_buggy_methods(filtered_data_object[0], CVE2CWE_OBJ))
-                evaluations_buggy_hunks.append(run_experiment_buggy_hunks(filtered_data_object[0], CVE2CWE_OBJ))
-                evaluations_bug_description.append(run_experiment_bug_description(filtered_data_object[0], CVE2CWE_OBJ))
-                evaluations_bug_description_and_files.append(
-                    run_experiment_bug_description_and_files(filtered_data_object[0], CVE2CWE_OBJ))
-                evaluations_bug_description_and_methods.append(
-                    run_experiment_bug_description_and_methods(filtered_data_object[0], CVE2CWE_OBJ))
-                evaluations_bug_description_and_hunks.append(
-                    run_experiment_bug_description_and_hunks(filtered_data_object[0], CVE2CWE_OBJ))
-            else:
-                not_inferred_cases.append({'url': data_obj['url'], 'CVE': data_obj['CVE'], 'date': data_obj['date'],
-                                           'reason': 'The record does not not meet the criteria. ' +
-                                                     filtered_data_object[1]})
-                print("The record does not not meet the criteria.")
-        else:
-            not_inferred_cases.append({'url': data_obj['url'], 'CVE': data_obj['CVE'], 'date': data_obj['date'],
-                                       'reason': 'The record is not new enough.'})
-            print("The record is not new enough.")
+    variants = [("final_analysis_of_buggy_files", evaluations_buggy_files, run_experiment_buggy_files),
+                ("final_analysis_of_buggy_methods", evaluations_buggy_methods, run_experiment_buggy_methods),
+                ("final_analysis_of_buggy_hunk", evaluations_buggy_hunks, run_experiment_buggy_hunks),
+                ("final_analysis_of_bug_description", evaluations_bug_description, run_experiment_bug_description),
+                ("final_analysis_of_bug_description_and_files", evaluations_bug_description_and_files,
+                 run_experiment_bug_description_and_files),
+                ("final_analysis_of_bug_description_and_method", evaluations_bug_description_and_methods,
+                 run_experiment_bug_description_and_methods),
+                ("final_analysis_of_bug_description_and_hunks", evaluations_bug_description_and_hunks,
+                 run_experiment_bug_description_and_hunks)]
 
-        print("---> " + str(idx + 1) + " of " + str(len(data_array)) + " record(s) have been processed")
+    for idx, (exp_name, list_to_add, runner) in enumerate(variants):
+        print(f"\n---> Experiment: {exp_name} | {idx + 1} of {len(variants)}")
+        not_inferred_cases = run_experiment(data_array, list_to_add, runner, CVE2CWE_OBJ)
+        final_analysis = Evaluator.analyze_evaluations(list_to_add)
+        save_to_json(f'{exp_name}.json', final_analysis)
+        print(f"\nThe experiment result was successfully saved at {exp_name}.json file | Overall Accuracy: {final_analysis['accuracy_overall']}%")
 
-    save_to_json('not_inferred_cases.json', not_inferred_cases)
-
-    final_analysis1 = Evaluator.analyze_evaluations(evaluations_buggy_files)
-    final_analysis2 = Evaluator.analyze_evaluations(evaluations_buggy_methods)
-    final_analysis3 = Evaluator.analyze_evaluations(evaluations_buggy_hunks)
-    final_analysis4 = Evaluator.analyze_evaluations(evaluations_bug_description)
-    final_analysis5 = Evaluator.analyze_evaluations(evaluations_bug_description_and_files)
-    final_analysis6 = Evaluator.analyze_evaluations(evaluations_bug_description_and_methods)
-    final_analysis7 = Evaluator.analyze_evaluations(evaluations_bug_description_and_hunks)
-    save_to_json('final_analysis_of_buggy_files.json', final_analysis1)
-    save_to_json('final_analysis_of_buggy_methods.json', final_analysis2)
-    save_to_json('final_analysis_of_buggy_hunks.json', final_analysis3)
-    save_to_json('final_analysis_of_bug_description.json', final_analysis4)
-    save_to_json('final_analysis_of_bug_description_and_files.json', final_analysis5)
-    save_to_json('final_analysis_of_bug_description_and_methods.json', final_analysis6)
-    save_to_json('final_analysis_of_bug_description_and_hunks.json', final_analysis7)
+        if idx == len(variants) - 1:
+            save_to_json('not_inferred_cases.json', not_inferred_cases)
