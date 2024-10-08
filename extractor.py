@@ -56,6 +56,8 @@ def extract_ts_methods(file_name):
 def extract_c_methods(file_name):
     return execute_methods_extractor_python_script(constants.C_EXTRACTOR_SCRIPT_PATH, file_name)
 
+def extract_cpp_methods(file_name):
+    return execute_methods_extractor_python_script(constants.CPP_EXTRACTOR_SCRIPT_PATH, file_name)
 
 def extract_go_methods(file_name):
     return execute_methods_extractor_python_script(constants.GO_EXTRACTOR_SCRIPT_PATH, file_name)
@@ -88,6 +90,8 @@ class Extractor:
             return extract_python_methods(file_name), file_name
         elif file_extension == 'c':
             return extract_c_methods(file_name), file_name
+        elif file_extension == 'cpp':
+            return extract_cpp_methods(file_name), file_name
         elif file_extension == 'rb':
             return extract_ruby_methods(file_name), file_name
         elif file_extension == 'java':

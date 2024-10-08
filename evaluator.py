@@ -32,6 +32,15 @@ class EvaluationResult:
         self.ground_truth_CVSS_version = gt_CVSS_version
         self.llm_raw_output = llm_output
         self.error_msg = None
+        self.equal_severity = None
+        self.is_equal = None
+        self.cwe_evaluation = None
+        self.llm_output = None
+
+        if llm_output is None:
+            self.is_equal = False
+            self.error_msg = "LLM OUTPUT IS NONE, POTENTIALLY BECAUSE TOKENS EXCEED"
+            return
 
         try:
             self.llm_output = json.loads(llm_output)
@@ -176,9 +185,9 @@ class Evaluator:
             'total_number_of_samples': len(evaluations),
             'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
             'equal': equal_counter,
-            'accuracy_overall': 0 if len(evaluations) == 0 else (equal_counter / len(evaluations)),
-            'accuracy_CWE': 0 if len(evaluations) == 0 else cwe_identical_counter / len(evaluations),
-            'accuracy_severity': 0 if len(evaluations) == 0 else equal_severity_counter / len(evaluations),
+            'accuracy_overall': 0 if len(evaluations) == 0 else (100.0 * equal_counter / len(evaluations)),
+            'accuracy_CWE': 0 if len(evaluations) == 0 else 100.0 * cwe_identical_counter / len(evaluations),
+            'accuracy_severity': 0 if len(evaluations) == 0 else 100.0 * equal_severity_counter / len(evaluations),
             'CWE_identical': cwe_identical_counter,
             'CWE_gt_subset_of_pr': cwe_gt_subset_of_pr_counter,
             'CWE_pr_subset_of_gt': cwe_pr_subset_of_gt_counter,
