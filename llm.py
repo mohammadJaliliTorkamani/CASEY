@@ -33,6 +33,7 @@ class LLM:
             return input_message, None
 
         while trial_number > 0:
+            response = None
             try:
                 response = self.client.chat.completions.create(model=self.model, temperature=constants.LLM_TEMPERATURE,
                                                                top_p=constants.LLM_TOP_P, stream=False,
@@ -53,7 +54,7 @@ class LLM:
                 trial_number -= 1
 
             print_nested(f"invalid LLM response. Trying again after {constants.LLM_TRIAL_GAP_SECONDS} "
-                         f"seconds...", 1)
+                         f"seconds... | received response: {response} | User: {user_input}", 1)
             time.sleep(constants.LLM_TRIAL_GAP_SECONDS)
 
         return input_message, None
@@ -75,8 +76,7 @@ class LLM:
             cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
         user_input = ""
         for item in buggy_code:
-            if item['file'].split('.')[-1] in constants.ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS:
-                user_input += f"File: {item['file']}\nContent: \n{constants.CODE_TAGS[0]}\n{item['file_content']}\n{constants.CODE_TAGS[1]}\n\n"
+            user_input += f"File: {item['file']}\nContent: \n{constants.CODE_TAGS[0]}\n{item['file_content']}\n{constants.CODE_TAGS[1]}\n\n"
 
         i, o = None, None
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_FILE % (

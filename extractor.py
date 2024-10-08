@@ -6,13 +6,6 @@ import constants
 import utils
 
 
-def extract_java_methods(file_name) -> list:
-    command = f'java -jar "{constants.JAVA_EXTRACTOR_JAR_FILE_PATH}" "{file_name}"'
-    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
-    stdout, stderr = process.communicate()
-    return json.loads(stdout.decode('utf-8'))['methods']
-
-
 def execute_methods_extractor_python_script(script_name: str, file_name: str):
     # Define the command to activate the virtual environment and run the Python script
     activate_script = os.path.join('.venv', 'bin', 'activate')
@@ -40,6 +33,8 @@ def execute_methods_extractor_python_script(script_name: str, file_name: str):
 def extract_python_methods(file_name):
     return execute_methods_extractor_python_script(constants.PYTHON_EXTRACTOR_SCRIPT_PATH, file_name)
 
+def extract_java_methods(file_name):
+    return execute_methods_extractor_python_script(constants.JAVA_EXTRACTOR_SCRIPT_PATH, file_name)
 
 def extract_js_methods(file_name):
     return execute_methods_extractor_python_script(constants.JS_EXTRACTOR_SCRIPT_PATH, file_name)
@@ -73,7 +68,6 @@ class Extractor:
         self.relative_path = file_relative_path
         self.hunks = raw_hunks
 
-    # TODO (do not forget to extract based on the file type) <Follow the sample output value>
     def extract_methods(self):
         file_extension = str(self.relative_path.split('/')[-1].split('.')[-1]).lower()
         file_name = constants.TEMP_CONTENT_FILE_NAME_FOR_METHOD_EXTRACTOR + "." + file_extension

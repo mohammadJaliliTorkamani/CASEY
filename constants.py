@@ -323,15 +323,16 @@ Note: The severity level may change based on specific characteristics of the vul
                               """}
 
 DATA_PATH = './data/cve_training.json'
-SMALL_DATA_PATH = './data/small_cve_training.json'
 TOP_CWE_PATH = './data/top_cwe.json'
 CVE2CWE_PATH = './data/cve_to_cwe_2016_2024.json'
 
+MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT = 100
+
 ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS = ['php', 'js', 'py', 'go', 'c', 'cpp', 'ts', 'rb', 'java']
 TEMP_CONTENT_FILE_NAME_FOR_METHOD_EXTRACTOR = 'temp'
-JAVA_EXTRACTOR_JAR_FILE_PATH = 'extractors/java_method_parser.jar'
 PYTHON_EXTRACTOR_SCRIPT_PATH = 'extractors/python_method_extractor.py'
 JS_EXTRACTOR_SCRIPT_PATH = 'extractors/js_parser.py'
+JAVA_EXTRACTOR_SCRIPT_PATH = 'extractors/java_parser.py'
 PHP_EXTRACTOR_SCRIPT_PATH = 'extractors/php_parser.py'
 TS_EXTRACTOR_SCRIPT_PATH = 'extractors/ts_parser.py'
 C_EXTRACTOR_SCRIPT_PATH = 'extractors/c_parser.py'

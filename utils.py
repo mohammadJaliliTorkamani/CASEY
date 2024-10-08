@@ -9,8 +9,10 @@ import constants
 
 
 def load_json_file(file_path):
+    print(f"Loading data: {file_path}")
     with open(file_path, 'r') as file:
         data = json.load(file)
+    print("loaded successfully!")
     return data
 
 

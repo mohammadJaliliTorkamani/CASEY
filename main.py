@@ -38,7 +38,7 @@ def run_experiment_buggy_methods(data_obj: dict, CVE2CWE_OBJ):
         if extracted_methods is not None:
             methods[buggy_code_obj['file']] = filter_methods(extracted_methods, buggy_code_obj['deletions'],
                                                              temp_file_path)
-
+        utils.remove_file(temp_file_path)
     llm_input, llm_output = llm.inference_with_buggy_methods(methods, gt_CVSS_versions)
 
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
@@ -165,42 +165,44 @@ def run_experiment_bug_description_and_hunks(data_obj: dict, CVE2CWE_OBJ):
 
 def meets_buggy_code_details(data_obj, CVE2CWE_OBJ) -> tuple:
     total_number_of_tokens = 0
-    new_buggy_codes = []
+    new_buggy_codes = list()
     failure_reason = None
     GT_CWEs = utils.get_CWEs_of_CVE(data_obj['CVE'], CVE2CWE_OBJ)
     if len(GT_CWEs) == 1 and GT_CWEs[0] == "Unknown-CWE":
-        failure_reason = "EMPTY_GT_CWEs"
+        failure_reason = "EMPTY_OR_UNKNOWN_GT_CWEs"
+    elif len(data_obj['buggy_code'])==0:
+        failure_reason = "EMPTY_BUGGY_CODE"
     else:
         for item in data_obj['buggy_code']:
-            if len(item['deletions']) == 0:
-                failure_reason = "EMPTY_DELETIONS"
+            if 'deletions' not in item or len(item['deletions']) == 0:
+                failure_reason = "EMPTY_HUNKS"
+            elif ('file' not in item or (item['file'].split('.')[-1] not in constants.ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS)):
+                failure_reason = "NON_ACCEPTABLE_FILE"
             else:
-                if ('file' in item and (
-                        item['file'].split('.')[-1] in constants.ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS) and
-                        len(item['deletions']) > 0):
-                    total_number_of_tokens += utils.count_gpt_tokens(item['file_content'])
-                    if total_number_of_tokens < constants.MAX_TOKEN_NUMBER:
-                        new_buggy_codes.append(item)
-                    else:
-                        return None, f"FILES_TOKENS_EXCEEDED ({total_number_of_tokens})"
+                total_number_of_tokens += utils.count_gpt_tokens(item['file_content'])
+                if total_number_of_tokens < constants.MAX_TOKEN_NUMBER:
+                    new_buggy_codes.append(item)
                 else:
-                    failure_reason = "NON-ACCEPTABLE_FILE_TYPE"
+                    return None, f"FILES_TOKENS_EXCEEDED ({total_number_of_tokens})"
 
         if len(new_buggy_codes) > 0:
             data_obj['buggy_code'] = new_buggy_codes
             return data_obj, None
+
     return None, failure_reason
 
 
 def run_experiment(data_array, _list, runner, CVE2CWE_OBJ):
+    data_array_length = len(data_array) if len(data_array) == -1 else min(len(data_array),
+                                                                          constants.MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT)
     not_inferred_cases = list()
-
     for idx, data_obj in enumerate(data_array):
-        print("Record url: ", data_obj['url'], "Experiment Progress: ", 100.0 * (idx + 1) / len(data_array), "%")
+        print("Record url: ", data_obj['url'], "Experiment Progress: ", 100.0 * (idx + 1) / data_array_length, "%")
         if utils.date_is_after(data_obj['date'], constants.LLM_MODEL_CUT_OFF_DATE):
             filtered_data_object = meets_buggy_code_details(data_obj, CVE2CWE_OBJ)
             if filtered_data_object[1] is None:
-                assert filtered_data_object[0] is not None
+                if filtered_data_object[0] is None:
+                    exit(0)
                 _list.append(runner(filtered_data_object[0], CVE2CWE_OBJ))
             else:
                 not_inferred_cases.append({'url': data_obj['url'], 'CVE': data_obj['CVE'], 'date': data_obj['date'],
@@ -209,12 +211,14 @@ def run_experiment(data_array, _list, runner, CVE2CWE_OBJ):
         else:
             not_inferred_cases.append({'url': data_obj['url'], 'CVE': data_obj['CVE'], 'date': data_obj['date'],
                                        'reason': 'The record is not new enough.'})
+        if idx + 1 == constants.MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT:
+            break
 
     return not_inferred_cases
 
 
 if __name__ == '__main__':
-    data_array = utils.load_json_file(constants.SMALL_DATA_PATH)
+    data_array = utils.load_json_file(constants.DATA_PATH)
     random.shuffle(data_array)
     evaluations_buggy_files = list()
     evaluations_buggy_methods = list()
@@ -227,7 +231,8 @@ if __name__ == '__main__':
 
     CVE2CWE_OBJ = utils.load_json_file(constants.CVE2CWE_PATH)
 
-    variants = [("final_analysis_of_buggy_files", evaluations_buggy_files, run_experiment_buggy_files),
+    variants = [
+        # ("final_analysis_of_buggy_files", evaluations_buggy_files, run_experiment_buggy_files),
                 ("final_analysis_of_buggy_methods", evaluations_buggy_methods, run_experiment_buggy_methods),
                 ("final_analysis_of_buggy_hunk", evaluations_buggy_hunks, run_experiment_buggy_hunks),
                 ("final_analysis_of_bug_description", evaluations_bug_description, run_experiment_bug_description),
@@ -243,7 +248,8 @@ if __name__ == '__main__':
         not_inferred_cases = run_experiment(data_array, list_to_add, runner, CVE2CWE_OBJ)
         final_analysis = Evaluator.analyze_evaluations(list_to_add)
         save_to_json(f'{exp_name}.json', final_analysis)
-        print(f"\nThe experiment result was successfully saved at {exp_name}.json file | Overall Accuracy: {final_analysis['accuracy_overall']}%")
+        print(
+            f"\nThe experiment result was successfully saved at {exp_name}.json file | Overall Accuracy: {final_analysis['accuracy_overall']}%")
 
         if idx == len(variants) - 1:
             save_to_json('not_inferred_cases.json', not_inferred_cases)
