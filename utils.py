@@ -80,9 +80,9 @@ We assume it is true even if one CWE of the candidate CVE is among top CWEs
 """
 
 
-def get_CWEs_of_CVE(candidate_CVE):
+def get_CWEs_of_CVE(candidate_CVE, CVE2CWE_OBJ):
     _list = list()
-    for obj in load_json_file(constants.CVE2CWE_PATH):
+    for obj in CVE2CWE_OBJ:
         if obj['CVE'] == candidate_CVE:
             for CWE in obj['CWE']:
                 _list.append(CWE['id'])
@@ -112,9 +112,9 @@ def is_among_top_CWEs(candidate_CWEs: list, top_CWEs):
     return False
 
 
-def get_severities_of_CVE(candidate_CVE) -> dict:
+def get_severities_of_CVE(candidate_CVE, CVE2CWE_OBJ) -> dict:
     _list = dict()
-    for obj in load_json_file(constants.CVE2CWE_PATH):
+    for obj in CVE2CWE_OBJ:
         if obj['CVE'] == candidate_CVE:
             for severity in obj['severity']:
                 if 'baseMetricV3' in severity and 'cvssV3' in severity['baseMetricV3'] and 'baseSeverity' in \
@@ -129,9 +129,9 @@ def get_severities_of_CVE(candidate_CVE) -> dict:
     return _list
 
 
-def extract_cvss_versions(candidate_CVE) -> list:
+def extract_cvss_versions(candidate_CVE, CVE2CWE_OBJ) -> list:
     _list = list()
-    for obj in load_json_file(constants.CVE2CWE_PATH):
+    for obj in CVE2CWE_OBJ:
         if obj['CVE'] == candidate_CVE:
             for severity in obj['severity']:
                 if 'baseMetricV3' in severity and 'cvssV3' in severity['baseMetricV3'] and 'baseSeverity' in \

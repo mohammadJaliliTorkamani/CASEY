@@ -48,7 +48,7 @@ class EvaluationResult:
                 self.llm_output['CWE_IDS'] = list(set(self.llm_output['CWE_IDS']))
                 if self.llm_output['severity'] == 'null':
                     self.llm_output['severity'] = None
-                else:
+                elif self.llm_output['severity'] is not None:
                     self.llm_output['severity'] = self.llm_output['severity'].upper()
 
                 self.equal_severity = (self.llm_output['severity'] is not None and
