@@ -1,143 +1,251 @@
+import datetime
 from enum import Enum
 
 import constants
 
 
+class CWE_EvaluationResultEnum(Enum):
+    IDENTICAL = 0
+    GT_SUBSET_OF_PR = 1
+    PR_SUBSET_OF_GT = 2
+    EMPTY_PR = 3
+    NOT_OVERLAPPED = 4
+    OVERLAPPED = 5
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
+class SeverityLabel_EvaluationResultEnum(Enum):
+    IDENTICAL = 0
+    NOT_IDENTICAL = 1
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
+class SeverityScore_EvaluationResultEnum(Enum):
+    IDENTICAL_EXACT_MATCH = 0
+    IDENTICAL_IN_LABEL_RANGE = 1
+    IDENTICAL_IN_RADIUS_RANGE = 2
+    NOT_IDENTICAL = 3
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
+class Equality_EvaluationResultEnum(Enum):
+    E_LABEL = 0
+    T_LABEL = 1
+    U_LABEL = 2
+    E_SCORE = 3
+    T_SCORE = 4
+    U_SCORE = 5
+    E_LABEL_RANGE_SCORE = 6
+    T_LABEL_RANGE_SCORE = 7
+    U_LABEL_RANGE_SCORE = 8
+    E_RADIUS_RANGE_SCORE = 9
+    T_RADIUS_RANGE_SCORE = 10
+    U_RADIUS_RANGE_SCORE = 11
+    UNEQUAL = 12
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
 class Evaluator:
-    class CWE_EvaluationResultEnum(Enum):
-        IDENTICAL_E = 0
-        IDENTICAL_T = 1
-        IDENTICAL_U = 2
-        GT_SUBSET_OF_PR_E = 3
-        GT_SUBSET_OF_PR_T = 4
-        GT_SUBSET_OF_PR_U = 5
-        PR_SUBSET_OF_GT_E = 6
-        PR_SUBSET_OF_GT_T = 7
-        PR_SUBSET_OF_GT_U = 8
-        EMPTY_PR_E = 9
-        EMPTY_PR_T = 10
-        EMPTY_PR_U = 11
-        NOT_OVERLAPPED_E = 12
-        NOT_OVERLAPPED_T = 13
-        NOT_OVERLAPPED_U = 14
-        OVERLAPPED_E = 15
-        OVERLAPPED_T = 16
-        OVERLAPPED_U = 17
-
-    class SeverityLabel_EvaluationResultEnum(Enum):
-        IDENTICAL = 0
-        NOT_IDENTICAL = 1
-
-    class SeverityScore_EvaluationResultEnum(Enum):
-        IDENTICAL_WITH_NORMAL = 0
-        IDENTICAL_WITH_RANGE_RANGE = 1
-        NOT_IDENTICAL = 2
-
-    class Equality_EvaluationResultEnum(Enum):
-        E_LABEL = 0
-        T_LABEL = 1
-        U_LABEL = 2
-        E_SCORE = 3
-        T_SCORE = 4
-        U_SCORE = 5
-        E_RANGE_SCORE = 6
-        T_RANGE_SCORE = 7
-        U_RANGE_SCORE = 8
-        UNEQUAL = 9
-
-        def __str__(self) -> str:
-            return f"{self.name}"
 
     def __init__(self):
-        self.id = -1
-        self.cwe_equality_status = None
+        self.reference_id = -1
+        self.cwe_equality_status = {'E': None, 'T': None, 'U': None}
         self.severity_label_equality_status = None
         self.severity_score_equality_status = None
-        self.equality_status = None
 
     def analyze(self, raw_experiment_result):
-        print(type(raw_experiment_result), len(raw_experiment_result))
+        ERROR_counter = 0
+        EQUAL_E_LABEL_counter = 0  # todo count all these
+        EQUAL_T_LABEL_counter = 0
+        EQUAL_U_LABEL_counter = 0
+        EQUAL_E_SCORE_counter = 0
+        EQUAL_T_SCORE_counter = 0
+        EQUAL_U_SCORE_counter = 0
+        EQUAL_E_LABEL_RANGE_counter = 0  # MEANS THE ALLOWED RANGE OF THE SCORE FOR THE SAME LABEL
+        EQUAL_T_LABEL_RANGE_counter = 0
+        EQUAL_U_LABEL_RANGE_counter = 0
+        EQUAL_E_RADIUS_RANGE_counter = 0
+        EQUAL_T_RADIUS_RANGE_counter = 0
+        EQUAL_U_RADIUS_RANGE_counter = 0
+        E_IDENTICAL_CWE_counter = 0
+        T_IDENTICAL_CWE_counter = 0
+        U_IDENTICAL_CWE_counter = 0
+        GT_SUBSET_OF_E_counter = 0
+        GT_SUBSET_OF_T_counter = 0
+        GT_SUBSET_OF_U_counter = 0
+        E_SUBSET_OF_GT_counter = 0
+        T_SUBSET_OF_GT_counter = 0
+        U_SUBSET_OF_GT_counter = 0
+        EMPTY_E_counter = 0
+        EMPTY_T_counter = 0
+        EMPTY_U_counter = 0
+        NON_OVERLAPPED_E_counter = 0
+        NON_OVERLAPPED_T_counter = 0
+        NON_OVERLAPPED_U_counter = 0
+        OVERLAPPED_E_counter = 0
+        OVERLAPPED_T_counter = 0
+        OVERLAPPED_U_counter = 0
+        SEVERITY_LABEL_EQUAL_LABEL_counter = 0
+        SEVERITY_LABEL_EQUAL_SCORE_EXATCT_MATCH_counter = 0
+        SEVERITY_LABEL_EQUAL_SCORE_LABEL_RANGE_counter = 0
+        SEVERITY_LABEL_EQUAL_SCORE_RADIUS_RANGE_counter = 0
+        INVALID_INFERENCE_counter = 0
 
         for raw_result in raw_experiment_result:
-            self.id = raw_result['id']
+            self.reference_id = raw_result['id']
+            if raw_result['error_msg'] is not None:
+                ERROR_counter += 1
+            else:
+                #####       LABEL ANALYSIS       #####
+                gt_CVSS = raw_result['ground_truth_CVSS_version'][0]
+                gt_label = raw_result['ground_truth_severities'][gt_CVSS][0]
+                predicted_label = raw_result['llm_output']['SEVERITY_LABEL']
 
-            for radius in constants.ANALYSIS_RADIUS:
-                pass
-    # self.equal_severity = (self.llm_output['severity'] is not None and
-    #                        len(self.ground_truth_severities) > 0 and
-    #                        str(self.llm_output['severity']).lower() == str(
-    #             self.ground_truth_severities[self.ground_truth_CVSS_version[0]]).lower())
-    #
-    # self.cwe_evaluation = self.calculate_cwe_evaluation(self.llm_output['CWE_IDS'], self.ground_truth_CWEs)
-    # self.is_equal = ((self.equal_severity) and
-    #                  (self.cwe_evaluation == EvaluationResult.CWE_EvaluationResultEnum.IDENTICAL))
+                if (predicted_label is not None) and (str(predicted_label).lower() == str(gt_label).lower()):
+                    self.severity_label_equality_status = SeverityLabel_EvaluationResultEnum.IDENTICAL
+                else:
+                    self.severity_label_equality_status = SeverityLabel_EvaluationResultEnum.NOT_IDENTICAL
 
-    # def calculate_cwe_evaluation(self, predicted_CWEs: list, ground_truth_CWEs: list) :
-    #     predicted_CWEs_set = set(predicted_CWEs)
-    #     ground_truth_CWEs_set = set(ground_truth_CWEs)
-    #
-    #     if len(predicted_CWEs_set) == 0:
-    #         return ExperimentResult.CWE_EvaluationResultEnum.EMPTY_PR
-    #     elif predicted_CWEs_set == ground_truth_CWEs_set:
-    #         return ExperimentResult.CWE_EvaluationResultEnum.IDENTICAL
-    #     elif ground_truth_CWEs_set.issubset(predicted_CWEs_set):
-    #         return ExperimentResult.CWE_EvaluationResultEnum.GT_SUBSET_OF_PR
-    #     elif predicted_CWEs_set.issubset(ground_truth_CWEs_set):
-    #         return ExperimentResult.CWE_EvaluationResultEnum.PR_SUBSET_OF_GT
-    #     elif ground_truth_CWEs_set.isdisjoint(predicted_CWEs_set):
-    #         return ExperimentResult.CWE_EvaluationResultEnum.NOT_OVERLAPPED
-    #     return ExperimentResult.CWE_EvaluationResultEnum.OVERLAPPED
+                gt_score = float(raw_result['ground_truth_severities'][gt_CVSS][1])
+                predicted_score = float(raw_result['llm_output']['SEVERITY_SCORE'])
 
-    # @staticmethod
-    # def analyze_evaluations(evaluations: list[dict]):
-    #     equal_counter = 0
-    #     errors_counter = 0
-    #     cwe_identical_counter = 0
-    #     cwe_gt_subset_of_pr_counter = 0
-    #     cwe_pr_subset_of_gt_counter = 0
-    #     cwe_empty_pr_counter = 0
-    #     cwe_non_overlapped_counter = 0
-    #     cwe_overlapped_counter = 0
-    #     equal_severity_counter = 0
-    #     invalid_inference_counter = 0
-    #
-    #     for evaluation in evaluations:
-    #         if evaluation['error_msg'] is not None:
-    #             errors_counter += 1
-    #         else:
-    #             if evaluation['is_equal']:
-    #                 equal_counter += 1
-    #             if evaluation['equal_severity'] is True:
-    #                 equal_severity_counter += 1
-    #             if evaluation['llm_output'] is None:
-    #                 invalid_inference_counter += 1
-    #             if evaluation['cwe_evaluation'] == "IDENTICAL":
-    #                 cwe_identical_counter += 1
-    #             elif evaluation['cwe_evaluation'] == "GT_SUBSET_OF_PR":
-    #                 cwe_gt_subset_of_pr_counter += 1
-    #             elif evaluation['cwe_evaluation'] == "PR_SUBSET_OF_GT":
-    #                 cwe_pr_subset_of_gt_counter += 1
-    #             elif evaluation['cwe_evaluation'] == "EMPTY_PR":
-    #                 cwe_empty_pr_counter += 1
-    #             elif evaluation['cwe_evaluation'] == "NOT_OVERLAPPED":
-    #                 cwe_non_overlapped_counter += 1
-    #             elif evaluation['cwe_evaluation'] == "OVERLAPPED":
-    #                 cwe_overlapped_counter += 1
-    #
-    #     return {
-    #         'total_number_of_samples': len(evaluations),
-    #         'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-    #         'errors': errors_counter,
-    #         'equal': equal_counter,
-    #         'accuracy_overall': 0 if len(evaluations) == 0 else (100.0 * equal_counter / len(evaluations)),
-    #         'accuracy_CWE': 0 if len(evaluations) == 0 else 100.0 * cwe_identical_counter / len(evaluations),
-    #         'accuracy_severity': 0 if len(evaluations) == 0 else 100.0 * equal_severity_counter / len(evaluations),
-    #         'CWE_identical': cwe_identical_counter,
-    #         'CWE_gt_subset_of_pr': cwe_gt_subset_of_pr_counter,
-    #         'CWE_pr_subset_of_gt': cwe_pr_subset_of_gt_counter,
-    #         'CWE_empty_pr': cwe_empty_pr_counter,
-    #         'CWE_non_overlapped': cwe_non_overlapped_counter,
-    #         'CWE_overlapped': cwe_overlapped_counter,
-    #         'equal_severities': equal_severity_counter,
-    #         'invalid_inferences': invalid_inference_counter,
-    #         'evaluations': evaluations}
+                score_evaluated = False
+                if gt_score == predicted_score:
+                    self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_EXACT_MATCH
+                    score_evaluated = True
+
+                #######      SCORE ANALYSIS     ####### (OBVIOUSLY IF LABEL IS IDENTICAL, THE SCORE WOULD AUTOMATICALLY BE EITHER EXACT MATCH OR IN_LABEL_RANGE. OTHERWISE SOMETHING IS WRONG IN MY CODE)
+                for radius in constants.ANALYSIS_RADIUS:
+                    if not score_evaluated:
+                        label_range = constants.SEVERITY_SCORE_RANGES[gt_CVSS][gt_label]
+
+                        if label_range[0] <= predicted_score <= label_range[1]:
+                            self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_IN_LABEL_RANGE
+                        else:
+                            radius_range = (max(label_range[0], predicted_score - radius),
+                                            min(label_range[1], predicted_score + radius))
+
+                            if radius_range[0] <= predicted_score <= radius_range[1]:
+                                self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE
+                            else:
+                                self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.NOT_IDENTICAL
+                    #########################################
+                #######   CWE EVALUATION   #######
+                GT_CWEs = set(raw_result['ground_truth_CWEs'])
+
+                ## FIRST: E
+                E = set(raw_result['llm_output']['EXACT_CWE_IDS'])
+                self.cwe_equality_status['E'] = self.evaluate_cwe(E, GT_CWEs)
+                ## SECOND: T
+                T = set(raw_result['llm_output']['TOP_FIVE_CWE_IDS'])
+                self.cwe_equality_status['T'] = self.evaluate_cwe(T, GT_CWEs)
+                ## THIRD: EUT
+                E_U_T = E | T
+                self.cwe_equality_status['U'] = self.evaluate_cwe(E_U_T, GT_CWEs)
+
+        return {
+            'TOTAL_NUMBER_OF_SAMPLES_counter': len(raw_experiment_result),
+            'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            'ERRORS': ERROR_counter,
+            'EQUAL_E_LABEL_counter': EQUAL_E_LABEL_counter,
+            'EQUAL_T_LABEL_counter': EQUAL_T_LABEL_counter,
+            'EQUAL_U_LABEL_counter': EQUAL_U_LABEL_counter,
+            'EQUAL_E_SCORE_counter': EQUAL_E_SCORE_counter,
+            'EQUAL_T_SCORE_counter': EQUAL_T_SCORE_counter,
+            'EQUAL_U_SCORE_counter': EQUAL_U_SCORE_counter,
+
+            'EQUAL_E_LABEL_RANGE_counter': EQUAL_E_LABEL_RANGE_counter,
+            'EQUAL_T_LABEL_RANGE_counter': EQUAL_T_LABEL_RANGE_counter,
+            'EQUAL_U_LABEL_RANGE_counter': EQUAL_U_LABEL_RANGE_counter,
+            'EQUAL_E_RADIUS_RANGE_counter': EQUAL_E_RADIUS_RANGE_counter,
+            'EQUAL_T_RADIUS_RANGE_counter': EQUAL_T_RADIUS_RANGE_counter,
+            'EQUAL_U_RADIUS_RANGE_counter': EQUAL_U_RADIUS_RANGE_counter,
+
+            'E_IDENTICAL_CWE_counter': E_IDENTICAL_CWE_counter,
+            'T_IDENTICAL_CWE_counter': T_IDENTICAL_CWE_counter,
+            'U_IDENTICAL_CWE_counter': U_IDENTICAL_CWE_counter,
+            'GT_SUBSET_OF_E_counter': GT_SUBSET_OF_E_counter,
+            'GT_SUBSET_OF_T_counter': GT_SUBSET_OF_T_counter,
+            'GT_SUBSET_OF_U_counter': GT_SUBSET_OF_U_counter,
+            'E_SUBSET_OF_GT_counter': E_SUBSET_OF_GT_counter,
+            'T_SUBSET_OF_GT_counter': T_SUBSET_OF_GT_counter,
+            'U_SUBSET_OF_GT_counter': U_SUBSET_OF_GT_counter,
+            'EMPTY_E_counter': EMPTY_E_counter,
+            'EMPTY_T_counter': EMPTY_T_counter,
+            'EMPTY_U_counter': EMPTY_U_counter,
+            'NON_OVERLAPPED_E_counter': NON_OVERLAPPED_E_counter,
+            'NON_OVERLAPPED_T_counter': NON_OVERLAPPED_T_counter,
+            'NON_OVERLAPPED_U_counter': NON_OVERLAPPED_U_counter,
+            'OVERLAPPED_E_counter': OVERLAPPED_E_counter,
+            'OVERLAPPED_T_counter': OVERLAPPED_T_counter,
+            'OVERLAPPED_U_counter': OVERLAPPED_U_counter,
+            'SEVERITY_LABEL_EQUAL_LABEL_counter': SEVERITY_LABEL_EQUAL_LABEL_counter,
+            'SEVERITY_LABEL_EQUAL_SCORE_EXATCT_MATCH_counter': SEVERITY_LABEL_EQUAL_SCORE_EXATCT_MATCH_counter,
+            'SEVERITY_LABEL_EQUAL_SCORE_LABEL_RANGE_counter': SEVERITY_LABEL_EQUAL_SCORE_LABEL_RANGE_counter,
+            'SEVERITY_LABEL_EQUAL_SCORE_RADIUS_RANGE_counter': SEVERITY_LABEL_EQUAL_SCORE_RADIUS_RANGE_counter,
+            'accuracy_overall_E_LABEL': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_E_LABEL_counter / len(raw_experiment_result)),
+            'accuracy_overall_T_LABEL': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_T_LABEL_counter / len(raw_experiment_result)),
+            'accuracy_overall_U_LABEL': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_U_LABEL_counter / len(raw_experiment_result)),
+            'accuracy_overall_E_SCORE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_E_SCORE_counter / len(raw_experiment_result)),
+            'accuracy_overall_T_SCORE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_T_SCORE_counter / len(raw_experiment_result)),
+            'accuracy_overall_U_SCORE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_U_SCORE_counter / len(raw_experiment_result)),
+            'accuracy_overall_E_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_E_LABEL_RANGE_counter / len(raw_experiment_result)),
+            'accuracy_overall_T_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_T_LABEL_RANGE_counter / len(raw_experiment_result)),
+            'accuracy_overall_U_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_U_LABEL_RANGE_counter / len(raw_experiment_result)),
+            'accuracy_overall_E_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_E_RADIUS_RANGE_counter / len(raw_experiment_result)),
+            'accuracy_overall_T_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_T_RADIUS_RANGE_counter / len(raw_experiment_result)),
+            'accuracy_overall_U_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                        100.0 * EQUAL_U_RADIUS_RANGE_counter / len(raw_experiment_result)),
+            'accuracy_CWE_E': 0 if len(raw_experiment_result) == 0 else 100.0 * E_IDENTICAL_CWE_counter / len(
+                raw_experiment_result),
+            'accuracy_CWE_T': 0 if len(raw_experiment_result) == 0 else 100.0 * T_IDENTICAL_CWE_counter / len(
+                raw_experiment_result),
+            'accuracy_CWE_U': 0 if len(raw_experiment_result) == 0 else 100.0 * U_IDENTICAL_CWE_counter / len(
+                raw_experiment_result),
+            'accuracy_severity_label': 0 if len(
+                raw_experiment_result) == 0 else 100.0 * SEVERITY_LABEL_EQUAL_LABEL_counter / len(
+                raw_experiment_result),
+            'accuracy_severity_score_exact_match': 0 if len(
+                raw_experiment_result) == 0 else 100.0 * SEVERITY_LABEL_EQUAL_SCORE_EXATCT_MATCH_counter / len(
+                raw_experiment_result),
+            'accuracy_severity_score_label_range': 0 if len(
+                raw_experiment_result) == 0 else 100.0 * SEVERITY_LABEL_EQUAL_SCORE_LABEL_RANGE_counter / len(
+                raw_experiment_result),
+            'accuracy_severity_score_radius_range': 0 if len(
+                raw_experiment_result) == 0 else 100.0 * SEVERITY_LABEL_EQUAL_SCORE_RADIUS_RANGE_counter / len(
+                raw_experiment_result),
+            ##
+            'INVALID_INFERENCES_counter': INVALID_INFERENCE_counter}
+
+    def evaluate_cwe(self, predicted_CWEs: set, GT_CWEs: set):
+        if len(predicted_CWEs) == 0:
+            return CWE_EvaluationResultEnum.EMPTY_PR
+        elif predicted_CWEs == GT_CWEs:
+            return CWE_EvaluationResultEnum.IDENTICAL
+        elif GT_CWEs.issubset(predicted_CWEs):
+            return CWE_EvaluationResultEnum.GT_SUBSET_OF_PR
+        elif predicted_CWEs.issubset(GT_CWEs):
+            return CWE_EvaluationResultEnum.PR_SUBSET_OF_GT
+        elif predicted_CWEs.isdisjoint(GT_CWEs):
+            return CWE_EvaluationResultEnum.NOT_OVERLAPPED
+        else:
+            return CWE_EvaluationResultEnum.OVERLAPPED
