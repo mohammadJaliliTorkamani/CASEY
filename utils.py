@@ -35,7 +35,8 @@ def count_gpt_tokens(text: str) -> int:
     tokens = tokenizer.encode(text)
     return len(tokens)
 
-def extract_line_range(search_string: str, file_path: str)-> tuple:
+
+def extract_line_range(search_string: str, file_path: str) -> tuple:
     occurrences = []
 
     # Read the entire file content
@@ -55,12 +56,14 @@ def extract_line_range(search_string: str, file_path: str)-> tuple:
 
         occurrences.append((start_line, end_line))
 
-    return occurrences[0] if len(occurrences) > 0 else (None,None)
+    return occurrences[0] if len(occurrences) > 0 else (None, None)
+
+
 def save_json(address, content):
-    # Ensure the directory exists; if not, create it
-    directory = os.path.dirname(address)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    # # Ensure the directory exists; if not, create it
+    # directory = os.path.dirname(address)
+    # if not os.path.exists(directory):
+    #     os.makedirs(directory)
 
     # Write the JSON content to the file
     with open(address, 'w', encoding='utf-8') as file:
@@ -122,11 +125,13 @@ def get_severities_of_CVE(candidate_CVE, CVE2CWE_OBJ) -> dict:
                 if 'baseMetricV3' in severity and 'cvssV3' in severity['baseMetricV3'] and 'baseSeverity' in \
                         severity['baseMetricV3']['cvssV3']:
                     version = severity['baseMetricV3']['cvssV3']['version']
-                    _list['V' + str(version)] = severity['baseMetricV3']['cvssV3']['baseSeverity']
+                    _list['V' + str(version)] = (severity['baseMetricV3']['cvssV3']['baseSeverity'],
+                                                 severity['baseMetricV3']['cvssV3']['baseScore'])
                 elif 'baseMetricV2' in severity and 'cvssV2' in severity['baseMetricV2'] and 'baseSeverity' in \
                         severity['baseMetricV2']['cvssV2']:
                     version = severity['baseMetricV2']['cvssV2']['version']
-                    _list['V' + str(version)] = severity['baseMetricV2']['cvssV2']['baseSeverity']
+                    _list['V' + str(version)] = (severity['baseMetricV2']['cvssV2']['baseSeverity'],
+                                                 severity['baseMetricV2']['cvssV2']['baseScore'])
 
     return _list
 
@@ -137,11 +142,11 @@ def extract_cvss_versions(candidate_CVE, CVE2CWE_OBJ) -> list:
         if obj['CVE'] == candidate_CVE:
             for severity in obj['severity']:
                 if 'baseMetricV3' in severity and 'cvssV3' in severity['baseMetricV3'] and 'baseSeverity' in \
-                        severity['baseMetricV3']['cvssV3']:
+                        severity['baseMetricV3']['cvssV3'] and 'baseScore' in severity['baseMetricV3']['cvssV3']:
                     version = severity['baseMetricV3']['cvssV3']['version']
                     _list.append('V' + str(version))
                 elif 'baseMetricV2' in severity and 'cvssV2' in severity['baseMetricV2'] and 'baseSeverity' in \
-                        severity['baseMetricV2']['cvssV2']:
+                        severity['baseMetricV2']['cvssV2'] and 'baseScore' in severity['baseMetricV2']['cvssV2']:
                     version = severity['baseMetricV2']['cvssV2']['version']
                     _list.append('V' + str(version))
 

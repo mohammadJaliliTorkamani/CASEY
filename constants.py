@@ -21,27 +21,40 @@ Instructions:
 1. * Input: You will receive one or more files, each has a file name, and file content enclosed  within <Code> and </Code>. If there are multiple buggy codes, they will be related to the same bug. The provided input structure is as below:
    File: file_name
    Content: <Code> content </Code>
+   
 2. * Output: Generate a JSON object with the following structure:
    {
-     "CWE_IDS": [], 
-     "severity": null
+     "EXACT_CWE_IDS": [], 
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null,
    }
 
 Output Details:
-- CWE_IDS: If you identify any CWE IDs in the provided buggy code(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- severity: If the buggy code(s) has a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy code(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy code(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- SEVERITY_LABEL: If the buggy code(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- SEVERITY_SCORE: If the buggy code(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
+- EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
 
 Example Outputs:
 1. If CWEs are found and severity is identified:
    {
-     "CWE_IDS": ["CWE-123", "CWE-456"],
-     "severity": "high"
+     "EXACT_CWE_IDS": ["CWE-123", "CWE-456"],
+     "TOP_FIVE_CWE_IDS": ["CWE-789", "CWE-152", "CWE-196"],
+     "SEVERITY_LABEL": "high",
+     "SEVERITY_SCORE": 8.3,
+     "EXPLANATION": "In assessing this CVE, the first step is to identify the nature of the vulnerability, which involves improper input validation leading to potential code injection. This indicates that an attacker could exploit the flaw to execute arbitrary commands. Next, I consider the impact of this exploitation. Since the CVE describes remote access capabilities, the vulnerability could allow an attacker to fully compromise the system. This makes the potential damage quite significant, particularly if it can lead to data loss or control over critical systems. Given the ease of exploitation and the high impact on system integrity and availability, this CVE should be labeled as High severity."
    }
 
 2. If no CWEs or severity are identified:
    {
-     "CWE_IDS": [],
-     "severity": null
+     "EXACT_CWE_IDS": [],
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
@@ -57,27 +70,40 @@ Instructions:
    Methods: 
         <Method> method 1 </Method>
         <Method> method 2 </Method>
+        
 2. * Output: Generate a JSON object with the following structure:
    {
-     "CWE_IDS": [], 
-     "severity": null
+     "EXACT_CWE_IDS": [], 
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Output Details:
-- CWE_IDS: If you identify any CWE IDs in the provided buggy method(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- severity: If the buggy method(s) has a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy method(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy method(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- SEVERITY_LABEL: If the buggy method(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- SEVERITY_SCORE: If the buggy method(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
+- EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
 
 Example Outputs:
 1. If CWEs are found and severity is identified:
    {
-     "CWE_IDS": ["CWE-123", "CWE-456"],
-     "severity": "high"
+     "EXACT_CWE_IDS": ["CWE-123", "CWE-456"],
+     "TOP_FIVE_CWE_IDS": ["CWE-789", "CWE-152", "CWE-196"],
+     "SEVERITY_LABEL": "high",
+     "SEVERITY_SCORE": 8.3,
+     "EXPLANATION": "In assessing this CVE, the first step is to identify the nature of the vulnerability, which involves improper input validation leading to potential code injection. This indicates that an attacker could exploit the flaw to execute arbitrary commands. Next, I consider the impact of this exploitation. Since the CVE describes remote access capabilities, the vulnerability could allow an attacker to fully compromise the system. This makes the potential damage quite significant, particularly if it can lead to data loss or control over critical systems. Given the ease of exploitation and the high impact on system integrity and availability, this CVE should be labeled as High severity."
    }
 
 2. If no CWEs or severity are identified:
    {
-     "CWE_IDS": [],
-     "severity": null
+     "EXACT_CWE_IDS": [],
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
@@ -93,29 +119,42 @@ Instructions:
    Hunks: 
         <Hunk> hunk 1 </Hunk>
         <Hunk> hunk 2 </Hunk>
+        
 2. * Output: Generate a JSON object with the following structure:
    {
-     "CWE_IDS": [], 
-     "severity": null
+     "EXACT_CWE_IDS": [], 
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Output Details:
-- CWE_IDS: If you identify any CWE IDs in the provided buggy hunk(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- severity: If the buggy method(s) has a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy hunk(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy hunk(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- SEVERITY_LABEL: If the buggy hunk(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- SEVERITY_SCORE: If the buggy hunk(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
+- EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
 
 Example Outputs:
 1. If CWEs are found and severity is identified:
    {
-     "CWE_IDS": ["CWE-123", "CWE-456"],
-     "severity": "high"
+     "EXACT_CWE_IDS": ["CWE-123", "CWE-456"],
+     "TOP_FIVE_CWE_IDS": ["CWE-789", "CWE-152", "CWE-196"],
+     "SEVERITY_LABEL": "high",
+     "SEVERITY_SCORE": 8.3,
+     "EXPLANATION": "In assessing this CVE, the first step is to identify the nature of the vulnerability, which involves improper input validation leading to potential code injection. This indicates that an attacker could exploit the flaw to execute arbitrary commands. Next, I consider the impact of this exploitation. Since the CVE describes remote access capabilities, the vulnerability could allow an attacker to fully compromise the system. This makes the potential damage quite significant, particularly if it can lead to data loss or control over critical systems. Given the ease of exploitation and the high impact on system integrity and availability, this CVE should be labeled as High severity."
    }
 
 2. If no CWEs or severity are identified:
    {
-     "CWE_IDS": [],
-     "severity": null
+     "EXACT_CWE_IDS": [],
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
-   
+
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
 
 %s
@@ -126,30 +165,43 @@ LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION = """You are an expert in identifying Commo
 Instructions:
 1. * Input: 
     Description: You will receive a description of a buggy code.
+    
 2. * Output: Generate a JSON object with the following structure:
    {
-     "CWE_IDS": [], 
-     "severity": null
+     "EXACT_CWE_IDS": [], 
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Output Details:
-- CWE_IDS: If you identify any CWE IDs from the provided description of the buggy code, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- severity: If the description indicates a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- EXACT_CWE_IDS: If you identify any CWE IDs in the provided description of the buggy code, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided description of the buggy code(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- SEVERITY_LABEL: If the description indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- SEVERITY_SCORE: If the description indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
+- EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
 
 Example Outputs:
 1. If CWEs are found and severity is identified:
    {
-     "CWE_IDS": ["CWE-123", "CWE-456"],
-     "severity": "high"
+     "EXACT_CWE_IDS": ["CWE-123", "CWE-456"],
+     "TOP_FIVE_CWE_IDS": ["CWE-789", "CWE-152", "CWE-196"],
+     "SEVERITY_LABEL": "high",
+     "SEVERITY_SCORE": 8.3,
+     "EXPLANATION": "In assessing this CVE, the first step is to identify the nature of the vulnerability, which involves improper input validation leading to potential code injection. This indicates that an attacker could exploit the flaw to execute arbitrary commands. Next, I consider the impact of this exploitation. Since the CVE describes remote access capabilities, the vulnerability could allow an attacker to fully compromise the system. This makes the potential damage quite significant, particularly if it can lead to data loss or control over critical systems. Given the ease of exploitation and the high impact on system integrity and availability, this CVE should be labeled as High severity."
    }
 
 2. If no CWEs or severity are identified:
    {
-     "CWE_IDS": [],
-     "severity": null
+     "EXACT_CWE_IDS": [],
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
-   
-Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptiond, or text.
+
+Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
 
 %s
 """
@@ -162,27 +214,40 @@ Instructions:
    File: file_name
    Content: 
         <Code> content </Code>
+        
 2. * Output: Generate a JSON object with the following structure:
    {
-     "CWE_IDS": [], 
-     "severity": null
+     "EXACT_CWE_IDS": [], 
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Output Details:
-- CWE_IDS: If you identify any CWE IDs from the provided buggy code(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- severity: If the provided information indicates a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy code(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy code(s) or its description (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- SEVERITY_LABEL: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- SEVERITY_SCORE: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
+- EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
 
 Example Outputs:
 1. If CWEs are found and severity is identified:
    {
-     "CWE_IDS": ["CWE-123", "CWE-456"],
-     "severity": "high"
+     "EXACT_CWE_IDS": ["CWE-123", "CWE-456"],
+     "TOP_FIVE_CWE_IDS": ["CWE-789", "CWE-152", "CWE-196"],
+     "SEVERITY_LABEL": "high",
+     "SEVERITY_SCORE": 8.3,
+     "EXPLANATION": "In assessing this CVE, the first step is to identify the nature of the vulnerability, which involves improper input validation leading to potential code injection. This indicates that an attacker could exploit the flaw to execute arbitrary commands. Next, I consider the impact of this exploitation. Since the CVE describes remote access capabilities, the vulnerability could allow an attacker to fully compromise the system. This makes the potential damage quite significant, particularly if it can lead to data loss or control over critical systems. Given the ease of exploitation and the high impact on system integrity and availability, this CVE should be labeled as High severity."
    }
 
 2. If no CWEs or severity are identified:
    {
-     "CWE_IDS": [],
-     "severity": null
+     "EXACT_CWE_IDS": [],
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
@@ -199,27 +264,40 @@ Instructions:
    Methods: 
         <Method> method 1 </Method>
         <Method> method 2 </Method>
+
 2. * Output: Generate a JSON object with the following structure:
    {
-     "CWE_IDS": [], 
-     "severity": null
+     "EXACT_CWE_IDS": [], 
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Output Details:
-- CWE_IDS: If you identify any CWE IDs from the provided buggy method(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- severity: If the provided information indicates a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy method(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy method(s) or its description (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- SEVERITY_LABEL: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- SEVERITY_SCORE: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
+- EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
 
 Example Outputs:
 1. If CWEs are found and severity is identified:
    {
-     "CWE_IDS": ["CWE-123", "CWE-456"],
-     "severity": "high"
+     "EXACT_CWE_IDS": ["CWE-123", "CWE-456"],
+     "TOP_FIVE_CWE_IDS": ["CWE-789", "CWE-152", "CWE-196"],
+     "SEVERITY_LABEL": "high",
+     "SEVERITY_SCORE": 8.3,
+     "EXPLANATION": "In assessing this CVE, the first step is to identify the nature of the vulnerability, which involves improper input validation leading to potential code injection. This indicates that an attacker could exploit the flaw to execute arbitrary commands. Next, I consider the impact of this exploitation. Since the CVE describes remote access capabilities, the vulnerability could allow an attacker to fully compromise the system. This makes the potential damage quite significant, particularly if it can lead to data loss or control over critical systems. Given the ease of exploitation and the high impact on system integrity and availability, this CVE should be labeled as High severity."
    }
 
 2. If no CWEs or severity are identified:
    {
-     "CWE_IDS": [],
-     "severity": null
+     "EXACT_CWE_IDS": [],
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
@@ -236,27 +314,40 @@ Instructions:
    Hunks: 
         <Hunk> hunk 1 </Hunk>
         <Hunk> hunk 2 </Hunk>
+        
 2. * Output: Generate a JSON object with the following structure:
    {
-     "CWE_IDS": [], 
-     "severity": null
+     "EXACT_CWE_IDS": [], 
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Output Details:
-- CWE_IDS: If you identify any CWE IDs from the provided buggy hunk(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- severity: If the provided information indicates a security vulnerability (CVE), provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy hunk(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy hunk(s) or its description (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- SEVERITY_LABEL: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
+- SEVERITY_SCORE: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
+- EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
 
 Example Outputs:
 1. If CWEs are found and severity is identified:
    {
-     "CWE_IDS": ["CWE-123", "CWE-456"],
-     "severity": "high"
+     "EXACT_CWE_IDS": ["CWE-123", "CWE-456"],
+     "TOP_FIVE_CWE_IDS": ["CWE-789", "CWE-152", "CWE-196"],
+     "SEVERITY_LABEL": "high",
+     "SEVERITY_SCORE": 8.3,
+     "EXPLANATION": "In assessing this CVE, the first step is to identify the nature of the vulnerability, which involves improper input validation leading to potential code injection. This indicates that an attacker could exploit the flaw to execute arbitrary commands. Next, I consider the impact of this exploitation. Since the CVE describes remote access capabilities, the vulnerability could allow an attacker to fully compromise the system. This makes the potential damage quite significant, particularly if it can lead to data loss or control over critical systems. Given the ease of exploitation and the high impact on system integrity and availability, this CVE should be labeled as High severity."
    }
 
 2. If no CWEs or severity are identified:
    {
-     "CWE_IDS": [],
-     "severity": null
+     "EXACT_CWE_IDS": [],
+     "TOP_FIVE_CWE_IDS": [],
+     "SEVERITY_LABEL": null,
+     "SEVERITY_SCORE": -1,
+     "EXPLANATION": null
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
@@ -320,13 +411,13 @@ Severity Levels and Example Combinations:
 5. Critical (9.0 - 10.0): These vulnerabilities are both easy to exploit and have a devastating impact. For example, “AV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H” and “AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H”
 
 Note: The severity level may change based on specific characteristics of the vulnerability. For example, if the attack vector is physical but the impact on availability is high, the severity might increase.
-                              """}
+"""}
 
 DATA_PATH = './data/cve_training.json'
 TOP_CWE_PATH = './data/top_cwe.json'
 CVE2CWE_PATH = './data/cve_to_cwe_2016_2024.json'
 
-MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT = 100
+MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT = 10
 
 ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS = ['php', 'js', 'py', 'go', 'c', 'cpp', 'ts', 'rb', 'java']
 TEMP_CONTENT_FILE_NAME_FOR_METHOD_EXTRACTOR = 'temp'
@@ -339,3 +430,27 @@ C_EXTRACTOR_SCRIPT_PATH = 'extractors/c_parser.py'
 CPP_EXTRACTOR_SCRIPT_PATH = 'extractors/cpp_parser.py'
 GO_EXTRACTOR_SCRIPT_PATH = 'extractors/go_parser.py'
 RB_EXTRACTOR_SCRIPT_PATH = 'extractors/ruby_parser.py'
+
+ANALYSIS_RADIUS = [0.5, 1, 2, 3, 4]
+SEVERITY_SCORE_RANGES = {
+    'V2.0': {
+        "LOW": (0.0, 3.9),
+        "MEDIUM": (4.0, 6.9),
+        "HIGH": (7.0, 10)
+    },
+    'V3.0': {
+        "LOW": (0.1, 3.9),
+        "MEDIUM": (4.0, 6.9),
+        "HIGH": (7.0, 8.9),
+        "CRITICAL": (9.0, 10.0)
+    },
+    'V3.1': {
+        "LOW": (0.1, 3.9),
+        "MEDIUM": (4.0, 6.9),
+        "HIGH": (7.0, 8.9),
+        "CRITICAL": (9.0, 10.0)
+    }
+}
+
+EXPERIMENT_STAGE = False
+ANALYZE_STAGE = not EXPERIMENT_STAGE

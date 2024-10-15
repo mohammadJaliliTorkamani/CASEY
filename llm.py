@@ -60,47 +60,50 @@ class LLM:
         return input_message, None
 
     def inference_with_description(self, description: str, cvss_versions: list):
-        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[
-            cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
+        cvss_version = cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS
+        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[cvss_version]
         i, o = None, None
 
         user_input = "Description: " + description
 
-        i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION % (
-            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+        i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION % (cvss_version,
+                                                                                              cvss_version,
+                                                                                              CVSS_severity_description))
 
         return i, o
 
     def inference_with_buggy_files(self, buggy_code, cvss_versions: list):
-        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[
-            cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
+        cvss_version = cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS
+        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[cvss_version]
         user_input = ""
         for item in buggy_code:
             user_input += f"File: {item['file']}\nContent: \n{constants.CODE_TAGS[0]}\n{item['file_content']}\n{constants.CODE_TAGS[1]}\n\n"
 
         i, o = None, None
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_FILE % (
-            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            cvss_version, cvss_version, CVSS_severity_description))
 
         return i, o
 
     def inference_with_buggy_methods(self, methods: dict, cvss_versions: list):
-        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[
-            cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
+        cvss_version = cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS
+        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[cvss_version]
         i, o = None, None
         user_input = ""
         for (file_name, _methods) in methods.items():
-            user_input += ('File: ' + file_name + '\nMethods:\n')
-            for method in _methods:
-                user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n" + constants.METHOD_TAGS[1] + "\n")
+            if len(_methods) > 0:
+                user_input += ('File: ' + file_name + '\nMethods:\n')
+                for method in _methods:
+                    user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n" + constants.METHOD_TAGS[1] + "\n")
+
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_METHOD % (
-            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            cvss_version, cvss_version, CVSS_severity_description))
 
         return i, o
 
     def inference_with_buggy_hunks(self, hunks: dict, cvss_versions: list):
-        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[
-            cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
+        cvss_version = cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS
+        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[cvss_version]
         i, o = None, None
         user_input = ""
         for (file_name, hunk_lines) in hunks.items():
@@ -109,13 +112,13 @@ class LLM:
                 user_input += (constants.HUNK_TAGS[0] + "\n" + hunk + "\n" + constants.HUNK_TAGS[1] + "\n")
 
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUGGY_HUNKS % (
-            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            cvss_version, cvss_version, CVSS_severity_description))
 
         return i, o
 
     def inference_with_description_and_files(self, description, buggy_code, cvss_versions: list):
-        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[
-            cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
+        cvss_version = cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS
+        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[cvss_version]
         user_input = "Description: " + description + "\n"
         for item in buggy_code:
             if item['file'].split('.')[-1] in constants.ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS:
@@ -123,28 +126,29 @@ class LLM:
 
         i, o = None, None
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_FILES % (
-            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            cvss_version, cvss_version, CVSS_severity_description))
 
         return i, o
 
     def inference_with_description_and_methods(self, description, methods_list: dict, cvss_versions: list):
-        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[
-            cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
+        cvss_version = cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS
+        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[cvss_version]
         i, o = None, None
         user_input = "Description: " + description + "\n"
         for (file_name, methods) in methods_list.items():
-            user_input += ('File: ' + file_name + '\nMethods:\n')
-            for method in methods:
-                user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n" + constants.METHOD_TAGS[1] + "\n")
+            if len(methods) > 0:
+                user_input += ('File: ' + file_name + '\nMethods:\n')
+                for method in methods:
+                    user_input += (constants.METHOD_TAGS[0] + "\n" + method + "\n" + constants.METHOD_TAGS[1] + "\n")
 
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_METHODS % (
-            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            cvss_version, cvss_version, CVSS_severity_description))
 
         return i, o
 
     def inference_with_description_and_hunks(self, description, hunks: dict, cvss_versions: list):
-        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[
-            cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS]
+        cvss_version = cvss_versions[0] if len(cvss_versions) > 0 else constants.DEFAULT_SEVERITY_VERSION_FOR_CVSS
+        CVSS_severity_description = constants.CVSS_SEVERITY_DESCRIPTIONS[cvss_version]
         i, o = None, None
         user_input = "Description: " + description + "\n"
         for (file_name, hunk_lines) in hunks.items():
@@ -153,6 +157,6 @@ class LLM:
                 user_input += (constants.HUNK_TAGS[0] + "\n" + hunk + "\n" + constants.HUNK_TAGS[1] + "\n")
 
         i, o = self.__inference(user_input, constants.LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_HUNKS % (
-            (cvss_versions[0] if len(cvss_versions) > 0 else ""), CVSS_severity_description))
+            cvss_version, cvss_version, CVSS_severity_description))
 
         return i, o

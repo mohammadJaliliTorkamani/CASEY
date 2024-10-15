@@ -33,8 +33,10 @@ def execute_methods_extractor_python_script(script_name: str, file_name: str):
 def extract_python_methods(file_name):
     return execute_methods_extractor_python_script(constants.PYTHON_EXTRACTOR_SCRIPT_PATH, file_name)
 
+
 def extract_java_methods(file_name):
     return execute_methods_extractor_python_script(constants.JAVA_EXTRACTOR_SCRIPT_PATH, file_name)
+
 
 def extract_js_methods(file_name):
     return execute_methods_extractor_python_script(constants.JS_EXTRACTOR_SCRIPT_PATH, file_name)
@@ -51,8 +53,10 @@ def extract_ts_methods(file_name):
 def extract_c_methods(file_name):
     return execute_methods_extractor_python_script(constants.C_EXTRACTOR_SCRIPT_PATH, file_name)
 
+
 def extract_cpp_methods(file_name):
     return execute_methods_extractor_python_script(constants.CPP_EXTRACTOR_SCRIPT_PATH, file_name)
+
 
 def extract_go_methods(file_name):
     return execute_methods_extractor_python_script(constants.GO_EXTRACTOR_SCRIPT_PATH, file_name)

@@ -16,3 +16,4 @@ node_modules/
 /text.txt
 .DS_Store
 /data/
+experiments/
