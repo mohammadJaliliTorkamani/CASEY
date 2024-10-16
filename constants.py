@@ -417,8 +417,6 @@ DATA_PATH = './data/cve_training.json'
 TOP_CWE_PATH = './data/top_cwe.json'
 CVE2CWE_PATH = './data/cve_to_cwe_2016_2024.json'
 
-MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT = 10
-
 ACCEPTABLE_EXPERIMENT_FILE_EXTENSIONS = ['php', 'js', 'py', 'go', 'c', 'cpp', 'ts', 'rb', 'java']
 TEMP_CONTENT_FILE_NAME_FOR_METHOD_EXTRACTOR = 'temp'
 PYTHON_EXTRACTOR_SCRIPT_PATH = 'extractors/python_method_extractor.py'
@@ -431,7 +429,7 @@ CPP_EXTRACTOR_SCRIPT_PATH = 'extractors/cpp_parser.py'
 GO_EXTRACTOR_SCRIPT_PATH = 'extractors/go_parser.py'
 RB_EXTRACTOR_SCRIPT_PATH = 'extractors/ruby_parser.py'
 
-ANALYSIS_RADIUS = [0.5, 1, 2, 3, 4]
+ANALYSIS_RADIUS = [0.5, 1, 2, 3, 4, 5]
 SEVERITY_SCORE_RANGES = {
     'V2.0': {
         "LOW": (0.0, 3.9),
@@ -452,5 +450,7 @@ SEVERITY_SCORE_RANGES = {
     }
 }
 
+MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT = 20
 EXPERIMENT_STAGE = False
+
 ANALYZE_STAGE = not EXPERIMENT_STAGE
