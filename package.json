@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "esprima": "^4.0.1",
-    "fs": "^0.0.1-security",
-    "npm": "^10.7.0"
-  }
-}

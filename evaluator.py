@@ -53,6 +53,17 @@ class Equality_EvaluationResultEnum(str, Enum):
         return f"{self.name}"
 
 
+def get_empty_radius_score_dic():
+    d = dict()
+    for r in constants.ANALYSIS_RADIUS:
+        d[r] = 0
+    return d
+
+
+def get_sum_of_value(d:dict):
+    return sum(d.values())
+
+
 class Evaluator:
 
     def __init__(self):
@@ -98,7 +109,7 @@ class Evaluator:
             'SEVERITY_LABEL_EQUAL_LABEL_counter': 0,  ######
             'SEVERITY_EQUAL_SCORE_EXACT_MATCH_counter': 0,
             'SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter': 0,
-            'SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter': 0,
+            'SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter': get_empty_radius_score_dic(),
             'INVALID_INFERENCE_counter': 0
         }
 
@@ -144,16 +155,19 @@ class Evaluator:
                         self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_IN_LABEL_RANGE, None
                         metrics['SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter'] += 1
                     else:
+                        assigned = False
                         for radius in sorted(constants.ANALYSIS_RADIUS):
                             radius_range = (predicted_score - radius, predicted_score + radius)
                             in_range = radius_range[0] <= gt_score <= radius_range[1]
 
                             if in_range:
-                                self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE, radius
-                                metrics['SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter'] += 1
-                                break
+                                metrics['SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter'][radius] += 1
+                                if not assigned:
+                                    self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE, radius
+                                    assigned = True
                             else:
-                                self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.NOT_IDENTICAL, None
+                                if not assigned:
+                                    self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.NOT_IDENTICAL, None
 
                 #######   CWE EVALUATION   #######
                 GT_CWEs = set(raw_result['ground_truth_CWEs'])
@@ -267,8 +281,7 @@ class Evaluator:
                 raw_experiment_result),
 
             'accuracy_severity_score_radius_range': 0 if len(
-                raw_experiment_result) == 0 else 100.0 * metrics[
-                'SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter'] / len(
+                raw_experiment_result) == 0 else 100.0 * list(metrics['SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter'].values())[-1] / len(
                 raw_experiment_result),
 
             'ERRORS': metrics['ERROR_counter'],  #
