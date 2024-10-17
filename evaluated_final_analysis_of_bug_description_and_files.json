@@ -1,0 +1,542 @@
+{
+    "TOTAL_NUMBER_OF_SAMPLES_counter": 37,
+    "timestamp": "16/10/2024 22:21:19",
+    "accuracy_overall_E_LABEL": 21.62162162162162,
+    "accuracy_overall_T_LABEL": 0.0,
+    "accuracy_overall_U_LABEL": 8.108108108108109,
+    "accuracy_overall_E_SCORE": 0.0,
+    "accuracy_overall_T_SCORE": 0.0,
+    "accuracy_overall_U_SCORE": 0.0,
+    "accuracy_overall_E_LABEL_RANGE": 21.62162162162162,
+    "accuracy_overall_T_LABEL_RANGE": 0.0,
+    "accuracy_overall_U_LABEL_RANGE": 8.108108108108109,
+    "accuracy_overall_E_RADIUS_RANGE": 8.108108108108109,
+    "accuracy_overall_T_RADIUS_RANGE": 0.0,
+    "accuracy_overall_U_RADIUS_RANGE": 2.7027027027027026,
+    "accuracy_identical_CWE_E": 32.432432432432435,
+    "accuracy_identical_CWE_T": 2.7027027027027026,
+    "accuracy_identical_CWE_U": 13.513513513513514,
+    "accuracy_identical_severity_label": 45.945945945945944,
+    "accuracy_severity_score_exact_match": 0.0,
+    "accuracy_severity_score_label_range": 45.945945945945944,
+    "accuracy_severity_score_radius_range": 29.72972972972973,
+    "ERRORS": 2,
+    "EQUAL_E_LABEL_counter": 8,
+    "EQUAL_T_LABEL_counter": 0,
+    "EQUAL_U_LABEL_counter": 3,
+    "EQUAL_E_SCORE_MATCH_counter": 0,
+    "EQUAL_T_SCORE_MATCH_counter": 0,
+    "EQUAL_U_SCORE_MATCH_counter": 0,
+    "EQUAL_E_LABEL_RANGE_counter": 8,
+    "EQUAL_T_LABEL_RANGE_counter": 0,
+    "EQUAL_U_LABEL_RANGE_counter": 3,
+    "EQUAL_E_RADIUS_RANGE_counter": 3,
+    "EQUAL_T_RADIUS_RANGE_counter": 0,
+    "EQUAL_U_RADIUS_RANGE_counter": 1,
+    "SEVERITY_LABEL_EQUAL_LABEL_counter": 17,
+    "SEVERITY_EQUAL_SCORE_EXACT_MATCH_counter": 0,
+    "SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter": 17,
+    "SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter": 11,
+    "CWE_IDENTICAL_E_counter": 12,
+    "CWE_IDENTICAL_T_counter": 1,
+    "CWE_IDENTICAL_U_counter": 5,
+    "CSE_GT_SUBSET_OF_E_counter": 7,
+    "CWE_GT_SUBSET_OF_T_counter": 2,
+    "CWE_GT_SUBSET_OF_U_counter": 15,
+    "CWE_E_SUBSET_OF_GT_counter": 0,
+    "CWE_T_SUBSET_OF_GT_counter": 0,
+    "CWE_U_SUBSET_OF_GT_counter": 0,
+    "CWE_EMPTY_E_counter": 6,
+    "CWE_EMPTY_T_counter": 15,
+    "CWE_EMPTY_U_counter": 6,
+    "CWE_NON_OVERLAPPED_E_counter": 10,
+    "CWE_NON_OVERLAPPED_T_counter": 17,
+    "CWE_NON_OVERLAPPED_U_counter": 9,
+    "CWE_OVERLAPPED_E_counter": 0,
+    "CWE_OVERLAPPED_T_counter": 0,
+    "CWE_OVERLAPPED_U_counter": 0,
+    "INVALID_INFERENCES_counter": 0,
+    "evaluations": [
+        {
+            "reference_id": 1,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 3,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 4,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 9,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 10,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "EMPTY_PR",
+                "U": "IDENTICAL"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 12,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "IDENTICAL",
+                "U": "IDENTICAL"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 19,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 21,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "EMPTY_PR",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 22,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 27,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "EMPTY_PR",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 28,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "EMPTY_PR",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 4
+            }
+        },
+        {
+            "reference_id": 33,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 38,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 40,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 45,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "EMPTY_PR",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 46,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 4
+            }
+        },
+        {
+            "reference_id": 48,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 50,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 54,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "EMPTY_PR",
+                "U": "IDENTICAL"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 56,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 59,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 64,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "EMPTY_PR",
+                "U": "IDENTICAL"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 65,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 67,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 69,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "EMPTY_PR",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 71,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 74,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 1
+            }
+        },
+        {
+            "reference_id": 77,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 4
+            }
+        },
+        {
+            "reference_id": 78,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 0.5
+            }
+        },
+        {
+            "reference_id": 79,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 83,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 3
+            }
+        },
+        {
+            "reference_id": 93,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 94,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 95,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 97,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 5
+            }
+        },
+        {
+            "reference_id": 98,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 99,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "EMPTY_PR",
+                "U": "IDENTICAL"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        }
+    ]
+}

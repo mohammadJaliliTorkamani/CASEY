@@ -135,14 +135,14 @@ class Evaluator:
                     self.severity_score_equality_status = None, None
                 elif gt_score == predicted_score:
                     self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_EXACT_MATCH, None
-                    metrics['SEVERITY_LABEL_EQUAL_SCORE_EXACT_MATCH_counter'] += 1
+                    metrics['SEVERITY_EQUAL_SCORE_EXACT_MATCH_counter'] += 1
 
                 #######      SCORE ANALYSIS     ####### (OBVIOUSLY IF LABEL IS IDENTICAL, THE SCORE WOULD AUTOMATICALLY BE EITHER EXACT MATCH OR IN_LABEL_RANGE. OTHERWISE SOMETHING IS WRONG IN MY CODE)
                 else:
                     label_range = constants.SEVERITY_SCORE_RANGES[gt_CVSS][gt_label]
                     if label_range[0] <= predicted_score <= label_range[1]:
                         self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_IN_LABEL_RANGE, None
-                        metrics['SEVERITY_LABEL_EQUAL_SCORE_LABEL_RANGE_counter'] += 1
+                        metrics['SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter'] += 1
                     else:
                         for radius in sorted(constants.ANALYSIS_RADIUS):
                             radius_range = (predicted_score - radius, predicted_score + radius)
