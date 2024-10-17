@@ -60,13 +60,14 @@ def get_empty_radius_score_dic():
     return d
 
 
-def get_sum_of_value(d:dict):
+def get_sum_of_value(d: dict):
     return sum(d.values())
 
 
 class Evaluator:
 
     def __init__(self):
+        self.reference_id = -1
         self.reference_id = -1
         self.cwe_equality_status = {'E': None, 'T': None, 'U': None}
         self.severity_label_equality_status = None
@@ -227,8 +228,8 @@ class Evaluator:
             evaluations.append(self.toJson())
 
         return {
-            'TOTAL_NUMBER_OF_SAMPLES_counter': len(raw_experiment_result),  #
-            'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),  #
+            'TOTAL_NUMBER_OF_SAMPLES_counter': len(raw_experiment_result),
+            'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
 
             'accuracy_overall_E_LABEL': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_E_LABEL_counter'] / len(raw_experiment_result)),
@@ -281,10 +282,12 @@ class Evaluator:
                 raw_experiment_result),
 
             'accuracy_severity_score_radius_range': 0 if len(
-                raw_experiment_result) == 0 else 100.0 * list(metrics['SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter'].values())[-1] / len(
+                raw_experiment_result) == 0 else 100.0 *
+                                                 list(metrics['SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter'].values())[
+                                                     -1] / len(
                 raw_experiment_result),
 
-            'ERRORS': metrics['ERROR_counter'],  #
+            'ERRORS': metrics['ERROR_counter'],
             'EQUAL_E_LABEL_counter': metrics['EQUAL_E_LABEL_counter'],
             'EQUAL_T_LABEL_counter': metrics['EQUAL_T_LABEL_counter'],
             'EQUAL_U_LABEL_counter': metrics['EQUAL_U_LABEL_counter'],
@@ -307,29 +310,29 @@ class Evaluator:
             'SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter': metrics['SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter'],
             'SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter': metrics['SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter'],
 
-            'CWE_IDENTICAL_E_counter': metrics['E_IDENTICAL_CWE_counter'],  #
-            'CWE_IDENTICAL_T_counter': metrics['T_IDENTICAL_CWE_counter'],  #
-            'CWE_IDENTICAL_U_counter': metrics['U_IDENTICAL_CWE_counter'],  #
+            'CWE_IDENTICAL_E_counter': metrics['E_IDENTICAL_CWE_counter'],
+            'CWE_IDENTICAL_T_counter': metrics['T_IDENTICAL_CWE_counter'],
+            'CWE_IDENTICAL_U_counter': metrics['U_IDENTICAL_CWE_counter'],
 
-            'CSE_GT_SUBSET_OF_E_counter': metrics['GT_SUBSET_OF_E_counter'],  #
-            'CWE_GT_SUBSET_OF_T_counter': metrics['GT_SUBSET_OF_T_counter'],  #
-            'CWE_GT_SUBSET_OF_U_counter': metrics['GT_SUBSET_OF_U_counter'],  #
+            'CSE_GT_SUBSET_OF_E_counter': metrics['GT_SUBSET_OF_E_counter'],
+            'CWE_GT_SUBSET_OF_T_counter': metrics['GT_SUBSET_OF_T_counter'],
+            'CWE_GT_SUBSET_OF_U_counter': metrics['GT_SUBSET_OF_U_counter'],
 
-            'CWE_E_SUBSET_OF_GT_counter': metrics['E_SUBSET_OF_GT_counter'],  #
-            'CWE_T_SUBSET_OF_GT_counter': metrics['T_SUBSET_OF_GT_counter'],  #
-            'CWE_U_SUBSET_OF_GT_counter': metrics['U_SUBSET_OF_GT_counter'],  #
+            'CWE_E_SUBSET_OF_GT_counter': metrics['E_SUBSET_OF_GT_counter'],
+            'CWE_T_SUBSET_OF_GT_counter': metrics['T_SUBSET_OF_GT_counter'],
+            'CWE_U_SUBSET_OF_GT_counter': metrics['U_SUBSET_OF_GT_counter'],
 
-            'CWE_EMPTY_E_counter': metrics['EMPTY_E_counter'],  #
-            'CWE_EMPTY_T_counter': metrics['EMPTY_T_counter'],  #
-            'CWE_EMPTY_U_counter': metrics['EMPTY_U_counter'],  #
+            'CWE_EMPTY_E_counter': metrics['EMPTY_E_counter'],
+            'CWE_EMPTY_T_counter': metrics['EMPTY_T_counter'],
+            'CWE_EMPTY_U_counter': metrics['EMPTY_U_counter'],
 
-            'CWE_NON_OVERLAPPED_E_counter': metrics['NON_OVERLAPPED_E_counter'],  #
-            'CWE_NON_OVERLAPPED_T_counter': metrics['NON_OVERLAPPED_T_counter'],  #
-            'CWE_NON_OVERLAPPED_U_counter': metrics['NON_OVERLAPPED_U_counter'],  #
+            'CWE_NON_OVERLAPPED_E_counter': metrics['NON_OVERLAPPED_E_counter'],
+            'CWE_NON_OVERLAPPED_T_counter': metrics['NON_OVERLAPPED_T_counter'],
+            'CWE_NON_OVERLAPPED_U_counter': metrics['NON_OVERLAPPED_U_counter'],
 
-            'CWE_OVERLAPPED_E_counter': metrics['OVERLAPPED_E_counter'],  #
-            'CWE_OVERLAPPED_T_counter': metrics['OVERLAPPED_T_counter'],  #
-            'CWE_OVERLAPPED_U_counter': metrics['OVERLAPPED_U_counter'],  #
+            'CWE_OVERLAPPED_E_counter': metrics['OVERLAPPED_E_counter'],
+            'CWE_OVERLAPPED_T_counter': metrics['OVERLAPPED_T_counter'],
+            'CWE_OVERLAPPED_U_counter': metrics['OVERLAPPED_U_counter'],
 
             'INVALID_INFERENCES_counter': metrics['INVALID_INFERENCE_counter'],
             'evaluations': evaluations}
