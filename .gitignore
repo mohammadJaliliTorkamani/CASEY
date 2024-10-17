@@ -17,4 +17,3 @@ node_modules/
 .DS_Store
 /data/
 experiments/
-*.json

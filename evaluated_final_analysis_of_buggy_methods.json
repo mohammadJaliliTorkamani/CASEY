@@ -1,0 +1,2652 @@
+{
+    "TOTAL_NUMBER_OF_SAMPLES_counter": 199,
+    "timestamp": "17/10/2024 09:11:28",
+    "accuracy_overall_E_LABEL": 0.0,
+    "accuracy_overall_T_LABEL": 0.0,
+    "accuracy_overall_U_LABEL": 0.0,
+    "accuracy_overall_E_SCORE": 0.0,
+    "accuracy_overall_T_SCORE": 0.0,
+    "accuracy_overall_U_SCORE": 0.0,
+    "accuracy_overall_E_LABEL_RANGE": 0.0,
+    "accuracy_overall_T_LABEL_RANGE": 0.0,
+    "accuracy_overall_U_LABEL_RANGE": 0.0,
+    "accuracy_overall_E_RADIUS_RANGE": 0.0,
+    "accuracy_overall_T_RADIUS_RANGE": 0.0,
+    "accuracy_overall_U_RADIUS_RANGE": 0.0,
+    "accuracy_identical_CWE_E": 3.0150753768844223,
+    "accuracy_identical_CWE_T": 0.5025125628140703,
+    "accuracy_identical_CWE_U": 1.0050251256281406,
+    "accuracy_identical_severity_label": 8.542713567839195,
+    "accuracy_severity_score_exact_match": 0.5025125628140703,
+    "accuracy_severity_score_label_range": 8.040201005025125,
+    "accuracy_severity_score_radius_range": 2.512562814070352,
+    "ERRORS": 10,
+    "EQUAL_E_LABEL_counter": 0,
+    "EQUAL_T_LABEL_counter": 0,
+    "EQUAL_U_LABEL_counter": 0,
+    "EQUAL_E_SCORE_MATCH_counter": 0,
+    "EQUAL_T_SCORE_MATCH_counter": 0,
+    "EQUAL_U_SCORE_MATCH_counter": 0,
+    "EQUAL_E_LABEL_RANGE_counter": 0,
+    "EQUAL_T_LABEL_RANGE_counter": 0,
+    "EQUAL_U_LABEL_RANGE_counter": 0,
+    "EQUAL_E_RADIUS_RANGE_counter": 0,
+    "EQUAL_T_RADIUS_RANGE_counter": 0,
+    "EQUAL_U_RADIUS_RANGE_counter": 0,
+    "SEVERITY_LABEL_EQUAL_LABEL_counter": 17,
+    "SEVERITY_EQUAL_SCORE_EXACT_MATCH_counter": 1,
+    "SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter": 16,
+    "SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter": {
+        "0.5": 0,
+        "1": 0,
+        "2": 5
+    },
+    "CWE_IDENTICAL_E_counter": 6,
+    "CWE_IDENTICAL_T_counter": 1,
+    "CWE_IDENTICAL_U_counter": 2,
+    "CSE_GT_SUBSET_OF_E_counter": 2,
+    "CWE_GT_SUBSET_OF_T_counter": 17,
+    "CWE_GT_SUBSET_OF_U_counter": 22,
+    "CWE_E_SUBSET_OF_GT_counter": 0,
+    "CWE_T_SUBSET_OF_GT_counter": 0,
+    "CWE_U_SUBSET_OF_GT_counter": 0,
+    "CWE_EMPTY_E_counter": 127,
+    "CWE_EMPTY_T_counter": 109,
+    "CWE_EMPTY_U_counter": 108,
+    "CWE_NON_OVERLAPPED_E_counter": 53,
+    "CWE_NON_OVERLAPPED_T_counter": 62,
+    "CWE_NON_OVERLAPPED_U_counter": 56,
+    "CWE_OVERLAPPED_E_counter": 1,
+    "CWE_OVERLAPPED_T_counter": 0,
+    "CWE_OVERLAPPED_U_counter": 1,
+    "INVALID_INFERENCES_counter": 0,
+    "evaluations": [
+        {
+            "reference_id": 5,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 10,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 12,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 13,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 15,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 23,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 25,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 28,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 29,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 30,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 31,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 32,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 37,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 38,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 39,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 41,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 43,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 47,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 48,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 49,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 51,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 54,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 61,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 62,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 64,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 68,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 69,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 72,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 77,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "EMPTY_PR",
+                "U": "IDENTICAL"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 81,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 83,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 84,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 93,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 97,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 103,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_EXACT_MATCH",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 106,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 108,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 109,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 111,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 112,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 119,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 120,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 121,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 124,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 126,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 129,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 137,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 139,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 145,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 149,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "IDENTICAL",
+                "U": "IDENTICAL"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 152,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 153,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 154,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 158,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 159,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 162,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 163,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 164,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 166,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 167,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 168,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 169,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 172,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 173,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 175,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 176,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 178,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 180,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 181,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 182,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 183,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 184,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 186,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 192,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 193,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 197,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 199,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 201,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 205,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 211,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 217,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 218,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 221,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 225,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 226,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 227,
+            "cwe_equality_status": {
+                "E": "OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 229,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 233,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 235,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 237,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 238,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 241,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 242,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 244,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 246,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 250,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 253,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 258,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 260,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 261,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 263,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 267,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 271,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 272,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 274,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 277,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 280,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 283,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 284,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 287,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 290,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 294,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 298,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 300,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 301,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 302,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 308,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 311,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 312,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 313,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 314,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 316,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 317,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 319,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 320,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 327,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 328,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 329,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 330,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 332,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 337,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 343,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 347,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 349,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 351,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 353,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 354,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 355,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 358,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 359,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 360,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 361,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 364,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 365,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 366,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 367,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 370,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 371,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 375,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 376,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 378,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 379,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 382,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 385,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 387,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 390,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 393,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 394,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 399,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 402,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 406,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 407,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 408,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 409,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 417,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 418,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 420,
+            "cwe_equality_status": {
+                "E": "IDENTICAL",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 430,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 431,
+            "cwe_equality_status": {
+                "E": null,
+                "T": null,
+                "U": null
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 432,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 435,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 436,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 438,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 439,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_LABEL_RANGE",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 440,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 441,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 443,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 446,
+            "cwe_equality_status": {
+                "E": "GT_SUBSET_OF_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 449,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 450,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 453,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 456,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 457,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 458,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 459,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 463,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "IDENTICAL_IN_RADIUS_RANGE",
+                "load": 2
+            }
+        },
+        {
+            "reference_id": 467,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 470,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 472,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 474,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "GT_SUBSET_OF_PR",
+                "U": "GT_SUBSET_OF_PR"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 475,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 477,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 480,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 486,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 487,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 490,
+            "cwe_equality_status": {
+                "E": "NOT_OVERLAPPED",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 493,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        },
+        {
+            "reference_id": 495,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "NOT_OVERLAPPED",
+                "U": "NOT_OVERLAPPED"
+            },
+            "severity_label_equality_status": "NOT_IDENTICAL",
+            "severity_score_equality_status": {
+                "type": "NOT_IDENTICAL",
+                "load": null
+            }
+        },
+        {
+            "reference_id": 500,
+            "cwe_equality_status": {
+                "E": "EMPTY_PR",
+                "T": "EMPTY_PR",
+                "U": "EMPTY_PR"
+            },
+            "severity_label_equality_status": null,
+            "severity_score_equality_status": {
+                "type": null,
+                "load": null
+            }
+        }
+    ]
+}

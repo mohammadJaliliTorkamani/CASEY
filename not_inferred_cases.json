@@ -1,0 +1,2109 @@
+[
+    {
+        "id": 1,
+        "url": "https://github.com/apollographql/router/commit/9e9527c73c8f34fc8438b09066163cd42520f413",
+        "CVE": "CVE-2024-28101",
+        "date": "2024-03-21",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 2,
+        "url": "https://github.com/PrestaShop/PrestaShop/commit/444bd0dea581659918fe2067541b9863cf099dd5",
+        "CVE": "CVE-2024-26129",
+        "date": "2024-02-19",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 3,
+        "url": "https://github.com/hopsoft/turbo_boost-commands/commit/88af4fc0ac39cc1799d16c49fab52f6dfbcec9ba",
+        "CVE": "CVE-2024-28181",
+        "date": "2024-03-14",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 4,
+        "url": "https://github.com/livehelperchat/livehelperchat/commit/edef7a8387be718d0de2dfd1e722789afb0461bc",
+        "CVE": "CVE-2022-1530",
+        "date": "2022-04-29",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (38181)"
+    },
+    {
+        "id": 6,
+        "url": "https://github.com/DFIRKuiper/Kuiper/commit/94fa135153002f651f5526c55a7240e083db8d73",
+        "CVE": "CVE-2023-6908",
+        "date": "2023-12-18",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (18786)"
+    },
+    {
+        "id": 7,
+        "url": "https://github.com/aws/amazon-redshift-jdbc-driver/commit/0d354a5f26ca23f7cac4e800e3b8734220230319",
+        "CVE": "CVE-2024-32888",
+        "date": "2024-05-15",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 8,
+        "url": "https://github.com/lima-vm/lima/commit/01dbd4d9cabe692afa4517be3995771f0ebb38a5",
+        "CVE": "CVE-2023-32684",
+        "date": "2023-05-30",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 9,
+        "url": "https://github.com/vim/vim/commit/35a319b77f897744eec1155b736e9372c9c5575f",
+        "CVE": "CVE-2021-3875",
+        "date": "2021-10-15",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (70534)"
+    },
+    {
+        "id": 11,
+        "url": "https://github.com/gpac/gpac/commit/4ade98128cbc41d5115b97a41ca2e59529c8dd5f",
+        "CVE": "CVE-2023-23145",
+        "date": "2023-01-20",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (60818)"
+    },
+    {
+        "id": 14,
+        "url": "https://github.com/gpac/gpac/commit/047f96fb39e6bf70cb9f344093f5886e51dce0ac",
+        "CVE": "CVE-2023-2839",
+        "date": "2023-05-22",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (47176)"
+    },
+    {
+        "id": 16,
+        "url": "https://github.com/LittleBigRefresh/Bunkum/commit/6e109464ed9255f558182f001f475a378405ff76",
+        "CVE": "CVE-2023-45814",
+        "date": "2023-10-18",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 17,
+        "url": "https://github.com/instantsoft/icms2/commit/1dbc3e6c8fbf5d2dc551cb27fad0de3584dee40f",
+        "CVE": "CVE-2023-4189",
+        "date": "2023-08-05",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16422)"
+    },
+    {
+        "id": 18,
+        "url": "https://git.lighttpd.net/lighttpd/lighttpd1.4/commit/b18de6f9264f914f7bf493abd3b6059343548e50",
+        "CVE": "CVE-2022-41556",
+        "date": "2022-10-06",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 19,
+        "url": "https://github.com/usememos/memos/commit/c9bb2b785dc5852655405d5c9ab127a2d5aa3948",
+        "CVE": "CVE-2022-4847",
+        "date": "2022-12-29",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 20,
+        "url": "https://github.com/froxlor/froxlor/commit/94d9c3eedf31bc8447e3aa349e32880dde02ee52",
+        "CVE": "CVE-2023-3192",
+        "date": "2023-06-11",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 21,
+        "url": "https://github.com/containerd/containerd/commit/0c314901076a74a7b797a545d2f462285fdbb8c4",
+        "CVE": "CVE-2023-25153",
+        "date": "2023-02-16",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 22,
+        "url": "https://github.com/pyca/cryptography/commit/97d231672763cdb5959a3b191e692a362f1b9e55",
+        "CVE": "CVE-2024-26130",
+        "date": "2024-02-21",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 24,
+        "url": "https://github.com/HabitRPG/habitica/commit/5bcfdbe066e8c899f3ecf3fdcdbacc2ecba7f02f",
+        "CVE": "CVE-2022-23077",
+        "date": "2022-06-22",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 26,
+        "url": "https://github.com/GeoNode/geoserver-geonode-ext/commit/f44cb074d8361c0f4e625013675bdd7bd8203df6",
+        "CVE": "CVE-2023-28442",
+        "date": "2023-03-24",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 27,
+        "url": "https://github.com/archimatetool/archi/commit/bcab676beddfbeddffecacf755b6692f0b0151f1",
+        "CVE": "CVE-2023-40235",
+        "date": "2023-08-10",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 33,
+        "url": "https://github.com/ckan/ckan/commit/81b56c55e5e3651d7fcf9642cd5a489a9b62212c",
+        "CVE": "CVE-2024-27097",
+        "date": "2024-03-13",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 34,
+        "url": "https://github.com/directus/directus/commit/a5a1c26ac48795ed3212a4c51b9523588aff4fa0",
+        "CVE": "CVE-2024-27296",
+        "date": "2024-03-01",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 35,
+        "url": "https://github.com/MISP/MISP/commit/0108f1bde2117ac5c1e28d124128f60c8bb09a8e",
+        "CVE": "CVE-2022-29528",
+        "date": "2022-04-20",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 36,
+        "url": "https://github.com/e2guardian/e2guardian/commit/eae46a7e2a57103aadca903c4a24cca94dc502a2",
+        "CVE": "CVE-2021-44273",
+        "date": "2021-12-23",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 40,
+        "url": "https://github.com/bestpractical/rt/commit/70749bb66cb13dd70bd53340c371038a5f3ca57c",
+        "CVE": "CVE-2021-38562",
+        "date": "2021-10-18",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 42,
+        "url": "https://github.com/parse-community/parse-server/commit/ba2b0a9cb9a568817a114b132a4c2e0911d76df1",
+        "CVE": "CVE-2022-31083",
+        "date": "2022-06-17",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17358)"
+    },
+    {
+        "id": 44,
+        "url": "https://github.com/pear/pearweb/commit/6447c174a6b4bd76d28ecca8543cbd24bf394f99#diff-204452a70c5b0b0084097fcff6aee77c2c38cb77a41c4b2dd0065fda37a7489c",
+        "CVE": "CVE-2022-27157",
+        "date": "2022-04-15",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16483)"
+    },
+    {
+        "id": 45,
+        "url": "https://github.com/squid-cache/squid/commit/b70f864940225dfe69f9f653f948e787f99c3810",
+        "CVE": "CVE-2023-46724",
+        "date": "2023-11-01",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 46,
+        "url": "https://github.com/1j01/mind-map/commit/9617e6084dfeccd92079ab4d7f439300a4b24394",
+        "CVE": "CVE-2022-4581",
+        "date": "2022-12-17",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 50,
+        "url": "https://github.com/adriankumpf/teslamate/commit/fff6915e7364f83b3030f980d5743299c4e5260d",
+        "CVE": "CVE-2022-23126",
+        "date": "2022-01-24",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 52,
+        "url": "https://github.com/Netflix/dispatch/commit/b1942a4319f0de820d86b84a58ebc85398b97c70",
+        "CVE": "CVE-2023-40171",
+        "date": "2023-08-17",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 53,
+        "url": "https://github.com/pimcore/admin-ui-classic-bundle/commit/24660b6d5ad9cbcb037a48d4309a6024e9adf251",
+        "CVE": "CVE-2024-24822",
+        "date": "2024-02-07",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 55,
+        "url": "https://github.com/lestrrat-go/jwx/commit/64f2a229b8e18605f47361d292b526bdc4aee01c",
+        "CVE": "CVE-2023-49290",
+        "date": "2023-12-05",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 56,
+        "url": "https://github.com/MariaDB/server/commit/b1351c15946349f9daa7e5297fb2ac6f3139e4a8",
+        "CVE": "CVE-2022-31621",
+        "date": "2022-05-25",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 57,
+        "url": "https://github.com/OpencachingDeutschland/oc-server3/commit/a9f79c7da78cd24a7ef1d298e6bc86006972ea73",
+        "CVE": "CVE-2022-4586",
+        "date": "2022-12-17",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 58,
+        "url": "https://github.com/MISP/MISP/commit/bb3b7a7e91862742cae228c43b3091bad476dcc0",
+        "CVE": "CVE-2022-29531",
+        "date": "2022-04-20",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16657)"
+    },
+    {
+        "id": 59,
+        "url": "https://github.com/torvalds/linux/commit/cefa91b2332d7009bc0be5d951d6cbbf349f90f8",
+        "CVE": "CVE-2022-2639",
+        "date": "2022-09-01",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (32326)"
+    },
+    {
+        "id": 60,
+        "url": "https://github.com/radareorg/radare2/commit/637f4bd1af6752e28e0a9998e954e2e9ce6fa992",
+        "CVE": "CVE-2022-28068",
+        "date": "2023-08-22",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (37844)"
+    },
+    {
+        "id": 63,
+        "url": "https://github.com/snipe/snipe-it/commit/ff81e6d5366c2cfb15618793ad919ae4cbb3ac57",
+        "CVE": "CVE-2021-4018",
+        "date": "2021-12-01",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 65,
+        "url": "https://github.com/vgropp/bwm-ng/commit/9774f23bf78a6e6d3ae4cfe3d73bad34f2fdcd17",
+        "CVE": "CVE-2022-1341",
+        "date": "2022-04-18",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 66,
+        "url": "https://github.com/geotools/geotools/commit/4f70fa3234391dd0cda883a20ab0ec75688cba49",
+        "CVE": "CVE-2022-24818",
+        "date": "2022-04-13",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (44542)"
+    },
+    {
+        "id": 67,
+        "url": "https://github.com/andialbrecht/sqlparse/commit/b4a39d9850969b4e1d6940d32094ee0b42a2cf03",
+        "CVE": "CVE-2024-4340",
+        "date": "2024-04-30",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 70,
+        "url": "https://github.com/snapview/tungstenite-rs/commit/8b3ecd3cc0008145ab4bc8d0657c39d09db8c7e2",
+        "CVE": "CVE-2023-43669",
+        "date": "2023-09-21",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 71,
+        "url": "https://github.com/authzed/spicedb/commit/9bbd7d76b6eaba33fe0236014f9b175d21232999",
+        "CVE": "CVE-2023-29193",
+        "date": "2023-04-14",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 73,
+        "url": "https://github.com/gpac/gpac/commit/cd8a95c1efb8f5bfc950b86c2ef77b4c76f6b893",
+        "CVE": "CVE-2023-48013",
+        "date": "2023-11-15",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 74,
+        "url": "https://github.com/basecamp/trix/commit/1a5c68a14d48421fc368e30026f4a7918028b7ad",
+        "CVE": "CVE-2024-34341",
+        "date": "2024-05-07",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 75,
+        "url": "https://github.com/jquery-validation/jquery-validation/commit/5bbd80d27fc6b607d2f7f106c89522051a9fb0dd",
+        "CVE": "CVE-2022-31147",
+        "date": "2022-07-14",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (41643)"
+    },
+    {
+        "id": 76,
+        "url": "https://github.com/mruby/mruby/commit/b1d0296a937fe278239bdfac840a3fd0e93b3ee9",
+        "CVE": "CVE-2022-1286",
+        "date": "2022-04-10",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (24717)"
+    },
+    {
+        "id": 78,
+        "url": "https://github.com/francoisjacquet/rosariosis/commit/6433946abfb34324616e833b1c00d0b2450753be",
+        "CVE": "CVE-2023-2202",
+        "date": "2023-04-21",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (46919)"
+    },
+    {
+        "id": 79,
+        "url": "https://github.com/getgrav/grav/commit/e3b0aa0c502aad251c1b79d1ee973dcd93711f07",
+        "CVE": "CVE-2024-27923",
+        "date": "2024-03-21",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 80,
+        "url": "https://github.com/yiisoft/yii/commit/ed67b7cc57216557c5c595c6650cdd2d3aa41c52",
+        "CVE": "CVE-2022-41922",
+        "date": "2022-11-23",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 82,
+        "url": "https://github.com/hoppscotch/hoppscotch/commit/86ef1a4e143ea5bb0c7b309574127cc39d4faa74",
+        "CVE": "CVE-2022-0121",
+        "date": "2022-01-06",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 85,
+        "url": "https://github.com/harfbuzz/harfbuzz/commit/85be877925ddbf34f74a1229f3ca1716bb6170dc",
+        "CVE": "CVE-2023-25193",
+        "date": "2023-02-04",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 86,
+        "url": "https://github.com/tensorflow/tensorflow/commit/25d622ffc432acc736b14ca3904177579e733cc6",
+        "CVE": "CVE-2021-41222",
+        "date": "2021-11-05",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 87,
+        "url": "https://github.com/mintplex-labs/anything-llm/commit/dc3dfbf31495fe316b21ee184b9317b38101d30e",
+        "CVE": "CVE-2023-4898",
+        "date": "2023-09-12",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17388)"
+    },
+    {
+        "id": 88,
+        "url": "https://github.com/radareorg/radare2/commit/2b77b277d67ce061ee6ef839e7139ebc2103c1e3",
+        "CVE": "CVE-2022-1244",
+        "date": "2022-04-05",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (21288)"
+    },
+    {
+        "id": 89,
+        "url": "https://github.com/upx/upx/commit/779b648c5f6aa9b33f4728f79dd4d0efec0bf860",
+        "CVE": "CVE-2023-23457",
+        "date": "2023-01-12",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (71913)"
+    },
+    {
+        "id": 90,
+        "url": "https://git.spip.net/spip/medias/commit/13c293fabd35e2c152379522c29432423936cbba",
+        "CVE": "CVE-2021-44118",
+        "date": "2022-01-26",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 91,
+        "url": "https://github.com/babelouest/rhonabwy/commit/f9fd9a1c77e48b514ebb3baf0360f87eef3d846e",
+        "CVE": "CVE-2024-25714",
+        "date": "2024-02-11",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 92,
+        "url": "https://github.com/tensorflow/tensorflow/commit/a989426ee1346693cc015792f11d715f6944f2b8",
+        "CVE": "CVE-2022-29212",
+        "date": "2022-05-21",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 94,
+        "url": "https://github.com/qt/qtbase/commit/aaf1381eab6292aa0444a5eadcc24165b6e1c02d",
+        "CVE": "CVE-2023-24607",
+        "date": "2023-04-15",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 95,
+        "url": "https://github.com/lunary-ai/lunary/commit/0755dde1afc2a74ec23b55eee03e4416916cf48f",
+        "CVE": "CVE-2024-5128",
+        "date": "2024-06-06",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 96,
+        "url": "https://github.com/Matthias-Wandel/jhead/commit/64894dbc7d8e1e232e85f1cab25c64290b2fc167",
+        "CVE": "CVE-2022-28550",
+        "date": "2023-06-13",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 98,
+        "url": "https://github.com/pallets/werkzeug/commit/cf275f42acad1b5950c50ffe8ef58fe62cdce028",
+        "CVE": "CVE-2023-23934",
+        "date": "2023-02-14",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 99,
+        "url": "https://github.com/rust-ethereum/evm/commit/d8991ec727ad0fb64fe9957a3cd307387a6701e4",
+        "CVE": "CVE-2024-21629",
+        "date": "2024-01-02",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 100,
+        "url": "https://github.com/eProsima/Fast-DDS/commit/349227005827e8a67a0406b823138b5068cc47dc",
+        "CVE": "CVE-2023-39947",
+        "date": "2023-08-11",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 101,
+        "url": "https://github.com/pkp/pkp-lib/commit/992ca674e9fb705751b1cbf929a1856ebe29b30a",
+        "CVE": "CVE-2023-5893",
+        "date": "2023-11-01",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 102,
+        "url": "https://github.com/pimcore/pimcore/commit/746fac1a342841624f63ab13edcd340358e1bc04",
+        "CVE": "CVE-2023-0323",
+        "date": "2023-01-16",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 104,
+        "url": "https://github.com/alextselegidis/easyappointments/commit/75b24735767868344193fb2cc56e17ee4b9ac4be",
+        "CVE": "CVE-2023-2104",
+        "date": "2023-04-15",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 105,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/65ca06c51e7a1d5a579344c7272b2cc9a9a21126",
+        "CVE": "CVE-2023-29207",
+        "date": "2023-04-15",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 107,
+        "url": "https://github.com/containers/buildah/commit/e7e55c988c05dd74005184ceb64f097a0cfe645b",
+        "CVE": "CVE-2022-27651",
+        "date": "2022-04-04",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (40379)"
+    },
+    {
+        "id": 110,
+        "url": "https://github.com/glpi-project/glpi/commit/ac9f1f03c5d2545b7e290197dbfebc3f752f810e",
+        "CVE": "CVE-2022-24869",
+        "date": "2022-04-21",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (25261)"
+    },
+    {
+        "id": 113,
+        "url": "https://github.com/DCMTK/dcmtk/commit/a9697dfeb672b0b9412c00c7d36d801e27ec85cb",
+        "CVE": "CVE-2021-41690",
+        "date": "2022-06-28",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 114,
+        "url": "https://github.com/torvalds/linux/commit/112e66017bff7f2837030f34c2bc19501e9212d5",
+        "CVE": "CVE-2023-30456",
+        "date": "2023-04-10",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 115,
+        "url": "https://github.com/quill-mention/quill-mention/commit/e85262ddced0a7f0b6fc8350d236a68bd1e28385",
+        "CVE": "CVE-2023-26149",
+        "date": "2023-09-28",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 116,
+        "url": "https://github.com/vim/vim/commit/e2fa213cf571041dbd04ab0329303ffdc980678a",
+        "CVE": "CVE-2022-1898",
+        "date": "2022-05-27",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 117,
+        "url": "https://github.com/Combodo/iTop/commit/09be84f69da0fe44221f63b8c2db041bdf7dd7f9",
+        "CVE": "CVE-2023-47622",
+        "date": "2024-04-15",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 118,
+        "url": "https://github.com/nilsteampassnet/teampass/commit/241dbd4159a5d63b55af426464d30dbb53925705",
+        "CVE": "CVE-2023-3191",
+        "date": "2023-06-10",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (19248)"
+    },
+    {
+        "id": 122,
+        "url": "https://github.com/vim/vim/commit/e031fe90cf2e375ce861ff5e5e281e4ad229ebb9",
+        "CVE": "CVE-2021-4069",
+        "date": "2021-12-06",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (70946)"
+    },
+    {
+        "id": 123,
+        "url": "https://github.com/squidex/squidex/commit/2aca7621845ce18ed4065cba8e3d0fa68aaf02bf",
+        "CVE": "CVE-2023-3580",
+        "date": "2023-07-10",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 125,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/13875a6437d4525ac4aeea25918f2d2dffac9ee1",
+        "CVE": "CVE-2023-35156",
+        "date": "2023-06-23",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 127,
+        "url": "https://github.com/opnsense/core/commit/e800097d0c287bb665f0751a98a67c75ef7b45e5",
+        "CVE": "CVE-2023-39001",
+        "date": "2023-08-09",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 128,
+        "url": "https://github.com/pear/pearweb/commit/6447c174a6b4bd76d28ecca8543cbd24bf394f99",
+        "CVE": "CVE-2022-27158",
+        "date": "2022-04-15",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16483)"
+    },
+    {
+        "id": 130,
+        "url": "https://github.com/livebook-dev/livebook/commit/2e11b59f677c6ed3b6aa82dad412a8b3406ffdf1",
+        "CVE": "CVE-2023-35174",
+        "date": "2023-06-22",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 131,
+        "url": "https://github.com/net-snmp/net-snmp/commit/ce66eb97c17aa9a48bc079be7b65895266fa6775",
+        "CVE": "CVE-2022-24807",
+        "date": "2024-04-16",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 132,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/4896712ee6483da623f131be2e618f1f2b79cb8d",
+        "CVE": "CVE-2024-31988",
+        "date": "2024-04-10",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 133,
+        "url": "https://github.com/web3/web3.js/commit/8ed041c6635d807b3da8960ad49e125e3d1b0e80",
+        "CVE": "CVE-2024-21505",
+        "date": "2024-03-25",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 134,
+        "url": "https://github.com/jumpserver/jumpserver/commit/0a58bba59cd275bab8e0ae58bf4b359fbc5eb74a",
+        "CVE": "CVE-2023-42442",
+        "date": "2023-09-15",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 135,
+        "url": "https://github.com/linuxmint/warpinator/commit/5244c33d4c109ede9607b9d94461650410e2cddc",
+        "CVE": "CVE-2022-42725",
+        "date": "2022-10-10",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 136,
+        "url": "https://github.com/digitalbazaar/forge/commit/3f0b49a0573ef1bb7af7f5673c0cfebf00424df1",
+        "CVE": "CVE-2022-24771",
+        "date": "2022-03-18",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (27146)"
+    },
+    {
+        "id": 138,
+        "url": "https://github.com/vim/vim/commit/ef02f16609ff0a26ffc6e20263523424980898fe",
+        "CVE": "CVE-2022-1619",
+        "date": "2022-05-08",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (34594)"
+    },
+    {
+        "id": 140,
+        "url": "https://github.com/argoproj/argo-cd/commit/c514105af739eebedb9dbe89d8a6dd8dfc30bb2c",
+        "CVE": "CVE-2024-31990",
+        "date": "2024-04-15",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 141,
+        "url": "https://github.com/gofiber/fiber/commit/f0cd3b44b086544a37886232d0530601f2406c23",
+        "CVE": "CVE-2024-25124",
+        "date": "2024-02-21",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 142,
+        "url": "https://github.com/vim/vim/commit/58f9befca1fa172068effad7f2ea5a9d6a7b0cca",
+        "CVE": "CVE-2023-48234",
+        "date": "2023-11-16",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 143,
+        "url": "https://github.com/gpac/gpac/commit/2c055153d401b8c49422971e3a0159869652d3da",
+        "CVE": "CVE-2023-1654",
+        "date": "2023-03-27",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (92931)"
+    },
+    {
+        "id": 144,
+        "url": "https://github.com/tensorflow/tensorflow/commit/cf35502463a88ca7185a99daa7031df60b3c1c98",
+        "CVE": "CVE-2022-41888",
+        "date": "2022-11-18",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 146,
+        "url": "https://github.com/tensorflow/tensorflow/commit/448a16182065bd08a202d9057dd8ca541e67996c",
+        "CVE": "CVE-2022-23591",
+        "date": "2022-02-04",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 147,
+        "url": "https://github.com/bfabiszewski/libmobi/commit/c78e186739b50d156cb3da5d08d70294f0490853",
+        "CVE": "CVE-2021-3888",
+        "date": "2021-10-19",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 148,
+        "url": "https://github.com/FFmpeg/FFmpeg/commit/d2e8974699a9e35cc1a926bf74a972300d629cd5",
+        "CVE": "CVE-2024-22860",
+        "date": "2024-01-27",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 150,
+        "url": "https://github.com/causefx/organizr/commit/a09d834d995599756b62016af7026d2408ecf43a",
+        "CVE": "CVE-2022-1346",
+        "date": "2022-04-13",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (71814)"
+    },
+    {
+        "id": 151,
+        "url": "https://github.com/open5gs/open5gs/commit/7278714133422cee46c32c7523f81ec2cecad9e2",
+        "CVE": "CVE-2023-50019",
+        "date": "2024-01-02",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 155,
+        "url": "https://github.com/nasa/openmct/commit/abc93d0ec4b104dac1ea5f8a615d06e3ab78934a",
+        "CVE": "CVE-2022-23054",
+        "date": "2022-02-20",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 156,
+        "url": "https://github.com/metersphere/metersphere/commit/c59e381d368990214813085a1a4877c5ef865411",
+        "CVE": "CVE-2023-32699",
+        "date": "2023-05-30",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 157,
+        "url": "https://github.com/bigbluebutton/greenlight/commit/20fe1ee71b5703fcc4ed698a959ad224fed19623",
+        "CVE": "CVE-2022-36029",
+        "date": "2024-04-25",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 160,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/04e325d57d4bcb6ab79bddcafbb19032474c2a55",
+        "CVE": "CVE-2023-46732",
+        "date": "2023-11-06",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 161,
+        "url": "https://github.com/snipe/snipe-it/commit/cf14a0222c67472086cd08b2155f045edaf75f2e",
+        "CVE": "CVE-2022-0179",
+        "date": "2022-01-12",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 165,
+        "url": "https://github.com/binary-husky/gpt_academic/commit/8af6c0cab6d96f5c4520bec85b24802e6e823f35",
+        "CVE": "CVE-2024-31224",
+        "date": "2024-04-08",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 170,
+        "url": "https://github.com/vapor/vapor/commit/6c63226a4ab82ce53730eb1afb9ca63866fcf033",
+        "CVE": "CVE-2022-31019",
+        "date": "2022-06-09",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 171,
+        "url": "https://github.com/snoyberg/keter/commit/d41f3697926b231782a3ad8050f5af1ce5cc40b7",
+        "CVE": "CVE-2022-4877",
+        "date": "2023-01-05",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 174,
+        "url": "https://github.com/Icinga/icingaweb2-module-incubator/commit/db7dc49585fee0b4e96be666d7f6009a74a1ccb5",
+        "CVE": "CVE-2024-24819",
+        "date": "2024-02-09",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 177,
+        "url": "https://github.com/argoproj/argo-cd/commit/17f7f4f462bdb233e1b9b36f67099f41052d8cb0",
+        "CVE": "CVE-2022-31034",
+        "date": "2022-06-27",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16802)"
+    },
+    {
+        "id": 179,
+        "url": "https://github.com/janeczku/calibre-web/commit/32e27712f0f71fdec646add20cd78b4ce75acfce",
+        "CVE": "CVE-2021-25964",
+        "date": "2021-10-04",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (19396)"
+    },
+    {
+        "id": 185,
+        "url": "https://github.com/pjsip/pjproject/commit/8b621f192cae14456ee0b0ade52ce6c6f258af1e",
+        "CVE": "CVE-2021-43804",
+        "date": "2021-12-22",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 187,
+        "url": "https://github.com/nilsteampassnet/teampass/commit/79731553fa305d45dabb7a227f3074d56d7c94c1",
+        "CVE": "CVE-2023-3083",
+        "date": "2023-06-03",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (19982)"
+    },
+    {
+        "id": 188,
+        "url": "https://github.com/xwiki/xwiki-commons/commit/4a185e0594d90cd4916d60aa60bb4333dc5623b2",
+        "CVE": "CVE-2023-29201",
+        "date": "2023-04-15",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 189,
+        "url": "https://github.com/pubnub/javascript/commit/fb6cd0417cbb4ba87ea2d5d86a9c94774447e119",
+        "CVE": "CVE-2023-26154",
+        "date": "2023-12-06",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (113790)"
+    },
+    {
+        "id": 190,
+        "url": "https://github.com/delcroip/dolibarr_project_timesheet/commit/082282e9dab43963e6c8f03cfaddd7921de377f4",
+        "CVE": "CVE-2022-4766",
+        "date": "2022-12-27",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (24952)"
+    },
+    {
+        "id": 191,
+        "url": "https://github.com/vim/vim/commit/c99cbf8f289bdda5d4a77d7ec415850a520330ba",
+        "CVE": "CVE-2023-1175",
+        "date": "2023-03-04",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 194,
+        "url": "https://github.com/automattic/mongoose/commit/305ce4ff789261df7e3f6e72363d0703e025f80d",
+        "CVE": "CVE-2023-3696",
+        "date": "2023-07-17",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 195,
+        "url": "https://github.com/usememos/memos/commit/97b434722cf0abe3cfcad5ac9e3d520233bf1536",
+        "CVE": "CVE-2023-5036",
+        "date": "2023-09-18",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 196,
+        "url": "https://github.com/opencontainers/runc/commit/d72d057ba794164c3cce9451a00b72a78b25e1ae",
+        "CVE": "CVE-2021-43784",
+        "date": "2021-12-06",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (18720)"
+    },
+    {
+        "id": 198,
+        "url": "https://github.com/freeswitch/sofia-sip/commit/907f2ac0ee504c93ebfefd676b4632a3575908c9",
+        "CVE": "CVE-2022-31003",
+        "date": "2022-05-31",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 200,
+        "url": "https://github.com/TryGhost/Ghost/commit/690fbf3f7302ff3f77159c0795928bdd20f41205",
+        "CVE": "CVE-2023-40028",
+        "date": "2023-08-15",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 202,
+        "url": "https://github.com/misskey-dev/misskey/commit/38f9d1e76428bea47c5944c440eab25428c7d99e",
+        "CVE": "CVE-2023-24811",
+        "date": "2023-02-22",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 203,
+        "url": "https://github.com/thorsten/phpmyfaq/commit/1d73af34bf42764f9f9491c7ba5e9495d70e3ca5",
+        "CVE": "CVE-2022-4407",
+        "date": "2022-12-11",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 204,
+        "url": "https://github.com/jgraph/drawio/commit/b5dfeb238369d664fb06a95e2179236b0e75f366",
+        "CVE": "CVE-2022-3148",
+        "date": "2022-09-08",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (2724228)"
+    },
+    {
+        "id": 206,
+        "url": "https://github.com/freeswitch/sofia-sip/commit/da53e4fbcb138b080a75576dd49c1fff2ada2764",
+        "CVE": "CVE-2023-22741",
+        "date": "2023-01-19",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 207,
+        "url": "https://github.com/fusionpbx/fusionpbx/commit/0377b2152c0e59c8f35297f9a9b6ee335a62d963",
+        "CVE": "CVE-2021-43406",
+        "date": "2021-11-05",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 208,
+        "url": "https://github.com/liquibase/liquibase/commit/33d9d925082097fb1a3d2fc8e44423d964cd9381",
+        "CVE": "CVE-2022-0839",
+        "date": "2022-03-04",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 209,
+        "url": "https://github.com/tensorflow/tensorflow/commit/7019ce4f68925fd01cdafde26f8d8c938f47e6f9",
+        "CVE": "CVE-2022-21737",
+        "date": "2022-02-03",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 210,
+        "url": "https://github.com/usememos/memos/commit/3556ae4e651d9443dc3bb8a170dd3cc726517a53",
+        "CVE": "CVE-2022-4808",
+        "date": "2022-12-28",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17760)"
+    },
+    {
+        "id": 212,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/0d547181389f7941e53291af940966413823f61c",
+        "CVE": "CVE-2023-29523",
+        "date": "2023-04-19",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (74217)"
+    },
+    {
+        "id": 213,
+        "url": "https://github.com/TYPO3/typo3/commit/0005a6fd86ab97eff8bf2e3a5828bf0e7cb6263a",
+        "CVE": "CVE-2023-24814",
+        "date": "2023-02-07",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (44600)"
+    },
+    {
+        "id": 214,
+        "url": "https://github.com/git/git/commit/7b70e9efb18c2cc3f219af399bd384c5801ba1d7",
+        "CVE": "CVE-2024-32465",
+        "date": "2024-05-14",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 215,
+        "url": "https://github.com/pyload/pyload/commit/431ea6f0371d748df66b344a05ca1a8e0310cff3",
+        "CVE": "CVE-2023-0435",
+        "date": "2023-01-22",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (78784)"
+    },
+    {
+        "id": 216,
+        "url": "https://github.com/tidwall/gjson/commit/77a57fda87dca6d0d7d4627d512a630f89a91c96",
+        "CVE": "CVE-2021-42836",
+        "date": "2021-10-22",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (19586)"
+    },
+    {
+        "id": 219,
+        "url": "https://github.com/wireshark/wireshark/commit/c3720cff158c265dec2a0c6104b1d65954ae6bfd",
+        "CVE": "CVE-2024-24479",
+        "date": "2024-02-21",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 220,
+        "url": "https://github.com/torvalds/linux/commit/158a66b245739e15858de42c0ba60fcf3de9b8e6",
+        "CVE": "CVE-2022-47940",
+        "date": "2022-12-23",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (70933)"
+    },
+    {
+        "id": 222,
+        "url": "https://github.com/tauri-apps/tauri/commit/066c09a6ea06f42f550d090715e06beb65cd5564",
+        "CVE": "CVE-2023-34460",
+        "date": "2023-06-23",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 223,
+        "url": "https://github.com/getkirby/demokit/commit/d4877a6715cbf6517cb04ff57798851ffbd0cd7e",
+        "CVE": "CVE-2024-26484",
+        "date": "2024-02-22",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 224,
+        "url": "https://github.com/discourse/discourse/commit/b72b0dac10493d09f4f9eb8f3c3ce7817295e34e",
+        "CVE": "CVE-2022-24824",
+        "date": "2022-04-14",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 228,
+        "url": "https://github.com/nilsteampassnet/teampass/commit/1f51482a0c4d152ca876844212b0f8f3cb9387af",
+        "CVE": "CVE-2023-2859",
+        "date": "2023-05-24",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (27927)"
+    },
+    {
+        "id": 230,
+        "url": "https://github.com/containerd/imgcrypt/commit/6fdd9818a4d8142107b7ecd767d839c9707700d9",
+        "CVE": "CVE-2022-24778",
+        "date": "2022-03-25",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 231,
+        "url": "https://github.com/Combodo/iTop/commit/b6fac4b411b8d145fc30fa35c66b51243eafd06b",
+        "CVE": "CVE-2022-24780",
+        "date": "2022-04-05",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (18696)"
+    },
+    {
+        "id": 232,
+        "url": "https://github.com/torvalds/linux/commit/1ba5bf993c6a3142e18e68ea6452b347f9cb5635",
+        "CVE": "CVE-2023-3106",
+        "date": "2023-07-12",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (24793)"
+    },
+    {
+        "id": 234,
+        "url": "https://github.com/thorsten/phpmyfaq/commit/ae6c1d8c3eab05d6e2227c7a9998707f4f891514",
+        "CVE": "CVE-2023-1762",
+        "date": "2023-03-31",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 236,
+        "url": "https://github.com/RIOT-OS/RIOT/commit/0c522075445a62ce3102e141573ecc2788521897",
+        "CVE": "CVE-2023-24825",
+        "date": "2023-05-30",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 239,
+        "url": "https://github.com/rust-lang/regex/commit/ae70b41d4f46641dbc45c7a4f87954aea356283e",
+        "CVE": "CVE-2022-24713",
+        "date": "2022-03-08",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 240,
+        "url": "https://github.com/rizinorg/rz-libdemangle/commit/51d016750e704b27ab8ace23c0f72acabca67018",
+        "CVE": "CVE-2023-40022",
+        "date": "2023-08-24",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (28434)"
+    },
+    {
+        "id": 243,
+        "url": "https://github.com/OpenOLAT/OpenOLAT/commit/23e6212e9412c3b099436159b8c8935321c91872",
+        "CVE": "CVE-2024-28198",
+        "date": "2024-03-11",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 245,
+        "url": "https://github.com/WeblateOrg/weblate/commit/f6753a1a1c63fade6ad418fbda827c6750ab0bda",
+        "CVE": "CVE-2022-24710",
+        "date": "2022-02-25",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16706)"
+    },
+    {
+        "id": 247,
+        "url": "https://github.com/PostHog/posthog/commit/22bd5942638d5d9bc4bd603a9bfe8f8a95572292",
+        "CVE": "CVE-2023-46746",
+        "date": "2023-12-01",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16810)"
+    },
+    {
+        "id": 248,
+        "url": "https://github.com/YAFNET/YAFNET/commit/2237a9d552e258a43570bb478a92a5505e7c8797",
+        "CVE": "CVE-2023-0549",
+        "date": "2023-01-27",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 249,
+        "url": "https://git.spip.net/spip/medias/commit/3014b845da2dd8ad15ff04b50fd9dbba388a9ca2",
+        "CVE": "CVE-2022-26846",
+        "date": "2022-03-10",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 251,
+        "url": "https://github.com/tensorflow/tensorflow/commit/e952a89b7026b98fe8cbe626514a93ed68b7c510",
+        "CVE": "CVE-2022-23567",
+        "date": "2022-02-03",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 252,
+        "url": "https://github.com/Combodo/iTop/commit/34ba4fa0ce99534f751d9f170fe0eda103e20c72",
+        "CVE": "CVE-2023-47123",
+        "date": "2024-04-15",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 254,
+        "url": "https://github.com/cobbler/cobbler/commit/d8f60bbf14a838c8c8a1dba98086b223e35fe70a",
+        "CVE": "CVE-2021-40325",
+        "date": "2021-10-04",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 255,
+        "url": "https://github.com/microweber/microweber/commit/dbd37dda91911360db23269897c737e0abae2c24",
+        "CVE": "CVE-2022-2130",
+        "date": "2022-06-20",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 256,
+        "url": "https://github.com/shopware/platform/commit/89d1ea154689cb6202e0d3a0ceeae0febb0c09e1",
+        "CVE": "CVE-2023-22731",
+        "date": "2023-01-17",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 257,
+        "url": "https://github.com/ScratchVerifier/ScratchOAuth2/commit/a91879bd58fa83b09283c0708a1864cdf067c64a",
+        "CVE": "CVE-2021-46250",
+        "date": "2022-02-15",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 259,
+        "url": "https://github.com/tensorflow/tensorflow/commit/e5272d4204ff5b46136a1ef1204fc00597e21837",
+        "CVE": "CVE-2021-41199",
+        "date": "2021-11-05",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 262,
+        "url": "https://github.com/facebook/hermes/commit/5b6255ae049fa4641791e47fad994e8e8c4da374",
+        "CVE": "CVE-2022-35289",
+        "date": "2022-10-11",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 264,
+        "url": "https://github.com/postgres/postgres/commit/28e24125541545483093819efae9bca603441951",
+        "CVE": "CVE-2021-23214",
+        "date": "2022-03-04",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 265,
+        "url": "https://github.com/mintplex-labs/anything-llm/commit/49f30e051c9f6e28977d57d0e5f49c1294094e41",
+        "CVE": "CVE-2024-3110",
+        "date": "2024-06-06",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 266,
+        "url": "https://www.github.com/getgrav/grav/commit/9d6a2dba09fd4e56f5cdfb9a399caea355bfeb83",
+        "CVE": "CVE-2023-34448",
+        "date": "2023-06-14",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 268,
+        "url": "https://github.com/thorsten/phpmyfaq/commit/e7599d49b0ece7ceef3a4e8d334782cc3df98be8",
+        "CVE": "CVE-2023-2752",
+        "date": "2023-05-17",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 269,
+        "url": "https://github.com/modoboa/modoboa/commit/8e14ac93669df4f35fcdebd55dc9d2f0fed3ed48",
+        "CVE": "CVE-2023-0398",
+        "date": "2023-01-19",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 270,
+        "url": "https://github.com/kindspells/astro-shield/commit/1221019306f501bf5fa9bcfb5a23a2321d34ba0a",
+        "CVE": "CVE-2024-30250",
+        "date": "2024-04-04",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 273,
+        "url": "https://github.com/lunary-ai/lunary/commit/67eaefe1c77c882c628780940c704a117b561d51",
+        "CVE": "CVE-2024-1643",
+        "date": "2024-04-10",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 275,
+        "url": "https://github.com/vim/vim/commit/baefde14550231f6468ac2ed2ed495bc381c0c92",
+        "CVE": "CVE-2022-2344",
+        "date": "2022-07-08",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (39127)"
+    },
+    {
+        "id": 276,
+        "url": "https://github.com/thm-mni-ii/feedbacksystem/commit/8d896125263e1efb1b70990987c7704426325bcf",
+        "CVE": "CVE-2023-37468",
+        "date": "2023-07-13",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 278,
+        "url": "https://github.com/RIOT-OS/RIOT/commit/31c6191f6196f1a05c9765cffeadba868e3b0723",
+        "CVE": "CVE-2023-33974",
+        "date": "2023-05-30",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (19251)"
+    },
+    {
+        "id": 279,
+        "url": "https://github.com/mgallegos/laravel-jqgrid/commit/fbc2d94f43d0dc772767a5bdb2681133036f935e",
+        "CVE": "CVE-2021-4262",
+        "date": "2022-12-19",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 281,
+        "url": "https://github.com/openedx/xblock-drag-and-drop-v2/commit/68887d1b4a44325d2de7573d450e41129ba98b1a",
+        "CVE": "CVE-2022-46147",
+        "date": "2022-11-28",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 282,
+        "url": "https://github.com/sigp/rust-yamux/commit/6689e227a48258a52347cd1d984adfc94afc6f7a",
+        "CVE": "CVE-2024-32984",
+        "date": "2024-05-01",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 285,
+        "url": "https://github.com/mlflow/mlflow/commit/438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+        "CVE": "CVE-2024-3573",
+        "date": "2024-04-16",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 286,
+        "url": "https://github.com/mde/ejs/commit/e469741dca7df2eb400199e1cdb74621e3f89aa5",
+        "CVE": "CVE-2024-33883",
+        "date": "2024-04-28",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 288,
+        "url": "https://github.com/mastodon/mastodon/commit/68eaa804c9bafdc5f798e114e9ba00161425dd71",
+        "CVE": "CVE-2024-25619",
+        "date": "2024-02-14",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 289,
+        "url": "https://github.com/weseek/growi/commit/b584e2a47ee3c8ce1d8ef38238302825c015327e",
+        "CVE": "CVE-2022-1236",
+        "date": "2022-04-05",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 291,
+        "url": "https://github.com/mruby/mruby/commit/ae3c99767a27f5c6c584162e2adc6a5d0eb2c54e",
+        "CVE": "CVE-2022-0481",
+        "date": "2022-02-04",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (30073)"
+    },
+    {
+        "id": 292,
+        "url": "https://github.com/LibreDWG/libredwg/commit/c8cf03ce4c2315b146caf582ea061c0460193bcc",
+        "CVE": "CVE-2023-26157",
+        "date": "2024-01-02",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (20215)"
+    },
+    {
+        "id": 293,
+        "url": "https://github.com/openfga/openfga/commit/087ce392595f3c319ab3028b5089118ea4063452",
+        "CVE": "CVE-2023-35933",
+        "date": "2023-06-26",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (21850)"
+    },
+    {
+        "id": 295,
+        "url": "https://github.com/matter-labs/era-compiler-solidity/commit/46ce047b51576495779b9f67534207d8154eab79",
+        "CVE": "CVE-2024-35229",
+        "date": "2024-05-27",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 296,
+        "url": "https://github.com/openpgpjs/openpgpjs/commit/6b43e02a254853f5ff508ebd1b07541f78b7c566",
+        "CVE": "CVE-2023-41037",
+        "date": "2023-08-29",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 297,
+        "url": "https://github.com/instantsoft/icms2/commit/d0aeeaf5979fbdbf80dc3a3227d6c58442ab7487",
+        "CVE": "CVE-2023-4879",
+        "date": "2023-09-10",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (24418)"
+    },
+    {
+        "id": 299,
+        "url": "https://github.com/glpi-project/glpi/commit/e66a0dfe697cbd4b3ec22736a8f8fd025a28f978",
+        "CVE": "CVE-2022-31143",
+        "date": "2022-09-14",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (58029)"
+    },
+    {
+        "id": 303,
+        "url": "https://github.com/mhenrixon/sidekiq-unique-jobs/commit/ec3afd920c1b55843c72f748a87baac7f8be82ed",
+        "CVE": "CVE-2024-25122",
+        "date": "2024-02-13",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 304,
+        "url": "https://github.com/torvalds/linux/commit/6709d4b7bc2e079241fdef15d1160581c5261c10",
+        "CVE": "CVE-2023-3863",
+        "date": "2023-07-24",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16820)"
+    },
+    {
+        "id": 305,
+        "url": "https://github.com/helm/helm/commit/bb4cc9125503a923afb7988f3eb478722a8580af",
+        "CVE": "CVE-2024-26147",
+        "date": "2024-02-21",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 306,
+        "url": "https://github.com/stanfordnlp/corenlp/commit/5d83f1e8482ca304db8be726cad89554c88f136a",
+        "CVE": "CVE-2021-3869",
+        "date": "2021-10-19",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 307,
+        "url": "https://gitee.com/dromara/J2EEFAST/commit/7a9e1a00e3329fdc0ae05f7a8257cce77037134d",
+        "CVE": "CVE-2023-2475",
+        "date": "2023-05-02",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 309,
+        "url": "https://github.com/rack/rack/commit/4849132bef471adb21131980df745f4bb84de2d9",
+        "CVE": "CVE-2024-26141",
+        "date": "2024-02-29",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 310,
+        "url": "https://github.com/clinical-genomics/scout/commit/952a2e2319af2d95d22b017a561730feac086ff1",
+        "CVE": "CVE-2022-1554",
+        "date": "2022-05-03",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 315,
+        "url": "https://github.com/smarty-php/smarty/commit/0be92bc8a6fb83e6e0d883946f7e7c09ba4e857a",
+        "CVE": "CVE-2024-35226",
+        "date": "2024-05-28",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 318,
+        "url": "https://github.com/kareadita/kavita/commit/9c31f7e7c81b919923cb2e3857439ec0d16243e4",
+        "CVE": "CVE-2022-2756",
+        "date": "2022-08-10",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 321,
+        "url": "https://github.com/openrazer/openrazer/commit/33aa7f07d54ae066f201c6d298cb4a2181cb90e6",
+        "CVE": "CVE-2022-23467",
+        "date": "2022-12-05",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 322,
+        "url": "https://github.com/vim/vim/commit/1e56bda9048a9625bce6e660938c834c5c15b07d",
+        "CVE": "CVE-2022-2580",
+        "date": "2022-08-01",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 323,
+        "url": "https://github.com/puma/puma/commit/5fc43d73b6ff193325e657a24ed76dec79133e93",
+        "CVE": "CVE-2024-21647",
+        "date": "2024-01-08",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 324,
+        "url": "https://github.com/FreeRDP/FreeRDP/commit/626d10a94a88565d957ddc30768ed08b320049a7",
+        "CVE": "CVE-2024-32662",
+        "date": "2024-04-23",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 325,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/3c9e4bb04286de94ad24854026a09fa967538e31",
+        "CVE": "CVE-2024-31982",
+        "date": "2024-04-10",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 326,
+        "url": "https://github.com/yarnpkg/yarn/commit/67fcce88935e45092ffa2674c08053f1ef5268a1",
+        "CVE": "CVE-2021-4435",
+        "date": "2024-02-04",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 331,
+        "url": "https://github.com/esphome/esphome/commit/d814ed1d4adc71fde47c4df41215bee449884513",
+        "CVE": "CVE-2024-27081",
+        "date": "2024-02-26",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 333,
+        "url": "https://github.com/kphrx/pleroma/commit/2c795094535537a8607cc0d3b7f076a609636f40",
+        "CVE": "CVE-2023-5588",
+        "date": "2023-10-15",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 334,
+        "url": "https://github.com/ampache/ampache/commit/d3191503ca856dfe0b33d7cb17717ffd480046cb",
+        "CVE": "CVE-2023-0606",
+        "date": "2023-02-01",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17280)"
+    },
+    {
+        "id": 335,
+        "url": "https://github.com/apollographql/router/commit/b295c103dd86c57c848397d32e8094edfa8502aa",
+        "CVE": "CVE-2023-41317",
+        "date": "2023-09-05",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 336,
+        "url": "https://github.com/torvalds/linux/commit/153695d36ead0ccc4d0256953c751cabf673e621",
+        "CVE": "CVE-2023-1195",
+        "date": "2023-05-18",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 338,
+        "url": "https://github.com/follow-redirects/follow-redirects/commit/8b347cbcef7c7b72a6e9be20f5710c17d6163c22",
+        "CVE": "CVE-2022-0155",
+        "date": "2022-01-10",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (19486)"
+    },
+    {
+        "id": 339,
+        "url": "https://github.com/torvalds/linux/commit/3c4f8333b582487a2d1e02171f1465531cde53e3",
+        "CVE": "CVE-2023-6546",
+        "date": "2023-12-21",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (37090)"
+    },
+    {
+        "id": 340,
+        "url": "https://github.com/chbrown/rfc6902/commit/c006ce9faa43d31edb34924f1df7b79c137096cf",
+        "CVE": "CVE-2021-4245",
+        "date": "2022-12-15",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 341,
+        "url": "https://github.com/PrestaShop/productcomments/commit/314456d739155aa71f0b235827e8e0f24b97c26b",
+        "CVE": "CVE-2022-35933",
+        "date": "2022-09-02",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 342,
+        "url": "https://github.com/thorsten/phpmyfaq/commit/40515c74815ace394ab23c6c19cbb33fd49059cb",
+        "CVE": "CVE-2023-0789",
+        "date": "2023-02-12",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 344,
+        "url": "https://github.com/Blosc/c-blosc2/commit/425e8a9a59d49378d57e2116b6c9b0190a5986f5",
+        "CVE": "CVE-2023-37185",
+        "date": "2023-12-25",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 345,
+        "url": "https://github.com/HumanSignal/label-studio/commit/5df9ae3828b98652e9fa290a19f4deedf51ef6c8",
+        "CVE": "CVE-2024-26152",
+        "date": "2024-02-22",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 346,
+        "url": "https://github.com/glpi-project/glpi/commit/1aa9fcc4741a46fa5a9f11d71b409b911ffc190f",
+        "CVE": "CVE-2022-24868",
+        "date": "2022-04-21",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (49632)"
+    },
+    {
+        "id": 348,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/59ccca24a8465a19f40c51d65fcc2c09c1edea16",
+        "CVE": "CVE-2022-41934",
+        "date": "2022-11-23",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 350,
+        "url": "https://github.com/gatsbyjs/gatsby/commit/fc22f4ba3ad7ca5fb3592f38f4f0ca8ae60b4bf7",
+        "CVE": "CVE-2023-34238",
+        "date": "2023-06-08",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 352,
+        "url": "https://github.com/mlflow/mlflow/commit/5139b1087d686fa52e2b087e09da66aff86297b1",
+        "CVE": "CVE-2023-6940",
+        "date": "2023-12-19",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 356,
+        "url": "https://github.com/tensorflow/tensorflow/commit/002408c3696b173863228223d535f9de72a101a9",
+        "CVE": "CVE-2022-21730",
+        "date": "2022-02-03",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 357,
+        "url": "https://github.com/DSpace/DSpace/commit/c3bea16ab911606e15ae96c97a1575e1ffb14f8a",
+        "CVE": "CVE-2021-41189",
+        "date": "2021-10-29",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 362,
+        "url": "https://git.ffmpeg.org/gitweb/ffmpeg.git/commit/13c13109759090b7f7182480d075e13b36ed8edd",
+        "CVE": "CVE-2022-3965",
+        "date": "2022-11-13",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 363,
+        "url": "https://github.com/nginx/njs/commit/404553896792b8f5f429dc8852d15784a59d8d3e",
+        "CVE": "CVE-2022-35173",
+        "date": "2022-08-18",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (38688)"
+    },
+    {
+        "id": 368,
+        "url": "https://github.com/snipe/snipe-it/commit/321be4733d3997fc738f0118e1b9af5905f95439",
+        "CVE": "CVE-2022-0611",
+        "date": "2022-02-16",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 369,
+        "url": "https://github.com/MISP/MISP/commit/01120163a6b4d905029d416e7305575df31df8af",
+        "CVE": "CVE-2022-29534",
+        "date": "2022-04-20",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (29283)"
+    },
+    {
+        "id": 372,
+        "url": "https://github.com/TandoorRecipes/recipes/commit/7b2117c0190d4f541ba4cc7ee4122f04738c4ac6",
+        "CVE": "CVE-2022-23073",
+        "date": "2022-06-21",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 373,
+        "url": "https://github.com/usememos/memos/commit/05b41804e33a34102f1f75bb2d69195dda6a1210",
+        "CVE": "CVE-2022-4734",
+        "date": "2022-12-27",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 374,
+        "url": "https://github.com/OpenTSDB/opentsdb/commit/fa88d3e4b5369f9fb73da384fab0b23e246309ba",
+        "CVE": "CVE-2023-36812",
+        "date": "2023-06-30",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16824)"
+    },
+    {
+        "id": 377,
+        "url": "https://github.com/francoisjacquet/rosariosis/commit/09d5afaa6be07688ca1a7ac3b755b5438109e986",
+        "CVE": "CVE-2023-2665",
+        "date": "2023-05-12",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17089)"
+    },
+    {
+        "id": 380,
+        "url": "https://github.com/glpi-project/glpi/commit/730c3db29a1edc32f9b9d1e2a940e90a0211ab26",
+        "CVE": "CVE-2024-31456",
+        "date": "2024-05-07",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 381,
+        "url": "https://github.com/phpbb/phpbb/commit/ccf6e6c255d38692d72fcb613b113e6eaa240aac",
+        "CVE": "CVE-2023-5917",
+        "date": "2023-11-02",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 383,
+        "url": "https://github.com/canonical/cloud-init/commit/b794d426b9ab43ea9d6371477466070d86e10668",
+        "CVE": "CVE-2021-3429",
+        "date": "2023-04-19",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (23538)"
+    },
+    {
+        "id": 384,
+        "url": "https://github.com/pyca/cryptography/commit/f09c261ca10a31fe41b1262306db7f8f1da0e48a",
+        "CVE": "CVE-2023-49083",
+        "date": "2023-11-29",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17478)"
+    },
+    {
+        "id": 386,
+        "url": "https://github.com/glpi-project/glpi/commit/9953a644777e4167b06db9e14fc93b945a557be5",
+        "CVE": "CVE-2022-31068",
+        "date": "2022-06-28",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 388,
+        "url": "https://github.com/torvalds/linux/commit/427215d85e8d1476da1a86b8d67aceb485eb3631",
+        "CVE": "CVE-2021-3732",
+        "date": "2022-03-10",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (31851)"
+    },
+    {
+        "id": 389,
+        "url": "https://github.com/Studio-42/elFinder/commit/3b758495538a448ac8830ee3559e7fb2c260c6db",
+        "CVE": "CVE-2022-26960",
+        "date": "2022-03-21",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (65501)"
+    },
+    {
+        "id": 391,
+        "url": "https://github.com/yetiforcecompany/yetiforcecrm/commit/bf69c427260011ffca42f7b6935bb54080c54124",
+        "CVE": "CVE-2022-1411",
+        "date": "2022-05-05",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (16701)"
+    },
+    {
+        "id": 392,
+        "url": "https://github.com/saleor/saleor/commit/96e04c092ddcac17b14f2e31554aa02d9006d0ce",
+        "CVE": "CVE-2022-39275",
+        "date": "2022-10-06",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17363)"
+    },
+    {
+        "id": 395,
+        "url": "https://github.com/composer/composer/commit/6bd43dff859c597c09bd03a7e7d6443822d0a396",
+        "CVE": "CVE-2024-35242",
+        "date": "2024-06-10",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 396,
+        "url": "https://github.com/FreeRDP/FreeRDP/commit/1a755d898ddc028cc818d0dd9d49d5acff4c44bf",
+        "CVE": "CVE-2024-32658",
+        "date": "2024-04-23",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 397,
+        "url": "https://github.com/star7th/showdoc/commit/335afc7ed6d6627c3d0434aa9acc168c77117614",
+        "CVE": "CVE-2021-3989",
+        "date": "2021-12-01",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (84771)"
+    },
+    {
+        "id": 398,
+        "url": "https://github.com/linuxmint/xreader/commit/141f1313745b9cc73670df51ac145165efcbb14a",
+        "CVE": "CVE-2023-44451",
+        "date": "2024-05-03",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 400,
+        "url": "https://github.com/nginx/njs/commit/e673ae41a998d1391bd562edb2ed6d49db7cc716",
+        "CVE": "CVE-2022-27008",
+        "date": "2022-04-14",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (20276)"
+    },
+    {
+        "id": 401,
+        "url": "https://github.com/mintplex-labs/anything-llm/commit/e1dcd5ded010b03abd6aa32d1bf0668a48e38e17",
+        "CVE": "CVE-2024-0550",
+        "date": "2024-02-28",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 403,
+        "url": "https://github.com/squid-cache/squid/commit/6ea12e8fb590ac6959e9356a81aa3370576568c3",
+        "CVE": "CVE-2023-46728",
+        "date": "2023-11-06",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 404,
+        "url": "https://github.com/umbraco/UmbracoIdentityExtensions/commit/e792429f9d1fa25c1ba4f7a61d23ee02fedd6dc9",
+        "CVE": "CVE-2023-32312",
+        "date": "2023-06-09",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 405,
+        "url": "https://github.com/RIAEvangelist/node-ipc/commit/847047cf7f81ab08352038b2204f0e7633449580",
+        "CVE": "CVE-2022-23812",
+        "date": "2022-03-16",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 410,
+        "url": "https://github.com/pkp/ojs/commit/99a9f393190383454aa5ddffedffc89596f6c682",
+        "CVE": "CVE-2023-5626",
+        "date": "2023-10-18",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 411,
+        "url": "https://github.com/git/git/commit/528290f8c61222433a8cf02fb7cfffa8438432b4",
+        "CVE": "CVE-2023-29007",
+        "date": "2023-04-25",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 412,
+        "url": "https://github.com/TYPO3/typo3/commit/2832e2f51f929aeddb5de7d667538a33ceda8156",
+        "CVE": "CVE-2024-34356",
+        "date": "2024-05-14",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 413,
+        "url": "https://github.com/sudo-project/sudo/commit/7873f8334c8d31031f8cfa83bd97ac6029309e4f",
+        "CVE": "CVE-2023-42465",
+        "date": "2023-12-22",
+        "reason": "The record does not not meet the criteria. EMPTY_OR_UNKNOWN_GT_CWEs"
+    },
+    {
+        "id": 414,
+        "url": "https://github.com/strapi/strapi/commit/a0da7e73e1496d835fe71a2febb14f70170135c7",
+        "CVE": "CVE-2024-31217",
+        "date": "2024-06-12",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 415,
+        "url": "https://git.ffmpeg.org/gitweb/ffmpeg.git/commit/92f9b28ed84a77138105475beba16c146bdaf984",
+        "CVE": "CVE-2022-3964",
+        "date": "2022-11-13",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 416,
+        "url": "https://github.com/MISP/MISP/commit/09fb0cba65eab9341e81f1cbebc2ae10be34a2b7",
+        "CVE": "CVE-2023-41098",
+        "date": "2023-08-23",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 419,
+        "url": "https://github.com/epiphyt/embed-privacy/commit/f80929992b2a5a66f4f4953cd6f46cc227154a5c",
+        "CVE": "CVE-2023-48300",
+        "date": "2023-11-20",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (21266)"
+    },
+    {
+        "id": 421,
+        "url": "https://github.com/nilsteampassnet/teampass/commit/39b774cba118ca5383b0a51a71b1e7dea2761927",
+        "CVE": "CVE-2023-2516",
+        "date": "2023-05-05",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (43886)"
+    },
+    {
+        "id": 422,
+        "url": "https://github.com/dolibarr/dolibarr/commit/7c1eac9774bd1fed0b7b4594159f2ac2d12a4011",
+        "CVE": "CVE-2022-4093",
+        "date": "2022-11-21",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (32512)"
+    },
+    {
+        "id": 423,
+        "url": "https://github.com/pimcore/pimcore/commit/58012d0e3b8b926fb54eccbd64ec5c993b30c22c",
+        "CVE": "CVE-2023-38708",
+        "date": "2023-08-04",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 424,
+        "url": "https://github.com/vyperlang/vyper/commit/851f7a1b3aa2a36fd041e3d0ed38f9355a58c8ae",
+        "CVE": "CVE-2023-30629",
+        "date": "2023-04-24",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (21742)"
+    },
+    {
+        "id": 425,
+        "url": "https://github.com/tensorflow/tensorflow/commit/6104f0d4091c260ce9352f9155f7e9b725eab012",
+        "CVE": "CVE-2022-36016",
+        "date": "2022-09-16",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 426,
+        "url": "https://github.com/torvalds/linux/commit/ba953a9d89a00c078b85f4b190bc1dde66fe16b5",
+        "CVE": "CVE-2022-3028",
+        "date": "2022-08-31",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 427,
+        "url": "https://github.com/openemr/openemr/commit/bb4244c83a74628faafabc0598366f49863914a9",
+        "CVE": "CVE-2023-2674",
+        "date": "2023-05-12",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 428,
+        "url": "https://github.com/gpac/gpac/commit/6f28c4cd607d83ce381f9b4a9f8101ca1e79c611",
+        "CVE": "CVE-2023-2837",
+        "date": "2023-05-22",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (20218)"
+    },
+    {
+        "id": 429,
+        "url": "https://github.com/bookstackapp/bookstack/commit/cb0d674a71449de883713db2fcdccb6e108992ad",
+        "CVE": "CVE-2021-4194",
+        "date": "2022-01-06",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 433,
+        "url": "https://github.com/usememos/memos/commit/3556ae4e651d9443dc3bb8a170dd3cc726517a53",
+        "CVE": "CVE-2022-4811",
+        "date": "2022-12-28",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17760)"
+    },
+    {
+        "id": 434,
+        "url": "https://github.com/star7th/showdoc/commit/818d7fe731f452acccacf731ce47ec27ad68049c",
+        "CVE": "CVE-2022-0880",
+        "date": "2022-03-12",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 437,
+        "url": "https://github.com/automattic/mongoose/commit/a45cfb6b0ce0067ae9794cfa80f7917e1fb3c6f8",
+        "CVE": "CVE-2022-2564",
+        "date": "2022-07-28",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 442,
+        "url": "https://github.com/vim/vim/commit/0b5b06cb4777d1401fdf83e7d48d287662236e7e",
+        "CVE": "CVE-2021-3927",
+        "date": "2021-11-05",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 444,
+        "url": "https://github.com/vim/vim/commit/3558afe9e9e904cabb8475392d859f2d2fc21041",
+        "CVE": "CVE-2022-3491",
+        "date": "2022-12-03",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (20100)"
+    },
+    {
+        "id": 445,
+        "url": "https://github.com/netty/netty/commit/0d0c6ed782d13d423586ad0c71737b2c7d02058c",
+        "CVE": "CVE-2024-29025",
+        "date": "2024-03-25",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 447,
+        "url": "https://github.com/beancount/fava/commit/dccfb6a2f4567f35ce2e9a78e24f92ebf946bc9b",
+        "CVE": "CVE-2022-2523",
+        "date": "2022-07-25",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 448,
+        "url": "https://github.com/ckan/ckan-docker-base/commit/5483c46ce9b518a4e1b626ef7032cce2c1d75c7d",
+        "CVE": "CVE-2023-32696",
+        "date": "2023-05-30",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 451,
+        "url": "https://github.com/discourse/discourse/commit/0c6b9df77bac9c6f7c7e2eadf6fe100064afdeab",
+        "CVE": "CVE-2021-43793",
+        "date": "2021-12-01",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 452,
+        "url": "https://github.com/gatsbyjs/gatsby/commit/dcf88ed01df2c26e0c93a41e1a2a840076d8247e",
+        "CVE": "CVE-2023-30548",
+        "date": "2023-04-17",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 454,
+        "url": "https://github.com/sudo-project/sudo/commit/334daf92b31b79ce68ed75e2ee14fca265f029ca",
+        "CVE": "CVE-2023-28487",
+        "date": "2023-03-16",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (19395)"
+    },
+    {
+        "id": 455,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/f1e310826a19acdcdecdecdcfe171d21f24d6ede",
+        "CVE": "CVE-2023-29511",
+        "date": "2023-04-16",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 460,
+        "url": "https://github.com/ipfs/go-unixfs/commit/467d139a640ecee4f2e74643dafcc58bb3b54175",
+        "CVE": "CVE-2023-23625",
+        "date": "2023-02-09",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 461,
+        "url": "https://github.com/getgrav/grav/commit/de1ccfa12dbcbf526104d68c1a6bc202a98698fe",
+        "CVE": "CVE-2024-28119",
+        "date": "2024-03-21",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 462,
+        "url": "https://github.com/openmrs/openmrs-module-referenceapplication/commit/0410c091d46eed3c132fe0fcafe5964182659f74",
+        "CVE": "CVE-2021-4289",
+        "date": "2022-12-27",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 464,
+        "url": "https://github.com/twisted/twisted/commit/592217e951363d60e9cd99c5bbfd23d4615043ac",
+        "CVE": "CVE-2022-24801",
+        "date": "2022-04-04",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 465,
+        "url": "https://github.com/discourse/discourse/commit/6183d9633de873ac2b1e9cdb6ac1c94b4ffae9cb",
+        "CVE": "CVE-2023-46130",
+        "date": "2023-11-10",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 466,
+        "url": "https://github.com/torvalds/linux/commit/a30f895ad3239f45012e860d4f94c1a388b36d14",
+        "CVE": "CVE-2022-1043",
+        "date": "2022-08-29",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (77799)"
+    },
+    {
+        "id": 468,
+        "url": "https://github.com/Leantime/leantime/commit/be75f1e0f311d11c00a0bdc7079a62eef3594bf0",
+        "CVE": "CVE-2023-45826",
+        "date": "2023-10-19",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 469,
+        "url": "https://github.com/tensorflow/tensorflow/commit/2eedc8f676d2c3b8be9492e547b2bc814c10b367",
+        "CVE": "CVE-2023-25671",
+        "date": "2023-03-25",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 471,
+        "url": "https://github.com/centreon/centreon/commit/293b10628f7d9f83c6c82c78cf637cbe9b907369",
+        "CVE": "CVE-2022-3827",
+        "date": "2022-11-02",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 473,
+        "url": "https://github.com/TeraTermProject/teraterm/commit/7279fbd6ef4d0c8bdd6a90af4ada2899d786eec0",
+        "CVE": "CVE-2023-48795",
+        "date": "2023-12-18",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (120221)"
+    },
+    {
+        "id": 476,
+        "url": "https://github.com/snoyberg/xml/commit/4be1021791dcdee8b164d239433a2043dc0939ea",
+        "CVE": "CVE-2021-4249",
+        "date": "2022-12-18",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 478,
+        "url": "https://github.com/Talend/tmdm-server-se/commit/31d442b9fb1d518128fd18f6e4d54e06c3d67793",
+        "CVE": "CVE-2021-4311",
+        "date": "2023-01-09",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 479,
+        "url": "https://github.com/ArjunSharda/Searchor/commit/16016506f7bf92b0f21f51841d599126d6fcd15b",
+        "CVE": "CVE-2023-43364",
+        "date": "2023-12-12",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 481,
+        "url": "https://github.com/xwiki/xwiki-platform/commit/5be1cc0adf917bf10899c47723fa451e950271fa",
+        "CVE": "CVE-2022-41930",
+        "date": "2022-11-23",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 482,
+        "url": "https://github.com/harfbuzz/harfbuzz/commit/d3e09bf4654fe5478b6dbf2b26ebab6271317d81",
+        "CVE": "CVE-2021-45931",
+        "date": "2022-01-01",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 483,
+        "url": "https://github.com/orchardcms/orchardcore/commit/218f25ddfadb66a54de7a82dffe3ab2e4ab7c4b4",
+        "CVE": "CVE-2022-0243",
+        "date": "2022-01-19",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 484,
+        "url": "https://github.com/mintplex-labs/anything-llm/commit/dc3dfbf31495fe316b21ee184b9317b38101d30e",
+        "CVE": "CVE-2023-4899",
+        "date": "2023-09-12",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (17388)"
+    },
+    {
+        "id": 485,
+        "url": "https://github.com/star7th/showdoc/commit/654e871a3923e79076818a9a03533fe88222c871",
+        "CVE": "CVE-2021-4017",
+        "date": "2021-12-01",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 488,
+        "url": "https://github.com/pjsip/pjproject/commit/15663e3f37091069b8c98a7fce680dc04bc8e865",
+        "CVE": "CVE-2021-37706",
+        "date": "2021-12-22",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 489,
+        "url": "https://github.com/alfio-event/alf.io/commit/c9a16ab93d42b2beb06d529b57890121f85be6ef",
+        "CVE": "CVE-2023-2260",
+        "date": "2023-04-24",
+        "reason": "The record does not not meet the criteria. FILES_TOKENS_EXCEEDED (20251)"
+    },
+    {
+        "id": 491,
+        "url": "https://github.com/gradle/gradle/commit/1096b309520a8c315e3b6109a6526de4eabcb879",
+        "CVE": "CVE-2023-35947",
+        "date": "2023-06-30",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 492,
+        "url": "https://github.com/pimcore/pimcore/commit/d35d0712858f24d0ec96ddfd4cbe82ff4b5a5fbb",
+        "CVE": "CVE-2023-1312",
+        "date": "2023-03-10",
+        "reason": "The record does not not meet the criteria. EMPTY_HUNKS"
+    },
+    {
+        "id": 494,
+        "url": "https://github.com/openmrs/openmrs-module-adminui/commit/a7eefb5f69f6c50a3bffcb138bb8ea57cb41a9b6",
+        "CVE": "CVE-2021-4291",
+        "date": "2022-12-27",
+        "reason": "The record does not not meet the criteria. NON_ACCEPTABLE_FILE"
+    },
+    {
+        "id": 496,
+        "url": "https://github.com/RS485/LogisticsPipes/commit/39a90b8f2d1a2bcc512ec68c3e139f1dac07aa56",
+        "CVE": "CVE-2023-38689",
+        "date": "2023-08-04",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 497,
+        "url": "https://github.com/aio-libs/aiosmtpd/commit/b3a4a2c6ecfd228856a20d637dc383541fcdbfda",
+        "CVE": "CVE-2024-34083",
+        "date": "2024-05-18",
+        "reason": "The record does not not meet the criteria. EMPTY_SEVERITIES"
+    },
+    {
+        "id": 498,
+        "url": "https://github.com/in-toto/in-toto/commit/3a21d84f40811b7d191fa7bd17265c1f99599afd",
+        "CVE": "CVE-2023-32076",
+        "date": "2023-05-10",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    },
+    {
+        "id": 499,
+        "url": "https://github.com/metal3-io/ironic-image/commit/f64bb6ce0945bbfb30d9965f98149ea183311de9",
+        "CVE": "CVE-2023-40585",
+        "date": "2023-08-25",
+        "reason": "The record does not not meet the criteria. EMPTY_BUGGY_CODE"
+    }
+]
