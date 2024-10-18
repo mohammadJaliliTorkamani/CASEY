@@ -152,6 +152,8 @@ class Evaluator:
                 else:
                     self.severity_label_equality_status = SeverityLabel_EvaluationResultEnum.NOT_IDENTICAL
 
+                #######      SCORE ANALYSIS     ####### (OBVIOUSLY IF LABEL IS IDENTICAL, THE SCORE WOULD AUTOMATICALLY BE EITHER EXACT MATCH OR IN_LABEL_RANGE. OTHERWISE SOMETHING IS WRONG IN MY CODE)
+
                 gt_score = float(raw_result['ground_truth_severities'][gt_CVSS][1])
                 predicted_score = float(raw_result['llm_output']['SEVERITY_SCORE'])
 
@@ -160,8 +162,6 @@ class Evaluator:
                 elif gt_score == predicted_score:
                     self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_EXACT_MATCH, None
                     metrics['SEVERITY_EQUAL_SCORE_EXACT_MATCH_counter'] += 1
-
-                #######      SCORE ANALYSIS     ####### (OBVIOUSLY IF LABEL IS IDENTICAL, THE SCORE WOULD AUTOMATICALLY BE EITHER EXACT MATCH OR IN_LABEL_RANGE. OTHERWISE SOMETHING IS WRONG IN MY CODE)
                 else:
                     label_range = constants.SEVERITY_SCORE_RANGES[gt_CVSS][gt_label]
                     if label_range[0] <= predicted_score <= label_range[1]:
