@@ -80,15 +80,27 @@ class Evaluator:
             'EQUAL_E_LABEL_counter': 0,
             'EQUAL_T_LABEL_counter': 0,
             'EQUAL_U_LABEL_counter': 0,
+            'GT_SUBSET_OF_E_LABEL_counter': 0,
+            'GT_SUBSET_OF_T_LABEL_counter': 0,
+            'GT_SUBSET_OF_U_LABEL_counter': 0,
             'EQUAL_E_SCORE_counter': 0,
             'EQUAL_T_SCORE_counter': 0,
             'EQUAL_U_SCORE_counter': 0,
+            'GT_SUBSET_OF_E_SCORE_counter': 0,
+            'GT_SUBSET_OF_T_SCORE_counter': 0,
+            'GT_SUBSET_OF_U_SCORE_counter': 0,
             'EQUAL_E_LABEL_RANGE_counter': 0,  # MEANS THE ALLOWED RANGE OF THE SCORE FOR THE SAME LABEL   #####
             'EQUAL_T_LABEL_RANGE_counter': 0,
             'EQUAL_U_LABEL_RANGE_counter': 0,
+            'GT_SUBSET_OF_E_LABEL_RANGE_counter': 0,
+            'GT_SUBSET_OF_T_LABEL_RANGE_counter': 0,
+            'GT_SUBSET_OF_U_LABEL_RANGE_counter': 0,
             'EQUAL_E_RADIUS_RANGE_counter': 0,
             'EQUAL_T_RADIUS_RANGE_counter': 0,
             'EQUAL_U_RADIUS_RANGE_counter': 0,
+            'GT_SUBSET_OF_E_RADIUS_RANGE_counter': 0,
+            'GT_SUBSET_OF_T_RADIUS_RANGE_counter': 0,
+            'GT_SUBSET_OF_U_RADIUS_RANGE_counter': 0,
             'E_IDENTICAL_CWE_counter': 0,
             'T_IDENTICAL_CWE_counter': 0,
             'U_IDENTICAL_CWE_counter': 0,
@@ -190,6 +202,19 @@ class Evaluator:
                         0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE:
                         metrics['EQUAL_E_RADIUS_RANGE_counter'] += 1
 
+                if metric_to_add_key == 'GT_SUBSET_OF_E_counter':
+                    if self.severity_label_equality_status == SeverityLabel_EvaluationResultEnum.IDENTICAL:
+                        metrics['GT_SUBSET_OF_E_LABEL_counter'] += 1
+                    if self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_EXACT_MATCH:
+                        metrics['GT_SUBSET_OF_E_SCORE_counter'] += 1
+                    elif self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_LABEL_RANGE:
+                        metrics['GT_SUBSET_OF_E_LABEL_RANGE_counter'] += 1
+                    elif self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE:
+                        metrics['GT_SUBSET_OF_E_RADIUS_RANGE_counter'] += 1
+
                 ## SECOND: T
                 T = set(raw_result['llm_output']['TOP_FIVE_CWE_IDS'])
                 self.cwe_equality_status['T'], metric_to_add_key = self.evaluate_cwe(T, 'T', GT_CWEs)
@@ -208,6 +233,19 @@ class Evaluator:
                         0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE:
                         metrics['EQUAL_T_RADIUS_RANGE_counter'] += 1
 
+                if metric_to_add_key == 'GT_SUBSET_OF_T_counter':
+                    if self.severity_label_equality_status == SeverityLabel_EvaluationResultEnum.IDENTICAL:
+                        metrics['GT_SUBSET_OF_T_LABEL_counter'] += 1
+                    if self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_EXACT_MATCH:
+                        metrics['GT_SUBSET_OF_T_SCORE_counter'] += 1
+                    elif self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_LABEL_RANGE:
+                        metrics['GT_SUBSET_OF_T_LABEL_RANGE_counter'] += 1
+                    elif self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE:
+                        metrics['GT_SUBSET_OF_T_RADIUS_RANGE_counter'] += 1
+
                 ## THIRD: EUT
                 E_U_T = E | T
                 self.cwe_equality_status['U'], metric_to_add_key = self.evaluate_cwe(E_U_T, 'U', GT_CWEs)
@@ -225,6 +263,19 @@ class Evaluator:
                         0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE:
                         metrics['EQUAL_U_RADIUS_RANGE_counter'] += 1
 
+                if metric_to_add_key == 'GT_SUBSET_OF_U_counter':
+                    if self.severity_label_equality_status == SeverityLabel_EvaluationResultEnum.IDENTICAL:
+                        metrics['GT_SUBSET_OF_U_LABEL_counter'] += 1
+                    if self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_EXACT_MATCH:
+                        metrics['GT_SUBSET_OF_U_SCORE_counter'] += 1
+                    elif self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_LABEL_RANGE:
+                        metrics['GT_SUBSET_OF_U_LABEL_RANGE_counter'] += 1
+                    elif self.severity_score_equality_status[
+                        0] == SeverityScore_EvaluationResultEnum.IDENTICAL_IN_RADIUS_RANGE:
+                        metrics['GT_SUBSET_OF_U_RADIUS_RANGE_counter'] += 1
+
             evaluations.append(self.toJson())
 
         return {
@@ -237,12 +288,27 @@ class Evaluator:
                     100.0 * metrics['EQUAL_T_LABEL_counter'] / len(raw_experiment_result)),
             'accuracy_overall_U_LABEL': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_U_LABEL_counter'] / len(raw_experiment_result)),
+
+            'accuracy_overall_GT_SUBSET_OF_E_LABEL': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_E_LABEL_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_T_LABEL': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_T_LABEL_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_U_LABEL': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_U_LABEL_counter'] / len(raw_experiment_result)),
+
             'accuracy_overall_E_SCORE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_E_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_T_SCORE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_T_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_U_SCORE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_U_SCORE_counter'] / len(raw_experiment_result)),
+
+            'accuracy_overall_GT_SUBSET_OF_E_SCORE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_E_SCORE_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_T_SCORE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_T_SCORE_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_U_SCORE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_U_SCORE_counter'] / len(raw_experiment_result)),
 
             'accuracy_overall_E_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_E_LABEL_RANGE_counter'] / len(raw_experiment_result)),
@@ -251,12 +317,26 @@ class Evaluator:
             'accuracy_overall_U_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_U_LABEL_RANGE_counter'] / len(raw_experiment_result)),
 
+            'accuracy_overall_GT_SUBSET_OF_E_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_E_LABEL_RANGE_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_T_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_T_LABEL_RANGE_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_U_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_U_LABEL_RANGE_counter'] / len(raw_experiment_result)),
+
             'accuracy_overall_E_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_E_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_T_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_T_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_U_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_U_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
+
+            'accuracy_overall_GT_SUBSET_OF_E_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_E_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_T_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_T_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
+            'accuracy_overall_GT_SUBSET_OF_U_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['GT_SUBSET_OF_U_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
 
             'accuracy_identical_CWE_E': 0 if len(raw_experiment_result) == 0 else 100.0 * metrics[
                 'E_IDENTICAL_CWE_counter'] / len(
@@ -291,18 +371,30 @@ class Evaluator:
             'EQUAL_E_LABEL_counter': metrics['EQUAL_E_LABEL_counter'],
             'EQUAL_T_LABEL_counter': metrics['EQUAL_T_LABEL_counter'],
             'EQUAL_U_LABEL_counter': metrics['EQUAL_U_LABEL_counter'],
+            'GT_SUBSET_OF_E_LABEL_counter': metrics['GT_SUBSET_OF_E_LABEL_counter'],
+            'GT_SUBSET_OF_T_LABEL_counter': metrics['GT_SUBSET_OF_T_LABEL_counter'],
+            'GT_SUBSET_OF_U_LABEL_counter': metrics['GT_SUBSET_OF_U_LABEL_counter'],
 
             'EQUAL_E_SCORE_MATCH_counter': metrics['EQUAL_E_SCORE_counter'],
             'EQUAL_T_SCORE_MATCH_counter': metrics['EQUAL_T_SCORE_counter'],
             'EQUAL_U_SCORE_MATCH_counter': metrics['EQUAL_U_SCORE_counter'],
+            'GT_SUBSET_OF_E_SCORE_MATCH_counter': metrics['GT_SUBSET_OF_E_SCORE_counter'],
+            'GT_SUBSET_OF_T_SCORE_MATCH_counter': metrics['GT_SUBSET_OF_T_SCORE_counter'],
+            'GT_SUBSET_OF_U_SCORE_MATCH_counter': metrics['GT_SUBSET_OF_U_SCORE_counter'],
 
             'EQUAL_E_LABEL_RANGE_counter': metrics['EQUAL_E_LABEL_RANGE_counter'],
             'EQUAL_T_LABEL_RANGE_counter': metrics['EQUAL_T_LABEL_RANGE_counter'],
             'EQUAL_U_LABEL_RANGE_counter': metrics['EQUAL_U_LABEL_RANGE_counter'],
+            'GT_SUBSET_OF_E_LABEL_RANGE_counter': metrics['GT_SUBSET_OF_E_LABEL_RANGE_counter'],
+            'GT_SUBSET_OF_T_LABEL_RANGE_counter': metrics['GT_SUBSET_OF_T_LABEL_RANGE_counter'],
+            'GT_SUBSET_OF_U_LABEL_RANGE_counter': metrics['GT_SUBSET_OF_U_LABEL_RANGE_counter'],
 
             'EQUAL_E_RADIUS_RANGE_counter': metrics['EQUAL_E_RADIUS_RANGE_counter'],
             'EQUAL_T_RADIUS_RANGE_counter': metrics['EQUAL_T_RADIUS_RANGE_counter'],
             'EQUAL_U_RADIUS_RANGE_counter': metrics['EQUAL_U_RADIUS_RANGE_counter'],
+            'GT_SUBSET_OF_E_RADIUS_RANGE_counter': metrics['GT_SUBSET_OF_E_RADIUS_RANGE_counter'],
+            'GT_SUBSET_OF_T_RADIUS_RANGE_counter': metrics['GT_SUBSET_OF_T_RADIUS_RANGE_counter'],
+            'GT_SUBSET_OF_U_RADIUS_RANGE_counter': metrics['GT_SUBSET_OF_U_RADIUS_RANGE_counter'],
 
             'SEVERITY_LABEL_EQUAL_LABEL_counter': metrics['SEVERITY_LABEL_EQUAL_LABEL_counter'],
 
