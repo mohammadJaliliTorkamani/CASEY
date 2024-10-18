@@ -367,6 +367,22 @@ class Evaluator:
                                                      -1] / len(
                 raw_experiment_result),
 
+
+            'accuracy_CWE_GT_SUBSET_OF_E' : 0 if len(
+                raw_experiment_result) == 0 else 100.0 *
+                                                 metrics['GT_SUBSET_OF_E_counter'] / len(
+                raw_experiment_result),
+
+            'accuracy_CWE_GT_SUBSET_OF_T': 0 if len(
+                raw_experiment_result) == 0 else 100.0 *
+                                                 metrics['GT_SUBSET_OF_T_counter'] / len(
+                raw_experiment_result),
+
+            'accuracy_CWE_GT_SUBSET_OF_U': 0 if len(
+                raw_experiment_result) == 0 else 100.0 *
+                                                 metrics['GT_SUBSET_OF_U_counter'] / len(
+                raw_experiment_result),
+
             'ERRORS': metrics['ERROR_counter'],
             'EQUAL_E_LABEL_counter': metrics['EQUAL_E_LABEL_counter'],
             'EQUAL_T_LABEL_counter': metrics['EQUAL_T_LABEL_counter'],
@@ -406,7 +422,7 @@ class Evaluator:
             'CWE_IDENTICAL_T_counter': metrics['T_IDENTICAL_CWE_counter'],
             'CWE_IDENTICAL_U_counter': metrics['U_IDENTICAL_CWE_counter'],
 
-            'CSE_GT_SUBSET_OF_E_counter': metrics['GT_SUBSET_OF_E_counter'],
+            'CWE_GT_SUBSET_OF_E_counter': metrics['GT_SUBSET_OF_E_counter'],
             'CWE_GT_SUBSET_OF_T_counter': metrics['GT_SUBSET_OF_T_counter'],
             'CWE_GT_SUBSET_OF_U_counter': metrics['GT_SUBSET_OF_U_counter'],
 
