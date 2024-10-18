@@ -1,6 +1,6 @@
 {
     "TOTAL_NUMBER_OF_SAMPLES_counter": 199,
-    "timestamp": "18/10/2024 09:40:29",
+    "timestamp": "18/10/2024 09:53:12",
     "accuracy_overall_E_LABEL": 0.0,
     "accuracy_overall_T_LABEL": 0.0,
     "accuracy_overall_U_LABEL": 0.0,
@@ -31,7 +31,7 @@
     "accuracy_identical_severity_label": 6.030150753768845,
     "accuracy_severity_score_exact_match": 0.0,
     "accuracy_severity_score_label_range": 6.030150753768845,
-    "accuracy_severity_score_radius_range": 1.5075376884422111,
+    "accuracy_severity_score_radius_range": 1.0050251256281406,
     "ERRORS": 8,
     "EQUAL_E_LABEL_counter": 0,
     "EQUAL_T_LABEL_counter": 0,
@@ -63,7 +63,7 @@
     "SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter": {
         "0.5": 0,
         "1": 0,
-        "2": 3
+        "1.5": 2
     },
     "CWE_IDENTICAL_E_counter": 3,
     "CWE_IDENTICAL_T_counter": 0,
@@ -1369,7 +1369,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -1641,8 +1641,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1694,7 +1694,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {

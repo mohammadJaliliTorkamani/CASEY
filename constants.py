@@ -429,7 +429,7 @@ CPP_EXTRACTOR_SCRIPT_PATH = 'extractors/cpp_parser.py'
 GO_EXTRACTOR_SCRIPT_PATH = 'extractors/go_parser.py'
 RB_EXTRACTOR_SCRIPT_PATH = 'extractors/ruby_parser.py'
 
-ANALYSIS_RADIUS = [0.5, 1, 2]
+ANALYSIS_RADIUS = [0.5, 1, 1.5]
 SEVERITY_SCORE_RANGES = {
     'V2.0': {
         "LOW": (0.0, 3.9),

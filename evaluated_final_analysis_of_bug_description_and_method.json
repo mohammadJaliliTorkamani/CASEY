@@ -1,6 +1,6 @@
 {
     "TOTAL_NUMBER_OF_SAMPLES_counter": 199,
-    "timestamp": "18/10/2024 09:40:29",
+    "timestamp": "18/10/2024 09:53:12",
     "accuracy_overall_E_LABEL": 18.09045226130653,
     "accuracy_overall_T_LABEL": 0.5025125628140703,
     "accuracy_overall_U_LABEL": 3.0150753768844223,
@@ -19,19 +19,19 @@
     "accuracy_overall_GT_SUBSET_OF_E_LABEL_RANGE": 0.0,
     "accuracy_overall_GT_SUBSET_OF_T_LABEL_RANGE": 9.045226130653266,
     "accuracy_overall_GT_SUBSET_OF_U_LABEL_RANGE": 21.105527638190956,
-    "accuracy_overall_E_RADIUS_RANGE": 11.557788944723619,
+    "accuracy_overall_E_RADIUS_RANGE": 4.522613065326633,
     "accuracy_overall_T_RADIUS_RANGE": 0.0,
     "accuracy_overall_U_RADIUS_RANGE": 0.0,
-    "accuracy_overall_GT_SUBSET_OF_E_RADIUS_RANGE": 2.0100502512562812,
-    "accuracy_overall_GT_SUBSET_OF_T_RADIUS_RANGE": 7.035175879396985,
-    "accuracy_overall_GT_SUBSET_OF_U_RADIUS_RANGE": 16.08040201005025,
+    "accuracy_overall_GT_SUBSET_OF_E_RADIUS_RANGE": 0.5025125628140703,
+    "accuracy_overall_GT_SUBSET_OF_T_RADIUS_RANGE": 2.0100502512562812,
+    "accuracy_overall_GT_SUBSET_OF_U_RADIUS_RANGE": 6.030150753768845,
     "accuracy_identical_CWE_E": 43.71859296482412,
     "accuracy_identical_CWE_T": 1.0050251256281406,
     "accuracy_identical_CWE_U": 4.522613065326633,
     "accuracy_identical_severity_label": 36.68341708542714,
     "accuracy_severity_score_exact_match": 1.0050251256281406,
     "accuracy_severity_score_label_range": 36.18090452261306,
-    "accuracy_severity_score_radius_range": 24.12060301507538,
+    "accuracy_severity_score_radius_range": 10.050251256281408,
     "ERRORS": 10,
     "EQUAL_E_LABEL_counter": 36,
     "EQUAL_T_LABEL_counter": 1,
@@ -51,19 +51,19 @@
     "GT_SUBSET_OF_E_LABEL_RANGE_counter": 0,
     "GT_SUBSET_OF_T_LABEL_RANGE_counter": 18,
     "GT_SUBSET_OF_U_LABEL_RANGE_counter": 42,
-    "EQUAL_E_RADIUS_RANGE_counter": 23,
+    "EQUAL_E_RADIUS_RANGE_counter": 9,
     "EQUAL_T_RADIUS_RANGE_counter": 0,
     "EQUAL_U_RADIUS_RANGE_counter": 0,
-    "GT_SUBSET_OF_E_RADIUS_RANGE_counter": 4,
-    "GT_SUBSET_OF_T_RADIUS_RANGE_counter": 14,
-    "GT_SUBSET_OF_U_RADIUS_RANGE_counter": 32,
+    "GT_SUBSET_OF_E_RADIUS_RANGE_counter": 1,
+    "GT_SUBSET_OF_T_RADIUS_RANGE_counter": 4,
+    "GT_SUBSET_OF_U_RADIUS_RANGE_counter": 12,
     "SEVERITY_LABEL_EQUAL_LABEL_counter": 73,
     "SEVERITY_EQUAL_SCORE_EXACT_MATCH_counter": 2,
     "SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter": 72,
     "SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter": {
         "0.5": 7,
         "1": 10,
-        "2": 48
+        "1.5": 20
     },
     "CWE_IDENTICAL_E_counter": 87,
     "CWE_IDENTICAL_T_counter": 2,
@@ -146,8 +146,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -159,8 +159,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -276,8 +276,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -289,8 +289,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -367,8 +367,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -393,8 +393,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -406,8 +406,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -485,7 +485,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -588,8 +588,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -640,8 +640,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -692,8 +692,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -783,8 +783,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -966,7 +966,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -978,8 +978,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1108,8 +1108,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1122,7 +1122,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -1135,7 +1135,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -1329,8 +1329,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1421,7 +1421,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -1459,8 +1459,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1563,8 +1563,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1602,8 +1602,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1707,7 +1707,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -1784,8 +1784,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1836,8 +1836,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1849,8 +1849,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -1941,7 +1941,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -1979,8 +1979,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -2045,7 +2045,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -2109,8 +2109,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -2174,8 +2174,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -2188,7 +2188,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -2200,8 +2200,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -2369,8 +2369,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -2408,8 +2408,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -2448,7 +2448,7 @@
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
                 "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "load": 1.5
             }
         },
         {
@@ -2577,8 +2577,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
@@ -2590,8 +2590,8 @@
             },
             "severity_label_equality_status": "NOT_IDENTICAL",
             "severity_score_equality_status": {
-                "type": "IDENTICAL_IN_RADIUS_RANGE",
-                "load": 2
+                "type": "NOT_IDENTICAL",
+                "load": null
             }
         },
         {
