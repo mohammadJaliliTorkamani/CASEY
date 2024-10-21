@@ -261,6 +261,7 @@ def meets_buggy_code_details(data_obj, CVE2CWE_OBJ) -> tuple:
 def run_experiment(data_array, _list, runner, CVE2CWE_OBJ):
     data_array_length = len(data_array) if len(data_array) == -1 else min(len(data_array),
                                                                           constants.MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT)
+
     not_inferred_cases = list()
     for idx, data_obj in enumerate(data_array):
         print("Record url: ", data_obj['url'], "Experiment Progress: ", 100.0 * (idx + 1) / data_array_length, "%")
