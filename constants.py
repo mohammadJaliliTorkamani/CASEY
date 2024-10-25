@@ -33,7 +33,7 @@ Instructions:
 
 Output Details:
 - EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy code(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy code(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five CWE IDs in the provided buggy code(s) (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
 - SEVERITY_LABEL: If the buggy code(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
 - SEVERITY_SCORE: If the buggy code(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
 - EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
@@ -82,7 +82,7 @@ Instructions:
 
 Output Details:
 - EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy method(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy method(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five CWE IDs in the provided buggy method(s) (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
 - SEVERITY_LABEL: If the buggy method(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
 - SEVERITY_SCORE: If the buggy method(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
 - EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
@@ -131,7 +131,7 @@ Instructions:
 
 Output Details:
 - EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy hunk(s), list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy hunk(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five CWE IDs in the provided buggy hunk(s) (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
 - SEVERITY_LABEL: If the buggy hunk(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
 - SEVERITY_SCORE: If the buggy hunk(s) has a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
 - EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
@@ -177,7 +177,7 @@ Instructions:
 
 Output Details:
 - EXACT_CWE_IDS: If you identify any CWE IDs in the provided description of the buggy code, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided description of the buggy code(s) (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five CWE IDs in the provided description of the buggy code(s) (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
 - SEVERITY_LABEL: If the description indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
 - SEVERITY_SCORE: If the description indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
 - EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
@@ -226,7 +226,7 @@ Instructions:
 
 Output Details:
 - EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy code(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy code(s) or its description (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five CWE IDs in the provided buggy code(s) or its description (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
 - SEVERITY_LABEL: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
 - SEVERITY_SCORE: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
 - EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
@@ -276,7 +276,7 @@ Instructions:
 
 Output Details:
 - EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy method(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy method(s) or its description (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five CWE IDs in the provided buggy method(s) or its description (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
 - SEVERITY_LABEL: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
 - SEVERITY_SCORE: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
 - EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
@@ -326,7 +326,7 @@ Instructions:
 
 Output Details:
 - EXACT_CWE_IDS: If you identify any CWE IDs in the provided buggy hunk(s) or its description, list them here (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
-- TOP_FIVE_CWE_IDS: List of top five alternative CWE IDs in the provided buggy hunk(s) or its description (e.g., ["CWE-123"]). If no alternative CWEs are found, leave this as an empty array [].
+- TOP_FIVE_CWE_IDS: List of top five CWE IDs in the provided buggy hunk(s) or its description (e.g., ["CWE-123"]). If no CWEs are found, leave this as an empty array [].
 - SEVERITY_LABEL: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity level (e.g., "high") based on CVSS %s . If there are no vulnerabilities, set this field to null.
 - SEVERITY_SCORE: If the provided information indicates a security vulnerability (CVE) considering predicted CWE_IDs, provide its severity score as a float number based on CVSS %s . If there are no vulnerabilities, set this field to -1.
 - EXPLANATION: Provide a step-by-step reasoning process to determine the correct severity label for this vulnerability. Consider key factors such as the nature of the vulnerability (e.g., buffer overflow, injection, access control), its impact on system security, and potential exploitation. Explain how the CVE bug functions, what kind of security breach it leads to, and how these characteristics influence your decision to assign a specific severity label.
