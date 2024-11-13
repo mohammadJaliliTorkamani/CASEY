@@ -76,7 +76,8 @@ class Evaluator:
 
     def analyze(self, raw_experiment_result):
         metrics = {
-            'ERROR_counter': 0,
+            'SEVERITY_ERROR_counter': 0,
+            'CWE_ERROR_counter': 0,
             'EQUAL_E_LABEL_counter': 0,
             'EQUAL_T_LABEL_counter': 0,
             'EQUAL_U_LABEL_counter': 0,
@@ -123,7 +124,8 @@ class Evaluator:
             'SEVERITY_EQUAL_SCORE_EXACT_MATCH_counter': 0,
             'SEVERITY_EQUAL_SCORE_LABEL_RANGE_counter': 0,
             'SEVERITY_EQUAL_SCORE_RADIUS_RANGE_counter': get_empty_radius_score_dic(),
-            'INVALID_INFERENCE_counter': 0
+            'INVALID_SEVERITY_INFERENCE_counter': 0,
+            'INVALID_CWE_INFERENCE_counter': 0,
         }
 
         evaluations = list()
@@ -131,18 +133,26 @@ class Evaluator:
         for raw_result in raw_experiment_result:
             self.reset_properties()
             self.reference_id = raw_result['id']
-            if raw_result['error_msg'] is not None:
-                metrics['ERROR_counter'] += 1
+
+            if (raw_result['severity_error_msg'] is not None) or (raw_result['cwe_error_msg'] is not None):
+                if raw_result['severity_error_msg'] is not None:
+                    metrics['SEVERITY_ERROR_counter'] += 1
+                else:
+                    metrics['CWE_ERROR_counter'] += 1
             else:
-                if raw_result['llm_output'] is None:
-                    metrics['INVALID_INFERENCE_counter'] += 1
+                if (raw_result['severity_llm_output'] is None) or (raw_result['cwe_llm_output'] is None):
+                    if raw_result['severity_llm_output'] is None:
+                        metrics['INVALID_SEVERITY_INFERENCE_counter'] += 1
+                    else:
+                        metrics['INVALID_CWE_INFERENCE_counter'] += 1
+
                     evaluations.append(self.toJson())
                     continue
 
                 #####       LABEL ANALYSIS       #####
                 gt_CVSS = raw_result['ground_truth_CVSS_version'][0]
                 gt_label = raw_result['ground_truth_severities'][gt_CVSS][0]
-                predicted_label = raw_result['llm_output']['SEVERITY_LABEL']
+                predicted_label = raw_result['severity_llm_output']['SEVERITY_LABEL']
 
                 if predicted_label is None:
                     self.severity_label_equality_status = None
@@ -155,7 +165,7 @@ class Evaluator:
                 #######      SCORE ANALYSIS     ####### (OBVIOUSLY IF LABEL IS IDENTICAL, THE SCORE WOULD AUTOMATICALLY BE EITHER EXACT MATCH OR IN_LABEL_RANGE. OTHERWISE SOMETHING IS WRONG IN MY CODE)
 
                 gt_score = float(raw_result['ground_truth_severities'][gt_CVSS][1])
-                predicted_score = float(raw_result['llm_output']['SEVERITY_SCORE'])
+                predicted_score = float(raw_result['severity_llm_output']['SEVERITY_SCORE'])
 
                 if predicted_score == -1:
                     self.severity_score_equality_status = None, None
@@ -186,7 +196,7 @@ class Evaluator:
                 GT_CWEs = set(raw_result['ground_truth_CWEs'])
 
                 ## FIRST: E
-                E = set(raw_result['llm_output']['EXACT_CWE_IDS'])
+                E = set(raw_result['cwe_llm_output']['EXACT_CWE_IDS'])
                 self.cwe_equality_status['E'], metric_to_add_key = self.evaluate_cwe(E, 'E', GT_CWEs)
                 metrics[metric_to_add_key] += 1
                 if metric_to_add_key == 'E_IDENTICAL_CWE_counter':
@@ -216,7 +226,7 @@ class Evaluator:
                         metrics['GT_SUBSET_OF_E_RADIUS_RANGE_counter'] += 1
 
                 ## SECOND: T
-                T = set(raw_result['llm_output']['TOP_FIVE_CWE_IDS'])
+                T = set(raw_result['cwe_llm_output']['TOP_FIVE_CWE_IDS'])
                 self.cwe_equality_status['T'], metric_to_add_key = self.evaluate_cwe(T, 'T', GT_CWEs)
 
                 metrics[metric_to_add_key] += 1
@@ -367,8 +377,7 @@ class Evaluator:
                                                      -1] / len(
                 raw_experiment_result),
 
-
-            'accuracy_CWE_GT_SUBSET_OF_E' : 0 if len(
+            'accuracy_CWE_GT_SUBSET_OF_E': 0 if len(
                 raw_experiment_result) == 0 else 100.0 *
                                                  metrics['GT_SUBSET_OF_E_counter'] / len(
                 raw_experiment_result),
@@ -383,7 +392,8 @@ class Evaluator:
                                                  metrics['GT_SUBSET_OF_U_counter'] / len(
                 raw_experiment_result),
 
-            'ERRORS': metrics['ERROR_counter'],
+            'SEVERITY_ERRORS': metrics['SEVERITY_ERROR_counter'],
+            'CWE_ERRORS': metrics['CWE_ERROR_counter'],
             'EQUAL_E_LABEL_counter': metrics['EQUAL_E_LABEL_counter'],
             'EQUAL_T_LABEL_counter': metrics['EQUAL_T_LABEL_counter'],
             'EQUAL_U_LABEL_counter': metrics['EQUAL_U_LABEL_counter'],
@@ -442,7 +452,8 @@ class Evaluator:
             'CWE_OVERLAPPED_T_counter': metrics['OVERLAPPED_T_counter'],
             'CWE_OVERLAPPED_U_counter': metrics['OVERLAPPED_U_counter'],
 
-            'INVALID_INFERENCES_counter': metrics['INVALID_INFERENCE_counter'],
+            'INVALID_SEVERITY_INFERENCES_counter': metrics['INVALID_SEVERITY_INFERENCE_counter'],
+            'INVALID_CWE_INFERENCES_counter': metrics['INVALID_CWE_INFERENCE_counter'],
             'evaluations': evaluations}
 
     def evaluate_cwe(self, predicted_CWEs: set, predicted_CWEs_type: str, GT_CWEs: set) -> (

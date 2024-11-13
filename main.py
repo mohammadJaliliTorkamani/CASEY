@@ -39,10 +39,10 @@ def filter_methods(extracted_methods, deletions, temp_file_path: str):
 def run_experiment_buggy_files(data_obj: dict, CVE2CWE_OBJ, id):
     gt_CVE = data_obj['CVE']
     gt_CVSS_versions = utils.extract_cvss_versions(gt_CVE, CVE2CWE_OBJ)
-    llm_input, llm_output = llm.inference_with_buggy_files(data_obj['buggy_code'], gt_CVSS_versions)
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_buggy_files(data_obj['buggy_code'], gt_CVSS_versions) #Each element of tuple is as (type, llm_input, llm_output)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -58,11 +58,11 @@ def run_experiment_buggy_methods(data_obj: dict, CVE2CWE_OBJ, id):
             methods[buggy_code_obj['file']] = filter_methods(extracted_methods, buggy_code_obj['deletions'],
                                                              temp_file_path)
         utils.remove_file(temp_file_path)
-    llm_input, llm_output = llm.inference_with_buggy_methods(methods, gt_CVSS_versions)
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_buggy_methods(methods, gt_CVSS_versions)
 
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -77,11 +77,11 @@ def run_experiment_buggy_hunks(data_obj: dict, CVE2CWE_OBJ, id):
         if len(hunks_temp) > 0:
             hunks[buggy_code_obj['file']] = hunks_temp
 
-    llm_input, llm_output = llm.inference_with_buggy_hunks(hunks, gt_CVSS_versions)
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_buggy_hunks(hunks, gt_CVSS_versions)
 
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -90,10 +90,10 @@ def run_experiment_bug_description(data_obj, CVE2CWE_OBJ, id):
     gt_CVE = data_obj['CVE']
     gt_CVSS_versions = utils.extract_cvss_versions(gt_CVE, CVE2CWE_OBJ)
     description = data_obj['description']
-    llm_input, llm_output = llm.inference_with_description(description, gt_CVSS_versions)
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_description(description, gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -102,10 +102,10 @@ def run_experiment_bug_github_description(data_obj, CVE2CWE_OBJ, id):
     gt_CVE = data_obj['CVE']
     gt_CVSS_versions = utils.extract_cvss_versions(gt_CVE, CVE2CWE_OBJ)
     description = data_obj['github_description']
-    llm_input, llm_output = llm.inference_with_description(description, gt_CVSS_versions)
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_description(description, gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -114,11 +114,11 @@ def run_experiment_bug_description_and_files(data_obj: dict, CVE2CWE_OBJ, id):
     gt_CVE = data_obj['CVE']
     gt_CVSS_versions = utils.extract_cvss_versions(gt_CVE, CVE2CWE_OBJ)
     description = data_obj['description']
-    llm_input, llm_output = llm.inference_with_description_and_files(description, data_obj['buggy_code'],
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_description_and_files(description, data_obj['buggy_code'],
                                                                      gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -127,11 +127,11 @@ def run_experiment_bug_github_description_and_files(data_obj: dict, CVE2CWE_OBJ,
     gt_CVE = data_obj['CVE']
     gt_CVSS_versions = utils.extract_cvss_versions(gt_CVE, CVE2CWE_OBJ)
     description = data_obj['github_description']
-    llm_input, llm_output = llm.inference_with_description_and_files(description, data_obj['buggy_code'],
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_description_and_files(description, data_obj['buggy_code'],
                                                                      gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -147,14 +147,14 @@ def run_experiment_bug_description_and_methods(data_obj: dict, CVE2CWE_OBJ, id):
             methods[buggy_code_obj['file']] = filter_methods(extracted_methods, buggy_code_obj['deletions'],
                                                              temp_file_path)
 
-    llm_input, llm_output = None, None
+    severity_llm_pack, cwe_llm_pack = None, None
     if len(methods) > 0:
         description = data_obj['description']
-        llm_input, llm_output = llm.inference_with_description_and_methods(description, methods,
+        severity_llm_pack, cwe_llm_pack = llm.inference_with_description_and_methods(description, methods,
                                                                            gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -170,14 +170,14 @@ def run_experiment_bug_github_description_and_methods(data_obj: dict, CVE2CWE_OB
             methods[buggy_code_obj['file']] = filter_methods(extracted_methods, buggy_code_obj['deletions'],
                                                              temp_file_path)
 
-    llm_input, llm_output = None, None
+    severity_llm_pack, cwe_llm_pack = None, None
     if len(methods) > 0:
         description = data_obj['github_description']
-        llm_input, llm_output = llm.inference_with_description_and_methods(description, methods,
+        severity_llm_pack, cwe_llm_pack = llm.inference_with_description_and_methods(description, methods,
                                                                            gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -193,10 +193,10 @@ def run_experiment_bug_description_and_hunks(data_obj: dict, CVE2CWE_OBJ, id):
             hunks[buggy_code_obj['file']] = hunks_temp
 
     description = data_obj['description']
-    llm_input, llm_output = llm.inference_with_description_and_hunks(description, hunks, gt_CVSS_versions)
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_description_and_hunks(description, hunks, gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack, cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 
@@ -212,10 +212,10 @@ def run_experiment_bug_github_description_and_hunks(data_obj: dict, CVE2CWE_OBJ,
             hunks[buggy_code_obj['file']] = hunks_temp
 
     description = data_obj['github_description']
-    llm_input, llm_output = llm.inference_with_description_and_hunks(description, hunks, gt_CVSS_versions)
+    severity_llm_pack, cwe_llm_pack = llm.inference_with_description_and_hunks(description, hunks, gt_CVSS_versions)
     gt_CWEs = list(set(utils.get_CWEs_of_CVE(gt_CVE, CVE2CWE_OBJ)))
     gt_SEVERITIES = utils.get_severities_of_CVE(gt_CVE, CVE2CWE_OBJ)
-    return experimentor.experiment(id, llm_input, llm_output, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
+    return experimentor.experiment(id, severity_llm_pack,cwe_llm_pack, gt_CVE, gt_CWEs, gt_SEVERITIES, gt_CVSS_versions,
                                    data_obj['url'],
                                    data_obj['description'], data_obj['date'], data_obj['github_description'])
 

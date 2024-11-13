@@ -138,8 +138,6 @@ Example Outputs:
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
-
-%s
 """
 
 # LLM_SYSTEM_FIELD_FOR_BUGGY_METHOD = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
@@ -271,8 +269,6 @@ Example Outputs:
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
-
-%s
 """
 
 # LLM_SYSTEM_FIELD_FOR_BUGGY_HUNKS = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities in software code.
@@ -404,8 +400,6 @@ Example Outputs:
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
-
-%s
 """
 
 # LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on the description of software bugs.
@@ -528,8 +522,6 @@ Example Outputs:
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
-
-%s
 """
 
 # LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_FILES = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy code(s) and bug description.
@@ -661,8 +653,6 @@ Example Outputs:
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
-
-%s
 """
 
 # LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_METHODS = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.
@@ -796,8 +786,6 @@ Output Details:
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
-
-%s
 """
 
 # LLM_SYSTEM_FIELD_FOR_BUG_DESCRIPTION_AND_HUNKS = """You are an expert in identifying Common Weakness Enumerations (CWEs) and assessing the severity of vulnerabilities based on both the buggy method(s) and bug description.
@@ -931,8 +919,6 @@ Output Details:
    }
 
 Important: Your output must strictly follow the described JSON structure. Do not include any additional fields, descriptions, or text.
-
-%s
 """
 
 DEFAULT_SEVERITY_VERSION_FOR_CVSS = 'V3.1'
@@ -1030,7 +1016,7 @@ SEVERITY_SCORE_RANGES = {
     }
 }
 
-MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT = 100
+MAX_NUMBER_OF_RECORDS_PER_EXPERIMENT = 500
 EXPERIMENT_STAGE = False
 
 ANALYZE_STAGE = not EXPERIMENT_STAGE
