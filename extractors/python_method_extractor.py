@@ -7,16 +7,19 @@ def extract_methods(python_file):
     with open(python_file, 'r', encoding='utf-8') as file:
         python_code = file.read()
 
-    # Parse the Python code
-    tree = ast.parse(python_code)
-
-    # Extract method names and bodies
     methods = []
-    for node in ast.walk(tree):
-        if isinstance(node, ast.FunctionDef):
-            method_body = ast.get_source_segment(python_code, node)
-            methods.append(method_body)
+    # Parse the Python code
+    try:
+        tree = ast.parse(python_code)
 
+        # Extract method names and bodies
+        for node in ast.walk(tree):
+            if isinstance(node, ast.FunctionDef):
+                method_body = ast.get_source_segment(python_code, node)
+                methods.append(method_body)
+
+    except Exception as e:
+        pass
     return methods
 
 

@@ -31,7 +31,7 @@ def remove_file(path: str) -> bool:
 
 
 def count_gpt_tokens(text: str) -> int:
-    tokenizer = tiktoken.encoding_for_model(constants.LLM_MODEL)
+    tokenizer = tiktoken.encoding_for_model(constants.LLM_NORMAL_MODEL)
     tokens = tokenizer.encode(text)
     return len(tokens)
 
@@ -156,3 +156,15 @@ def extract_cvss_versions(candidate_CVE, CVE2CWE_OBJ) -> list:
 def save_file(file_name, file_content):
     with open(file_name, 'w', encoding='utf-8') as file:
         file.write(file_content)
+
+def fix_json_string(json_string):
+    fixed_string = re.sub(r"(?<!\\)'", '"', json_string)
+    return fixed_string
+
+
+def shorten_model_name(model_name):
+    if ":cwe:" in model_name:
+        model_name = "cwe_fine_tuned"
+    elif ":severity:" in model_name:
+        model_name = "severity_fine_tuned"
+    return model_name
