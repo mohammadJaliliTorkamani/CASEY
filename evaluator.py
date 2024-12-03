@@ -73,9 +73,9 @@ class Evaluator:
         self.severity_label_equality_status = None
         self.severity_score_equality_status = None
         self.severity_score_label_range_equality_status = (
-        None, None)  # The first is type, the second is extra info (range)
+            None, None)  # The first is type, the second is extra info (range)
         self.severity_score_equality_radius_status = (
-        None, None)  # The first is type, the second is extra info (min radius)
+            None, None)  # The first is type, the second is extra info (min radius)
         # (used for radius range for min acceptable radius in the prefixed radius list)
 
     def analyze(self, raw_experiment_result):
@@ -87,7 +87,6 @@ class Evaluator:
             'EQUAL_E_EQUAL_LABEL_counter': 0,
             'EQUAL_E_EQUAL_SCORE_counter': 0,
             'EQUAL_E_WITHIN_LABEL_RANGE_counter': 0,
-            'EQUAL_E_WITHIN_RADIUS_RANGE_counter': 0,
             'EQUAL_T_EQUAL_LABEL_counter': 0,
             'EQUAL_T_EQUAL_SCORE_counter': 0,
             'EQUAL_T_WITHIN_LABEL_RANGE_counter': 0,
@@ -95,7 +94,6 @@ class Evaluator:
             'GT_SUBSET_OF_E_EQUAL_LABEL_counter': 0,
             'GT_SUBSET_OF_E_EQUAL_SCORE_counter': 0,
             'GT_SUBSET_OF_E_WITHIN_LABEL_RANGE_counter': 0,
-            'GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter': 0,
             'GT_SUBSET_OF_T_EQUAL_LABEL_counter': 0,
             'GT_SUBSET_OF_T_EQUAL_SCORE_counter': 0,
             'GT_SUBSET_OF_T_WITHIN_LABEL_RANGE_counter': 0,
@@ -103,11 +101,9 @@ class Evaluator:
             'E_SUBSET_OF_GT_EQUAL_LABEL_counter': 0,
             'E_SUBSET_OF_GT_EQUAL_SCORE_counter': 0,
             'E_SUBSET_OF_GT_WITHIN_LABEL_RANGE_counter': 0,
-            'E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter': 0,
             'T_SUBSET_OF_GT_EQUAL_LABEL_counter': 0,
             'T_SUBSET_OF_GT_EQUAL_SCORE_counter': 0,
             'T_SUBSET_OF_GT_WITHIN_LABEL_RANGE_counter': 0,
-            'T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter': 0,
             'E_IDENTICAL_CWE_counter': 0,
             'T_IDENTICAL_CWE_counter': 0,
             'GT_SUBSET_OF_E_counter': 0,
@@ -181,7 +177,7 @@ class Evaluator:
                     self.severity_score_equality_status = SeverityScore_EvaluationResultEnum.IDENTICAL_EXACT_MATCH
                     self.severity_score_label_range_equality_status = SeverityScoreLabelRange_EvaluationResultEnum.IDENTICAL, label_range
                     self.severity_score_equality_radius_status = SeverityScoreAsRadius_EvaluationResultEnum.COVERS, \
-                    sorted(constants.ANALYSIS_RADIUS)[0]
+                        sorted(constants.ANALYSIS_RADIUS)[0]
                     metrics['EQUAL_SCORE_counter'] += 1
                     metrics['WITHIN_LABEL_RANGE_counter'] += 1
                     for radius in sorted(constants.ANALYSIS_RADIUS):
@@ -230,7 +226,13 @@ class Evaluator:
 
                     if self.severity_score_equality_radius_status[
                         0] == SeverityScoreAsRadius_EvaluationResultEnum.COVERS:
-                        metrics['EQUAL_E_WITHIN_RADIUS_RANGE_counter'] += 1
+                        for r in sorted(constants.ANALYSIS_RADIUS):
+                            metrics.setdefault(f'EQUAL_E_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+                            if self.severity_score_equality_radius_status[1] <= r:
+                                metrics[f'EQUAL_E_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 1
+                            else:
+                                metrics[
+                                    f'EQUAL_E_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 0  # this creates it if not exists
 
                 elif metric_to_add_key == 'GT_SUBSET_OF_E_counter':
                     if self.severity_label_equality_status == SeverityLabel_EvaluationResultEnum.IDENTICAL:
@@ -243,7 +245,14 @@ class Evaluator:
 
                     if self.severity_score_equality_radius_status[
                         0] == SeverityScoreAsRadius_EvaluationResultEnum.COVERS:
-                        metrics['GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter'] += 1
+                        for r in sorted(constants.ANALYSIS_RADIUS):
+                            metrics.setdefault(f'GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+                            if self.severity_score_equality_radius_status[1] <= r:
+                                metrics[f'GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 1
+                            else:
+                                metrics[
+                                    f'GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 0  # this creates it if not exists
+
 
                 elif metric_to_add_key == 'E_SUBSET_OF_GT_counter':
                     if self.severity_label_equality_status == SeverityLabel_EvaluationResultEnum.IDENTICAL:
@@ -256,7 +265,13 @@ class Evaluator:
 
                     if self.severity_score_equality_radius_status[
                         0] == SeverityScoreAsRadius_EvaluationResultEnum.COVERS:
-                        metrics['E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter'] += 1
+                        for r in sorted(constants.ANALYSIS_RADIUS):
+                            metrics.setdefault(f'E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+                            if self.severity_score_equality_radius_status[1] <= r:
+                                metrics[f'E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 1
+                            else:
+                                metrics[
+                                    f'E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 0  # this creates it if not exists
 
                 ## SECOND: T
                 T = set(raw_result['cwe_llm_output']['TOP_FIVE_CWE_IDS'])
@@ -274,7 +289,14 @@ class Evaluator:
 
                     if self.severity_score_equality_radius_status[
                         0] == SeverityScoreAsRadius_EvaluationResultEnum.COVERS:
-                        metrics['EQUAL_T_WITHIN_RADIUS_RANGE_counter'] += 1
+                        for r in sorted(constants.ANALYSIS_RADIUS):
+                            metrics.setdefault(f'EQUAL_T_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+                            if self.severity_score_equality_radius_status[1] <= r:
+                                metrics[f'EQUAL_T_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 1
+                            else:
+                                metrics[
+                                    f'EQUAL_T_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 0  # this creates it if not exists
+
 
                 elif metric_to_add_key == 'GT_SUBSET_OF_T_counter':
                     if self.severity_label_equality_status == SeverityLabel_EvaluationResultEnum.IDENTICAL:
@@ -287,7 +309,13 @@ class Evaluator:
 
                     if self.severity_score_equality_radius_status[
                         0] == SeverityScoreAsRadius_EvaluationResultEnum.COVERS:
-                        metrics['GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_counter'] += 1
+                        for r in sorted(constants.ANALYSIS_RADIUS):
+                            metrics.setdefault(f'GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+                            if self.severity_score_equality_radius_status[1] <= r:
+                                metrics[f'GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 1
+                            else:
+                                metrics[
+                                    f'GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 0  # this creates it if not exists
 
                 elif metric_to_add_key == 'T_SUBSET_OF_GT_counter':
                     if self.severity_label_equality_status == SeverityLabel_EvaluationResultEnum.IDENTICAL:
@@ -300,12 +328,18 @@ class Evaluator:
 
                     if self.severity_score_equality_radius_status[
                         0] == SeverityScoreAsRadius_EvaluationResultEnum.COVERS:
-                        metrics['T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter'] += 1
+                        for r in sorted(constants.ANALYSIS_RADIUS):
+                            metrics.setdefault(f'T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+                            if self.severity_score_equality_radius_status[1] <= r:
+                                metrics[f'T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 1
+                            else:
+                                metrics[
+                                    f'T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}'] += 0  # this creates it if not exists
 
                 self.valid_evaluation = True
             evaluations.append(self.toJson())
 
-        return {
+        to_return = {
             'TOTAL_NUMBER_OF_SAMPLES_counter': len(raw_experiment_result),
             'timestamp': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
 
@@ -315,8 +349,6 @@ class Evaluator:
                     100.0 * metrics['EQUAL_E_EQUAL_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_E_WITHIN_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_E_WITHIN_LABEL_RANGE_counter'] / len(raw_experiment_result)),
-            'accuracy_overall_E_WITHIN_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
-                    100.0 * metrics['EQUAL_E_WITHIN_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
 
             'accuracy_overall_T_EQUAL_LABEL': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_T_EQUAL_LABEL_counter'] / len(raw_experiment_result)),
@@ -324,8 +356,6 @@ class Evaluator:
                     100.0 * metrics['EQUAL_T_EQUAL_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_T_WITHIN_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['EQUAL_T_WITHIN_LABEL_RANGE_counter'] / len(raw_experiment_result)),
-            'accuracy_overall_T_WITHIN_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
-                    100.0 * metrics['EQUAL_T_WITHIN_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
 
             'accuracy_overall_GT_SUBSET_OF_E_EQUAL_LABEL': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['GT_SUBSET_OF_E_EQUAL_LABEL_counter'] / len(raw_experiment_result)),
@@ -333,8 +363,6 @@ class Evaluator:
                     100.0 * metrics['GT_SUBSET_OF_E_EQUAL_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_GT_SUBSET_OF_E_WITHIN_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['GT_SUBSET_OF_E_WITHIN_LABEL_RANGE_counter'] / len(raw_experiment_result)),
-            'accuracy_overall_GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
-                    100.0 * metrics['GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
 
             'accuracy_overall_GT_SUBSET_OF_T_EQUAL_LABEL': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['GT_SUBSET_OF_T_EQUAL_LABEL_counter'] / len(raw_experiment_result)),
@@ -342,8 +370,6 @@ class Evaluator:
                     100.0 * metrics['GT_SUBSET_OF_T_EQUAL_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_GT_SUBSET_OF_T_WITHIN_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['GT_SUBSET_OF_T_WITHIN_LABEL_RANGE_counter'] / len(raw_experiment_result)),
-            'accuracy_overall_GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
-                    100.0 * metrics['GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
 
             'accuracy_overall_E_SUBSET_OF_GT_EQUAL_LABEL': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['E_SUBSET_OF_GT_EQUAL_LABEL_counter'] / len(raw_experiment_result)),
@@ -351,8 +377,6 @@ class Evaluator:
                     100.0 * metrics['E_SUBSET_OF_GT_EQUAL_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_E_SUBSET_OF_GT_WITHIN_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['E_SUBSET_OF_GT_WITHIN_LABEL_RANGE_counter'] / len(raw_experiment_result)),
-            'accuracy_overall_E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
-                    100.0 * metrics['E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
 
             'accuracy_overall_T_SUBSET_OF_GT_EQUAL_LABEL': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['T_SUBSET_OF_GT_EQUAL_LABEL_counter'] / len(raw_experiment_result)),
@@ -360,8 +384,6 @@ class Evaluator:
                     100.0 * metrics['T_SUBSET_OF_GT_EQUAL_SCORE_counter'] / len(raw_experiment_result)),
             'accuracy_overall_T_SUBSET_OF_GT_WITHIN_LABEL_RANGE': 0 if len(raw_experiment_result) == 0 else (
                     100.0 * metrics['T_SUBSET_OF_GT_WITHIN_LABEL_RANGE_counter'] / len(raw_experiment_result)),
-            'accuracy_overall_T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE': 0 if len(raw_experiment_result) == 0 else (
-                    100.0 * metrics['T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter'] / len(raw_experiment_result)),
 
             'accuracy_identical_CWE_E': 0 if len(raw_experiment_result) == 0 else 100.0 * metrics[
                 'E_IDENTICAL_CWE_counter'] / len(raw_experiment_result),
@@ -402,9 +424,55 @@ class Evaluator:
             'SEVERITY_ERRORS': metrics['SEVERITY_ERROR_counter'],
             'CWE_ERRORS': metrics['CWE_ERROR_counter'],
             'INVALID_CWE_INFERENCE_counter': metrics['INVALID_CWE_INFERENCE_counter'],
-            'INVALID_SEVERITY_INFERENCE_counter': metrics['INVALID_SEVERITY_INFERENCE_counter'],
-            'metrics': metrics,
-            'evaluations': evaluations}
+            'INVALID_SEVERITY_INFERENCE_counter': metrics['INVALID_SEVERITY_INFERENCE_counter']
+        }
+
+        for r in sorted(constants.ANALYSIS_RADIUS):
+            metrics.setdefault(f'EQUAL_E_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+            metrics.setdefault(f'EQUAL_T_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+            metrics.setdefault(f'GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+            metrics.setdefault(f'GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+            metrics.setdefault(f'E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+            metrics.setdefault(f'T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}', 0)
+            metrics.setdefault(f'accuracy_severity_score_radius_range_{str(r)}', 0)
+
+            to_return[f'accuracy_severity_score_radius_range_{str(r)}'] = 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics['WITHIN_RADIUS_RANGE_counter'][r] / len(raw_experiment_result))
+
+            to_return[f'accuracy_overall_E_WITHIN_RADIUS_RANGE_{str(r)}'] = 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics[f'EQUAL_E_WITHIN_RADIUS_RANGE_counter_{str(r)}'] / len(raw_experiment_result))
+
+            to_return[f'accuracy_overall_T_WITHIN_RADIUS_RANGE_{str(r)}'] = 0 if len(raw_experiment_result) == 0 else (
+                    100.0 * metrics[f'EQUAL_T_WITHIN_RADIUS_RANGE_counter_{str(r)}'] / len(raw_experiment_result))
+
+            to_return[f'accuracy_overall_GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_{str(r)}'] = 0 if len(
+                raw_experiment_result) == 0 else (
+                    100.0 * metrics[f'GT_SUBSET_OF_E_WITHIN_RADIUS_RANGE_counter_{str(r)}'] / len(
+                raw_experiment_result))
+
+            to_return[f'accuracy_overall_GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_{str(r)}'] = 0 if len(
+                raw_experiment_result) == 0 else (
+                    100.0 * metrics[f'GT_SUBSET_OF_T_WITHIN_RADIUS_RANGE_counter_{str(r)}'] / len(
+                raw_experiment_result))
+
+            to_return[f'accuracy_overall_E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_{str(r)}'] = 0 if len(
+                raw_experiment_result) == 0 else (
+                    100.0 * metrics[f'E_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}'] / len(
+                raw_experiment_result))
+
+            to_return[f'accuracy_overall_T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_{str(r)}'] = 0 if len(
+                raw_experiment_result) == 0 else (
+                    100.0 * metrics[f'T_SUBSET_OF_GT_WITHIN_RADIUS_RANGE_counter_{str(r)}'] / len(
+                raw_experiment_result))
+
+        for r, r_freq in metrics['WITHIN_RADIUS_RANGE_counter'].items():
+            to_return[f'accuracy_severity_score_radius_range_{str(r)}'] = 0 if len(
+                raw_experiment_result) == 0 else 100.0 * r_freq / len(raw_experiment_result)
+
+        to_return['metrics'] = metrics
+        to_return['evaluations'] = evaluations
+
+        return to_return
 
     def evaluate_cwe(self, predicted_CWEs: set, predicted_CWEs_type: str, GT_CWEs: set) -> (
             tuple[CWE_EvaluationResultEnum, str]):
@@ -433,7 +501,8 @@ class Evaluator:
                                     self.cwe_equality_status.items()},
             'severity_label_equality_status': None if self.severity_label_equality_status is None else str(
                 self.severity_label_equality_status),
-            'severity_score_equality_status': None if self.severity_score_equality_status is None else str(self.severity_score_equality_status),
+            'severity_score_equality_status': None if self.severity_score_equality_status is None else str(
+                self.severity_score_equality_status),
             'severity_score_label_range_equality_status': {
                 'type': None if self.severity_score_label_range_equality_status[0] is None else str(
                     self.severity_score_label_range_equality_status[0]),
