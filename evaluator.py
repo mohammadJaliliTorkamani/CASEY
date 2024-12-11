@@ -422,10 +422,10 @@ class Evaluator:
             'accuracy_severity_score_label_range': 0 if len(raw_experiment_result) == 0 else 100.0 * metrics['WITHIN_LABEL_RANGE_counter'] / len(raw_experiment_result),
             'accuracy_severity_score_radius_range': 0 if len(raw_experiment_result) == 0 else 100.0 * list(metrics['WITHIN_RADIUS_RANGE_counter'].values())[-1] / len(raw_experiment_result),
 
-            'SEVERITY_ERRORS': metrics['SEVERITY_ERROR_counter'],
-            'CWE_ERRORS': metrics['CWE_ERROR_counter'],
-            'INVALID_CWE_INFERENCE_counter': metrics['INVALID_CWE_INFERENCE_counter'],
-            'INVALID_SEVERITY_INFERENCE_counter': metrics['INVALID_SEVERITY_INFERENCE_counter']
+            'accuracy_SEVERITY_ERRORS': 0 if len(raw_experiment_result) == 0 else 100.0 * metrics['SEVERITY_ERROR_counter']/ len(raw_experiment_result),
+            'accuracy_CWE_ERRORS': 0 if len(raw_experiment_result) == 0 else 100.0 * metrics['CWE_ERROR_counter']/ len(raw_experiment_result),
+            'accuracy_INVALID_CWE_INFERENCE_counter': 0 if len(raw_experiment_result) == 0 else 100.0 * metrics['INVALID_CWE_INFERENCE_counter']/ len(raw_experiment_result),
+            'accuracy_INVALID_SEVERITY_INFERENCE_counter': 0 if len(raw_experiment_result) == 0 else 100.0 * metrics['INVALID_SEVERITY_INFERENCE_counter']/ len(raw_experiment_result)
         }
 
         metrics['GT_SUBSETEQUAL_OF_E_EQUAL_LABEL_counter'] = metrics['GT_SUBSET_OF_E_EQUAL_LABEL_counter'] + metrics['EQUAL_E_EQUAL_LABEL_counter']
