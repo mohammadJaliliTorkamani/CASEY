@@ -37,16 +37,8 @@ def create_excel_from_json(json_file_paths_normal, json_file_paths_finetuned, ou
 
 
 # Example usage
-json_file_paths_normal = ['/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_gpt-3.5-turbo_gpt-3.5-turbo.json',
-                          '/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_and_files_gpt-3.5-turbo_gpt-3.5-turbo.json',
-                          '/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_and_method_gpt-3.5-turbo_gpt-3.5-turbo.json',
-                          '/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_and_hunks_gpt-3.5-turbo_gpt-3.5-turbo.json',
-                          ]
+json_file_paths_normal = ['JSON ADDRESSES GO HERE']
 
-json_file_paths_finetuned = ['/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_severity_fine_tuned_cwe_fine_tuned.json',
-                             '/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_and_files_severity_fine_tuned_cwe_fine_tuned.json',
-                             '/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_and_method_severity_fine_tuned_cwe_fine_tuned.json',
-                             '/Users/mjalilitorkamani2/Codes/BugType_Categorization/evaluated_final_analysis_of_bug_description_and_hunks_severity_fine_tuned_cwe_fine_tuned.json',
-                            ]
+json_file_paths_finetuned = ['JSON ADDRESSES GO HERE']
 output_excel_path = 'output.xlsx'
 create_excel_from_json(json_file_paths_normal, json_file_paths_finetuned, output_excel_path)
