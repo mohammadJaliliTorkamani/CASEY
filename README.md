@@ -12,7 +12,12 @@ Finally, run the project using the following command:
 ``python3 main.py``
 
 ## Links to Datasets:
+You can have access to dataset artifacts using either of these two ways:
+### Link-1:  
+Including a link for all artifacts uploaded in Zenodo [Here](https://zenodo.org/records/14578172?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImMzNmQwMzc4LTg5NzctNGI2OS04NGRjLWIzODIxNWM4NTdjMSIsImRhdGEiOnt9LCJyYW5kb20iOiJiMjdjNzExOGFiNjE5YzU4YTUyZTI1MWQxNGEzMDc5MSJ9.BTmonq6aT7lA_jut33V6VY8ZsZ-MOEGUtDg8uHQuisJhMRzwk4nnotL3yyDjTCJz6YZg631LKyoAAdF8lYSykQ)
 
+### Link-2: 
+Direct links for each one of the artifacts:
 ### Total Dataset: [https://mega.nz/file/s7tH2DKQ#343OYhB9fb8F_9rY6N-q-0twhhLbZRnVlQLLnBtLZ1o]
 ### CVE2CWE Dataset: [https://mega.nz/file/Bj9VWR7a#DuSu6kDmIFtD4xiZDzsQXpjNOfF-7uYIbn_6k1-Vct0]
 ### Evaluation Dataset: [https://mega.nz/file/YvUzAbBR#3rpznGlsiLSYa1WDvxeTk3ObzMaLDQXzYxgoSzwu56k]
