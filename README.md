@@ -1,5 +1,8 @@
 # Streamlining Security Vulnerability Triage with Large Language Models
 
+#### Collaborators: 
+Mohammad Jalili Torkamani, Joey Ng, Nikita Mehrotra, Mahinthan Chandramohan, Padmanabhan Krishnan, Rahul Purandare
+
 ## How to Run
 
 1. Open `constants.py` and replace the placeholders (`OPENAI_API_KEY`, `PROJECT_ABSOLUTE_PATH`, `LLM_CWE_FINE_TUNED_MODEL`, `LLM_SEVERITY_FINE_TUNED_MODEL`) with the appropriate values.
