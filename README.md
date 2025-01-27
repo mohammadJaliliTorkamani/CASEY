@@ -26,6 +26,3 @@ Direct links for each one of the artifacts:
 ### Fine-tuning Dataset (CWE - Testing): [https://mega.nz/file/YrlyiKaA#oprGrrJqrWOiZmCKxPdMyLSBFfVpgxa1s1eCU5zlxzE]
 ### Fine-tuning Dataset (Severity - Training): [https://mega.nz/file/d2UkwIIZ#PvoilsWpVwIkxsD5q4mHS-GV1TkvnbbpBcSAvfltk0A]
 ### Fine-tuning Dataset (Severity - Testing): [https://mega.nz/file/dy1DUDjC#flcYEorpKZrt3FrTNLGjEJqNWm522rVRoyOFkvgmhWc]
-
-Preprint paper:
-https://
