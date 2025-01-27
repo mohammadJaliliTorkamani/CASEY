@@ -1,7 +1,7 @@
 # Streamlining Security Vulnerability Triage with Large Language Models
 
 #### Collaborators: 
-Mohammad Jalili Torkamani, Joey Ng, Nikita Mehrotra, Mahinthan Chandramohan, Padmanabhan Krishnan, Rahul Purandare
+Mohammad Jalili Torkamani (UNL), Joey Ng (UNL), Nikita Mehrotra (Microsoft), Mahinthan Chandramohan (Oracle Labs.), Padmanabhan Krishnan (Oracle Labs.), Rahul Purandare (UNL)
 
 ## How to Run
 
